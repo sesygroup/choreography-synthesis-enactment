@@ -21,7 +21,7 @@ The replication package can be downloaded [here](https://github.com/sesygroup/ch
 |  execution-monitoring | contains the artefacts used to `execute` the experiment, the `monitor` used to analyze the extracted data, and the set of `monitoring data` |
 
 
-```c
+```shell 
 choreography-synthesis-enactment
 |   pom.xml 'build all the projects'
 |
