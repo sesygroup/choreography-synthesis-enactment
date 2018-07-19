@@ -1,0 +1,95 @@
+<!--
+Licensed to the Apache Software Foundation (ASF) under one
+or more contributor license agreements.  See the NOTICE file
+distributed with this work for additional information
+regarding copyright ownership.  The ASF licenses this file
+to you under the Apache License, Version 2.0 (the
+"License"); you may not use this file except in compliance
+with the License.  You may obtain a copy of the License at
+        
+  http://www.apache.org/licenses/LICENSE-2.0
+    
+Unless required by applicable law or agreed to in writing,
+software distributed under the License is distributed on an
+"AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+KIND, either express or implied.  See the License for the
+specific language governing permissions and limitations
+under the License.
+-->
+
+<div ng-switch="schema.type" >
+  <input ng-switch-when="String" class="form-control" type="text"
+         ng-model="user.plainAttrs[schema.key].values[index]"
+         ng-required="{{schema.mandatoryCondition}}" validate="true"
+         ng-disabled="schema.readonly" ng-init="initAttribute(schema, index)" name="{{schema.key}}"/>
+  <input ng-switch-when="Encrypted" class="form-control" type="text"
+         ng-model="user.plainAttrs[schema.key].values[index]"
+         ng-required="{{schema.mandatoryCondition}}" validate="true"
+         ng-disabled="schema.readonly" ng-init="initAttribute(schema, index)"
+         ame="{{schema.key}}"/>
+  <div ng-switch-when="Boolean">
+    <input type="checkbox" ng-model="user.plainAttrs[schema.key].values[index]" ng-required="{{schema.mandatoryCondition}}" 
+           ng-init="initAttribute(schema, index)" />
+  </div>
+  <input ng-switch-when="Long" class="form-control" type="number" ng-model="user.plainAttrs[schema.key].values[index]" 
+         ng-required="{{schema.mandatoryCondition}}" validate="true"
+         ng-init="initAttribute(schema, index)" name="{{schema.key}}"/>
+  <input ng-switch-when="Double" class="form-control" type="number" ng-model="user.plainAttrs[schema.key].values[index]"
+         ng-required="{{schema.mandatoryCondition}}" validate="true"
+         ng-init="initAttribute(schema, index)" name="{{schema.key}}"/>
+
+  <div ng-switch-when="Date" id="date">
+    <span id="datetime">
+      <input type="text" class="form-control" 
+             uib-datepicker-popup
+             ng-model="selectedDate"
+             ng-change="bindDateToModel(selectedDate, selectedTime)"
+             min-date="minDate" max-date="maxDate"
+             is-open="status.opened" datepicker-options="dateOptions"
+             ng-required="{{schema.mandatoryCondition}}" close-text="Close"
+             ng-init="initAttribute(schema, index)"/>
+    </span>
+    <span>
+      <button type="button" class="btn btn-default" style="margin-top:35px;" ng-click="open($event)" >
+        <i class="glyphicon glyphicon-calendar"></i>
+      </button>
+    </span>
+    <span id="timepicker" ng-if="(schema.conversionPattern.indexOf('H') > -1 ||
+                schema.conversionPattern.indexOf('h') > -1)">
+      <uib-timepicker ng-model="selectedTime" 
+                      ng-change="bindDateToModel(selectedDate, selectedTime)"
+                      hour-step="hstep" minute-step="mstep" show-meridian="ismeridian">
+      </uib-timepicker>
+    </span>
+  </div>
+
+  <div ng-switch-when="Enum" ng-init="initAttribute(schema, index)">
+    <select class="form-control"
+            ng-model="user.plainAttrs[schema.key].values[index]"
+            ng-required="{{schema.mandatoryCondition}}">
+      <option ng-repeat="value in enumerationValues" value="{{value}}">
+        {{schema.enumerationKeys[$index]|| value}}
+      </option>
+    </select>
+  </div>
+
+  <div ng-switch-when="Binary" ng-init="initAttribute(schema, index)">
+    <!--<div enctype="multipart/form-data" accept-charset="UTF-8">-->
+    <div >
+      <input id="fileInput" type="file" ng-required="{{schema.mandatoryCondition}}"/>
+      <button type="button" title="Download file" class="fileButton btn btn-default btn-sm" ng-click="download()">
+        <i class="glyphicon glyphicon-download" ></i>
+      </button>
+      <button type="button" class="fileButton btn btn-default btn-sm" title="Remove file" ng-click="remove()">
+        <i class="glyphicon glyphicon-remove-sign" ></i>
+      </button>
+      <h4><span class="label label-primary" ng-model="userFile">{{userFile}}</span></h4>
+    </div>
+
+  </div>
+  <input ng-switch-default class="form-control" type="text"
+         ng-model="user.plainAttrs[schema.key].values[index]"
+         ng-required="{{schema.mandatoryCondition}}" 
+         ng-disabled="schema.readonly" ng-init="initAttribute(schema, index)"/>
+
+</div>

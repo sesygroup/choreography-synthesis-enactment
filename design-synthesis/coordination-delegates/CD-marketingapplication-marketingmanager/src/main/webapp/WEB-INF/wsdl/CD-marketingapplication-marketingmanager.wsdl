@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/"
+             xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+             xmlns:tns="http://services.choreos.org/"
+             xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata"
+             xmlns:wsp="http://www.w3.org/ns/ws-policy"
+             xmlns:wsp1_2="http://schemas.xmlsoap.org/ws/2004/09/policy"
+             xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"
+             xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+             targetNamespace="http://services.choreos.org/"
+             name="MarketingManagerService">
+    <types>
+        <xsd:schema version="1.0" targetNamespace="http://services.choreos.org/">
+            <xsd:element name="ScenarioException" nillable="true" type="tns:ScenarioException"></xsd:element>
+            <xsd:element name="putEstimationReq" type="tns:putEstimationReq"></xsd:element>
+            <xsd:element name="putEstimationReqResponse" type="tns:putEstimationReqResponse"></xsd:element>
+            <xsd:element name="requestPrivateOffer" type="tns:requestPrivateOffer"></xsd:element>
+            <xsd:element name="requestPrivateOfferResponse" type="tns:requestPrivateOfferResponse"></xsd:element>
+            <xsd:element name="requestPublicOffer" type="tns:requestPublicOffer"></xsd:element>
+            <xsd:element name="requestPublicOfferResponse" type="tns:requestPublicOfferResponse"></xsd:element>
+            <xsd:element name="scenarioSetup" type="tns:scenarioSetup"></xsd:element>
+            <xsd:element name="scenarioSetupResponse" type="tns:scenarioSetupResponse"></xsd:element>
+            <xsd:element name="setEndpointAddress" type="tns:setEndpointAddress"></xsd:element>
+            <xsd:element name="setEndpointAddressResponse" type="tns:setEndpointAddressResponse"></xsd:element>
+            <xsd:element name="setInvocationAddress" type="tns:setInvocationAddress"></xsd:element>
+            <xsd:element name="setInvocationAddressResponse" type="tns:setInvocationAddressResponse"></xsd:element>
+            <xsd:complexType name="putEstimationReq">
+                <xsd:sequence>
+                    <xsd:element name="sessionId" type="xsd:string" minOccurs="0"></xsd:element>
+                    <xsd:element name="estimationNeedAlert" type="tns:estimationNeedAlert" minOccurs="0"></xsd:element>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="estimationNeedAlert">
+                <xsd:sequence>
+                    <xsd:element name="product" type="tns:product" minOccurs="0"></xsd:element>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="product">
+                <xsd:sequence>
+                    <xsd:element name="name" type="xsd:string" minOccurs="0"></xsd:element>
+                    <xsd:element name="brand" type="xsd:string" minOccurs="0"></xsd:element>
+                    <xsd:element name="barcode" type="xsd:string" minOccurs="0"></xsd:element>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="putEstimationReqResponse">
+                <xsd:sequence></xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="ScenarioException">
+                <xsd:sequence>
+                    <xsd:element name="message" type="xsd:string" minOccurs="0"></xsd:element>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="requestPrivateOffer">
+                <xsd:sequence>
+                    <xsd:element name="sessionId" type="xsd:string" minOccurs="0"></xsd:element>
+                    <xsd:element name="product" type="tns:product" minOccurs="0"></xsd:element>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="requestPrivateOfferResponse">
+                <xsd:sequence></xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="setEndpointAddress">
+                <xsd:sequence>
+                    <xsd:element name="arg0" type="xsd:string" minOccurs="0"></xsd:element>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="setEndpointAddressResponse">
+                <xsd:sequence></xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="setInvocationAddress">
+                <xsd:sequence>
+                    <xsd:element name="arg0" type="xsd:string" minOccurs="0"></xsd:element>
+                    <xsd:element name="arg1" type="xsd:string" minOccurs="0"></xsd:element>
+                    <xsd:element name="arg2" type="xsd:string" minOccurs="0" maxOccurs="unbounded"></xsd:element>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="setInvocationAddressResponse">
+                <xsd:sequence></xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="scenarioSetup">
+                <xsd:sequence></xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="scenarioSetupResponse">
+                <xsd:sequence></xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="requestPublicOffer">
+                <xsd:sequence>
+                    <xsd:element name="sessionId" type="xsd:string" minOccurs="0"></xsd:element>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="requestPublicOfferResponse">
+                <xsd:sequence></xsd:sequence>
+            </xsd:complexType>
+        </xsd:schema>
+    </types>
+    <message name="scenarioSetup">
+        <part name="parameters" element="tns:scenarioSetup"></part>
+    </message>
+    <message name="scenarioSetupResponse">
+        <part name="parameters" element="tns:scenarioSetupResponse"></part>
+    </message>
+    <message name="putEstimationReq">
+        <part name="parameters" element="tns:putEstimationReq"></part>
+    </message>
+    <message name="putEstimationReqResponse">
+        <part name="parameters" element="tns:putEstimationReqResponse"></part>
+    </message>
+    <message name="ScenarioException">
+        <part name="fault" element="tns:ScenarioException"></part>
+    </message>
+    <message name="requestPrivateOffer">
+        <part name="parameters" element="tns:requestPrivateOffer"></part>
+    </message>
+    <message name="requestPrivateOfferResponse">
+        <part name="parameters" element="tns:requestPrivateOfferResponse"></part>
+    </message>
+    <message name="requestPublicOffer">
+        <part name="parameters" element="tns:requestPublicOffer"></part>
+    </message>
+    <message name="requestPublicOfferResponse">
+        <part name="parameters" element="tns:requestPublicOfferResponse"></part>
+    </message>
+    <message name="setInvocationAddress">
+        <part name="parameters" element="tns:setInvocationAddress"></part>
+    </message>
+    <message name="setInvocationAddressResponse">
+        <part name="parameters" element="tns:setInvocationAddressResponse"></part>
+    </message>
+    <message name="setEndpointAddress">
+        <part name="parameters" element="tns:setEndpointAddress"></part>
+    </message>
+    <message name="setEndpointAddressResponse">
+        <part name="parameters" element="tns:setEndpointAddressResponse"></part>
+    </message>
+    <portType name="MarketingManager">
+        <operation name="scenarioSetup">
+            <input wsam:Action="http://services.choreos.org/MarketingManager/scenarioSetupRequest" message="tns:scenarioSetup"></input>
+            <output wsam:Action="http://services.choreos.org/MarketingManager/scenarioSetupResponse" message="tns:scenarioSetupResponse"></output>
+        </operation>
+        <operation name="putEstimationReq">
+            <input wsam:Action="http://services.choreos.org/MarketingManager/putEstimationReqRequest" message="tns:putEstimationReq"></input>
+            <output wsam:Action="http://services.choreos.org/MarketingManager/putEstimationReqResponse" message="tns:putEstimationReqResponse"></output>
+            <fault message="tns:ScenarioException" name="ScenarioException" wsam:Action="http://services.choreos.org/MarketingManager/putEstimationReq/Fault/ScenarioException"></fault>
+        </operation>
+        <operation name="requestPrivateOffer">
+            <input wsam:Action="http://services.choreos.org/MarketingManager/requestPrivateOfferRequest" message="tns:requestPrivateOffer"></input>
+            <output wsam:Action="http://services.choreos.org/MarketingManager/requestPrivateOfferResponse" message="tns:requestPrivateOfferResponse"></output>
+            <fault message="tns:ScenarioException" name="ScenarioException" wsam:Action="http://services.choreos.org/MarketingManager/requestPrivateOffer/Fault/ScenarioException"></fault>
+        </operation>
+        <operation name="requestPublicOffer">
+            <input wsam:Action="http://services.choreos.org/MarketingManager/requestPublicOfferRequest" message="tns:requestPublicOffer"></input>
+            <output wsam:Action="http://services.choreos.org/MarketingManager/requestPublicOfferResponse" message="tns:requestPublicOfferResponse"></output>
+            <fault message="tns:ScenarioException" name="ScenarioException" wsam:Action="http://services.choreos.org/MarketingManager/requestPublicOffer/Fault/ScenarioException"></fault>
+        </operation>
+        <operation name="setInvocationAddress">
+            <input wsam:Action="http://services.choreos.org/MarketingManager/setInvocationAddressRequest" message="tns:setInvocationAddress"></input>
+            <output wsam:Action="http://services.choreos.org/MarketingManager/setInvocationAddressResponse" message="tns:setInvocationAddressResponse"></output>
+        </operation>
+        <operation name="setEndpointAddress">
+            <input wsam:Action="http://services.choreos.org/MarketingManager/setEndpointAddressRequest" message="tns:setEndpointAddress"></input>
+            <output wsam:Action="http://services.choreos.org/MarketingManager/setEndpointAddressResponse" message="tns:setEndpointAddressResponse"></output>
+        </operation>
+    </portType>
+    <binding name="MarketingManagerPortBinding" type="tns:MarketingManager">
+        <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"></soap:binding>
+        <operation name="scenarioSetup">
+            <soap:operation soapAction=""></soap:operation>
+            <input>
+                <soap:body use="literal"></soap:body>
+            </input>
+            <output>
+                <soap:body use="literal"></soap:body>
+            </output>
+        </operation>
+        <operation name="putEstimationReq">
+            <soap:operation soapAction=""></soap:operation>
+            <input>
+                <soap:body use="literal"></soap:body>
+            </input>
+            <output>
+                <soap:body use="literal"></soap:body>
+            </output>
+            <fault name="ScenarioException">
+                <soap:fault name="ScenarioException" use="literal"></soap:fault>
+            </fault>
+        </operation>
+        <operation name="requestPrivateOffer">
+            <soap:operation soapAction=""></soap:operation>
+            <input>
+                <soap:body use="literal"></soap:body>
+            </input>
+            <output>
+                <soap:body use="literal"></soap:body>
+            </output>
+            <fault name="ScenarioException">
+                <soap:fault name="ScenarioException" use="literal"></soap:fault>
+            </fault>
+        </operation>
+        <operation name="requestPublicOffer">
+            <soap:operation soapAction=""></soap:operation>
+            <input>
+                <soap:body use="literal"></soap:body>
+            </input>
+            <output>
+                <soap:body use="literal"></soap:body>
+            </output>
+            <fault name="ScenarioException">
+                <soap:fault name="ScenarioException" use="literal"></soap:fault>
+            </fault>
+        </operation>
+        <operation name="setInvocationAddress">
+            <soap:operation soapAction=""></soap:operation>
+            <input>
+                <soap:body use="literal"></soap:body>
+            </input>
+            <output>
+                <soap:body use="literal"></soap:body>
+            </output>
+        </operation>
+        <operation name="setEndpointAddress">
+            <soap:operation soapAction=""></soap:operation>
+            <input>
+                <soap:body use="literal"></soap:body>
+            </input>
+            <output>
+                <soap:body use="literal"></soap:body>
+            </output>
+        </operation>
+    </binding>
+    <service name="MarketingManagerService">
+        <port name="MarketingManagerPort" binding="tns:MarketingManagerPortBinding">
+            <soap:address location="http://localhost:8080/CD-marketingapplication-marketingmanager/CD-marketingapplication-marketingmanager"></soap:address>
+        </port>
+    </service>
+</definitions>

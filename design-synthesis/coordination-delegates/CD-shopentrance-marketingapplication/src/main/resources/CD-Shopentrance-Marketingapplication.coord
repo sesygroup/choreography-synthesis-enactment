@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coord:COORDModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:coord="http://eu.chorevolution/modelingnotations/coord" name="CD-Shopentrance-Marketingapplication" choreographyName="Default Choreography" initialState="//@states.0">
+  <tuples sourceState="//@states.1" targetState="//@states.2" allowedOperation="//@operations.0" condition="true"/>
+  <tuples sourceState="//@states.3" targetState="//@states.4" allowedComponentInTargetState="//@participants.0" condition="true"/>
+  <tuples sourceState="//@states.3" targetState="//@states.5" condition="true"/>
+  <tuples sourceState="//@states.6" targetState="//@states.7" condition="true"/>
+  <tuples sourceState="//@states.7" targetState="//@states.8" condition="true"/>
+  <tuples sourceState="//@states.9" targetState="//@states.6" condition="true"/>
+  <tuples sourceState="//@states.2" targetState="//@states.9" condition="true">
+    <wait>
+      <elements state="//@states.10" participants="//@participants.1"/>
+    </wait>
+    <notify>
+      <elements state="//@states.2" participants="//@participants.1"/>
+    </notify>
+  </tuples>
+  <tuples sourceState="//@states.11" targetState="//@states.5" condition="true"/>
+  <tuples sourceState="//@states.11" targetState="//@states.12" allowedComponentInTargetState="//@participants.0" condition="true"/>
+  <tuples sourceState="//@states.7" targetState="//@states.13" allowedComponentInTargetState="//@participants.2" condition="true"/>
+  <tuples sourceState="//@states.8" targetState="//@states.14" allowedComponentInTargetState="//@participants.1" condition="true"/>
+  <tuples sourceState="//@states.8" targetState="//@states.15" allowedComponentInTargetState="//@participants.1" condition="true"/>
+  <tuples sourceState="//@states.6" targetState="//@states.11" condition="true"/>
+  <tuples sourceState="//@states.6" targetState="//@states.3" condition="true"/>
+  <tuples sourceState="//@states.8" targetState="//@states.16" allowedComponentInTargetState="//@participants.1" condition="true"/>
+  <states name="S0"/>
+  <states name="S12"/>
+  <states name="S13"/>
+  <states name="S30"/>
+  <states name="S34"/>
+  <states name="final"/>
+  <states name="S3"/>
+  <states name="S17"/>
+  <states name="S8"/>
+  <states name="S9"/>
+  <states name="S11"/>
+  <states name="S40"/>
+  <states name="S41"/>
+  <states name="S22"/>
+  <states name="S15"/>
+  <states name="S4"/>
+  <states name="S6"/>
+  <operations name="notifyCheckin"/>
+  <participants name="CD-Marketingapplication-Marketingmanager"/>
+  <participants name="CD-Client-Smartcart"/>
+  <participants name="CD-Client-Selfcheckoutmachine"/>
+</coord:COORDModel>

@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/"
+             xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+             xmlns:tns="http://services.choreos.org/"
+             xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata"
+             xmlns:wsp="http://www.w3.org/ns/ws-policy"
+             xmlns:wsp1_2="http://schemas.xmlsoap.org/ws/2004/09/policy"
+             xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"
+             xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+             targetNamespace="http://services.choreos.org/"
+             name="BasicCommunicationDeviceService">
+    <types>
+        <xsd:schema version="1.0" targetNamespace="http://services.choreos.org/">
+            <xsd:element name="ScenarioException" nillable="true" type="tns:ScenarioException"></xsd:element>
+            <xsd:element name="basicCommDeviceSubscribe" type="tns:basicCommDeviceSubscribe"></xsd:element>
+            <xsd:element name="basicCommDeviceSubscribeResponse" type="tns:basicCommDeviceSubscribeResponse"></xsd:element>
+            <xsd:element name="basicCommDeviceUnsubscribe" type="tns:basicCommDeviceUnsubscribe"></xsd:element>
+            <xsd:element name="basicCommDeviceUnsubscribeResponse" type="tns:basicCommDeviceUnsubscribeResponse"></xsd:element>
+            <xsd:element name="bcd_receive_sms" type="tns:bcd_receive_sms"></xsd:element>
+            <xsd:element name="bcd_receive_smsResponse" type="tns:bcd_receive_smsResponse"></xsd:element>
+            <xsd:element name="scenarioSetup" type="tns:scenarioSetup"></xsd:element>
+            <xsd:element name="scenarioSetupResponse" type="tns:scenarioSetupResponse"></xsd:element>
+            <xsd:element name="setEndpointAddress" type="tns:setEndpointAddress"></xsd:element>
+            <xsd:element name="setEndpointAddressResponse" type="tns:setEndpointAddressResponse"></xsd:element>
+            <xsd:element name="setInvocationAddress" type="tns:setInvocationAddress"></xsd:element>
+            <xsd:element name="setInvocationAddressResponse" type="tns:setInvocationAddressResponse"></xsd:element>
+            <xsd:complexType name="basicCommDeviceUnsubscribe">
+                <xsd:sequence>
+                    <xsd:element name="sessionId" type="xsd:string" minOccurs="0"></xsd:element>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="basicCommDeviceUnsubscribeResponse">
+                <xsd:sequence></xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="setEndpointAddress">
+                <xsd:sequence>
+                    <xsd:element name="arg0" type="xsd:string" minOccurs="0"></xsd:element>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="setEndpointAddressResponse">
+                <xsd:sequence></xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="bcd_receive_sms">
+                <xsd:sequence>
+                    <xsd:element name="sessionId" type="xsd:string" minOccurs="0"></xsd:element>
+                    <xsd:element name="msg" type="tns:sMSMessage" minOccurs="0"></xsd:element>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="sMSMessage">
+                <xsd:sequence>
+                    <xsd:element name="text" type="xsd:string" minOccurs="0"></xsd:element>
+                    <xsd:element name="from" type="xsd:string" minOccurs="0"></xsd:element>
+                    <xsd:element name="date" type="xsd:dateTime" minOccurs="0"></xsd:element>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="bcd_receive_smsResponse">
+                <xsd:sequence></xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="ScenarioException">
+                <xsd:sequence>
+                    <xsd:element name="message" type="xsd:string" minOccurs="0"></xsd:element>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="setInvocationAddress">
+                <xsd:sequence>
+                    <xsd:element name="arg0" type="xsd:string" minOccurs="0"></xsd:element>
+                    <xsd:element name="arg1" type="xsd:string" minOccurs="0"></xsd:element>
+                    <xsd:element name="arg2" type="xsd:string" minOccurs="0" maxOccurs="unbounded"></xsd:element>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="setInvocationAddressResponse">
+                <xsd:sequence></xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="scenarioSetup">
+                <xsd:sequence></xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="scenarioSetupResponse">
+                <xsd:sequence></xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="basicCommDeviceSubscribe">
+                <xsd:sequence>
+                    <xsd:element name="sessionId" type="xsd:string" minOccurs="0"></xsd:element>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="basicCommDeviceSubscribeResponse">
+                <xsd:sequence></xsd:sequence>
+            </xsd:complexType>
+        </xsd:schema>
+    </types>
+    <message name="scenarioSetup">
+        <part name="parameters" element="tns:scenarioSetup"></part>
+    </message>
+    <message name="scenarioSetupResponse">
+        <part name="parameters" element="tns:scenarioSetupResponse"></part>
+    </message>
+    <message name="basicCommDeviceSubscribe">
+        <part name="parameters" element="tns:basicCommDeviceSubscribe"></part>
+    </message>
+    <message name="basicCommDeviceSubscribeResponse">
+        <part name="parameters" element="tns:basicCommDeviceSubscribeResponse"></part>
+    </message>
+    <message name="basicCommDeviceUnsubscribe">
+        <part name="parameters" element="tns:basicCommDeviceUnsubscribe"></part>
+    </message>
+    <message name="basicCommDeviceUnsubscribeResponse">
+        <part name="parameters" element="tns:basicCommDeviceUnsubscribeResponse"></part>
+    </message>
+    <message name="bcd_receive_sms">
+        <part name="parameters" element="tns:bcd_receive_sms"></part>
+    </message>
+    <message name="bcd_receive_smsResponse">
+        <part name="parameters" element="tns:bcd_receive_smsResponse"></part>
+    </message>
+    <message name="ScenarioException">
+        <part name="fault" element="tns:ScenarioException"></part>
+    </message>
+    <message name="setInvocationAddress">
+        <part name="parameters" element="tns:setInvocationAddress"></part>
+    </message>
+    <message name="setInvocationAddressResponse">
+        <part name="parameters" element="tns:setInvocationAddressResponse"></part>
+    </message>
+    <message name="setEndpointAddress">
+        <part name="parameters" element="tns:setEndpointAddress"></part>
+    </message>
+    <message name="setEndpointAddressResponse">
+        <part name="parameters" element="tns:setEndpointAddressResponse"></part>
+    </message>
+    <portType name="BasicCommunicationDevice">
+        <operation name="scenarioSetup">
+            <input wsam:Action="http://services.choreos.org/BasicCommunicationDevice/scenarioSetupRequest" message="tns:scenarioSetup"></input>
+            <output wsam:Action="http://services.choreos.org/BasicCommunicationDevice/scenarioSetupResponse" message="tns:scenarioSetupResponse"></output>
+        </operation>
+        <operation name="basicCommDeviceSubscribe">
+            <input wsam:Action="http://services.choreos.org/BasicCommunicationDevice/basicCommDeviceSubscribeRequest" message="tns:basicCommDeviceSubscribe"></input>
+            <output wsam:Action="http://services.choreos.org/BasicCommunicationDevice/basicCommDeviceSubscribeResponse" message="tns:basicCommDeviceSubscribeResponse"></output>
+        </operation>
+        <operation name="basicCommDeviceUnsubscribe">
+            <input wsam:Action="http://services.choreos.org/BasicCommunicationDevice/basicCommDeviceUnsubscribeRequest" message="tns:basicCommDeviceUnsubscribe"></input>
+            <output wsam:Action="http://services.choreos.org/BasicCommunicationDevice/basicCommDeviceUnsubscribeResponse" message="tns:basicCommDeviceUnsubscribeResponse"></output>
+        </operation>
+        <operation name="bcd_receive_sms">
+            <input wsam:Action="http://services.choreos.org/BasicCommunicationDevice/bcd_receive_smsRequest" message="tns:bcd_receive_sms"></input>
+            <output wsam:Action="http://services.choreos.org/BasicCommunicationDevice/bcd_receive_smsResponse" message="tns:bcd_receive_smsResponse"></output>
+            <fault message="tns:ScenarioException" name="ScenarioException" wsam:Action="http://services.choreos.org/BasicCommunicationDevice/bcd_receive_sms/Fault/ScenarioException"></fault>
+        </operation>
+        <operation name="setInvocationAddress">
+            <input wsam:Action="http://services.choreos.org/BasicCommunicationDevice/setInvocationAddressRequest" message="tns:setInvocationAddress"></input>
+            <output wsam:Action="http://services.choreos.org/BasicCommunicationDevice/setInvocationAddressResponse" message="tns:setInvocationAddressResponse"></output>
+        </operation>
+        <operation name="setEndpointAddress">
+            <input wsam:Action="http://services.choreos.org/BasicCommunicationDevice/setEndpointAddressRequest" message="tns:setEndpointAddress"></input>
+            <output wsam:Action="http://services.choreos.org/BasicCommunicationDevice/setEndpointAddressResponse" message="tns:setEndpointAddressResponse"></output>
+        </operation>
+    </portType>
+    <binding name="BasicCommunicationDevicePortBinding" type="tns:BasicCommunicationDevice">
+        <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"></soap:binding>
+        <operation name="scenarioSetup">
+            <soap:operation soapAction=""></soap:operation>
+            <input>
+                <soap:body use="literal"></soap:body>
+            </input>
+            <output>
+                <soap:body use="literal"></soap:body>
+            </output>
+        </operation>
+        <operation name="basicCommDeviceSubscribe">
+            <soap:operation soapAction=""></soap:operation>
+            <input>
+                <soap:body use="literal"></soap:body>
+            </input>
+            <output>
+                <soap:body use="literal"></soap:body>
+            </output>
+        </operation>
+        <operation name="basicCommDeviceUnsubscribe">
+            <soap:operation soapAction=""></soap:operation>
+            <input>
+                <soap:body use="literal"></soap:body>
+            </input>
+            <output>
+                <soap:body use="literal"></soap:body>
+            </output>
+        </operation>
+        <operation name="bcd_receive_sms">
+            <soap:operation soapAction=""></soap:operation>
+            <input>
+                <soap:body use="literal"></soap:body>
+            </input>
+            <output>
+                <soap:body use="literal"></soap:body>
+            </output>
+            <fault name="ScenarioException">
+                <soap:fault name="ScenarioException" use="literal"></soap:fault>
+            </fault>
+        </operation>
+        <operation name="setInvocationAddress">
+            <soap:operation soapAction=""></soap:operation>
+            <input>
+                <soap:body use="literal"></soap:body>
+            </input>
+            <output>
+                <soap:body use="literal"></soap:body>
+            </output>
+        </operation>
+        <operation name="setEndpointAddress">
+            <soap:operation soapAction=""></soap:operation>
+            <input>
+                <soap:body use="literal"></soap:body>
+            </input>
+            <output>
+                <soap:body use="literal"></soap:body>
+            </output>
+        </operation>
+    </binding>
+    <service name="BasicCommunicationDeviceService">
+        <port name="BasicCommunicationDevicePort" binding="tns:BasicCommunicationDevicePortBinding">
+            <soap:address location="http://localhost:8080/basiccommunicationdevice/basiccommunicationdevice"></soap:address>
+        </port>
+    </service>
+</definitions>

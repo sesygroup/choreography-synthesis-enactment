@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coord:COORDModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:coord="http://eu.chorevolution/modelingnotations/coord" name="CD-Marketingapplication-Marketingmanager" choreographyName="Default Choreography" initialState="//@states.0">
+  <tuples sourceState="//@states.1" targetState="//@states.2" allowedOperation="//@operations.0" allowedComponentInTargetState="//@participants.0" condition="true"/>
+  <tuples sourceState="//@states.3" targetState="//@states.4" allowedOperation="//@operations.1" allowedComponentInTargetState="//@participants.0" condition="true"/>
+  <states name="S0"/>
+  <states name="S41"/>
+  <states name="S42"/>
+  <states name="S34"/>
+  <states name="S35"/>
+  <operations name="requestPublicOffer"/>
+  <operations name="requestPrivateOffer"/>
+  <participants name="CD-Marketingmanager-Marketingapplication"/>
+</coord:COORDModel>

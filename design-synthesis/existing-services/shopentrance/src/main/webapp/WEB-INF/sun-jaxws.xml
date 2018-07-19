@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<endpoints version="2.0" xmlns="http://java.sun.com/xml/ns/jax-ws/ri/runtime">
+ <endpoint 
+      name="shopentrance" 
+      interface="org.choreos.services.ShopEntrance"
+      implementation="org.choreos.services.ShopEntranceImpl" 
+      wsdl="WEB-INF/wsdl/shopentrance.wsdl"
+      service="{http://services.choreos.org/}ShopEntranceService"
+      port="{http://services.choreos.org/}ShopEntrancePort"
+      url-pattern="/shopentrance"/>
+  
+</endpoints>

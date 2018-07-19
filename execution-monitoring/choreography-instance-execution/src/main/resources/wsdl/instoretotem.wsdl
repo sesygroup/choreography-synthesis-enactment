@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/"
+             xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+             xmlns:tns="http://services.choreos.org/"
+             xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata"
+             xmlns:wsp="http://www.w3.org/ns/ws-policy"
+             xmlns:wsp1_2="http://schemas.xmlsoap.org/ws/2004/09/policy"
+             xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"
+             xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+             targetNamespace="http://services.choreos.org/"
+             name="InStoreTotemService">
+    <types>
+        <xsd:schema version="1.0" targetNamespace="http://services.choreos.org/">
+            <xsd:element name="ScenarioException" nillable="true" type="tns:ScenarioException"></xsd:element>
+            <xsd:element name="publish" type="tns:publish"></xsd:element>
+            <xsd:element name="publishResponse" type="tns:publishResponse"></xsd:element>
+            <xsd:element name="scenarioSetup" type="tns:scenarioSetup"></xsd:element>
+            <xsd:element name="scenarioSetupResponse" type="tns:scenarioSetupResponse"></xsd:element>
+            <xsd:element name="setEndpointAddress" type="tns:setEndpointAddress"></xsd:element>
+            <xsd:element name="setEndpointAddressResponse" type="tns:setEndpointAddressResponse"></xsd:element>
+            <xsd:element name="setInvocationAddress" type="tns:setInvocationAddress"></xsd:element>
+            <xsd:element name="setInvocationAddressResponse" type="tns:setInvocationAddressResponse"></xsd:element>
+            <xsd:complexType name="publish">
+                <xsd:sequence>
+                    <xsd:element name="sessionId" type="xsd:string" minOccurs="0"></xsd:element>
+                    <xsd:element name="offer" type="tns:offer" minOccurs="0"></xsd:element>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="offer">
+                <xsd:sequence>
+                    <xsd:element name="item" type="tns:product" minOccurs="0"></xsd:element>
+                    <xsd:element name="discount" type="xsd:int"></xsd:element>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="product">
+                <xsd:sequence>
+                    <xsd:element name="name" type="xsd:string" minOccurs="0"></xsd:element>
+                    <xsd:element name="brand" type="xsd:string" minOccurs="0"></xsd:element>
+                    <xsd:element name="barcode" type="xsd:string" minOccurs="0"></xsd:element>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="publishResponse">
+                <xsd:sequence></xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="ScenarioException">
+                <xsd:sequence>
+                    <xsd:element name="message" type="xsd:string" minOccurs="0"></xsd:element>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="setEndpointAddress">
+                <xsd:sequence>
+                    <xsd:element name="arg0" type="xsd:string" minOccurs="0"></xsd:element>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="setEndpointAddressResponse">
+                <xsd:sequence></xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="setInvocationAddress">
+                <xsd:sequence>
+                    <xsd:element name="arg0" type="xsd:string" minOccurs="0"></xsd:element>
+                    <xsd:element name="arg1" type="xsd:string" minOccurs="0"></xsd:element>
+                    <xsd:element name="arg2" type="xsd:string" minOccurs="0" maxOccurs="unbounded"></xsd:element>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="setInvocationAddressResponse">
+                <xsd:sequence></xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="scenarioSetup">
+                <xsd:sequence></xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="scenarioSetupResponse">
+                <xsd:sequence></xsd:sequence>
+            </xsd:complexType>
+        </xsd:schema>
+    </types>
+    <message name="scenarioSetup">
+        <part name="parameters" element="tns:scenarioSetup"></part>
+    </message>
+    <message name="scenarioSetupResponse">
+        <part name="parameters" element="tns:scenarioSetupResponse"></part>
+    </message>
+    <message name="publish">
+        <part name="parameters" element="tns:publish"></part>
+    </message>
+    <message name="publishResponse">
+        <part name="parameters" element="tns:publishResponse"></part>
+    </message>
+    <message name="ScenarioException">
+        <part name="fault" element="tns:ScenarioException"></part>
+    </message>
+    <message name="setInvocationAddress">
+        <part name="parameters" element="tns:setInvocationAddress"></part>
+    </message>
+    <message name="setInvocationAddressResponse">
+        <part name="parameters" element="tns:setInvocationAddressResponse"></part>
+    </message>
+    <message name="setEndpointAddress">
+        <part name="parameters" element="tns:setEndpointAddress"></part>
+    </message>
+    <message name="setEndpointAddressResponse">
+        <part name="parameters" element="tns:setEndpointAddressResponse"></part>
+    </message>
+    <portType name="InStoreTotem">
+        <operation name="scenarioSetup">
+            <input wsam:Action="http://services.choreos.org/InStoreTotem/scenarioSetupRequest" message="tns:scenarioSetup"></input>
+            <output wsam:Action="http://services.choreos.org/InStoreTotem/scenarioSetupResponse" message="tns:scenarioSetupResponse"></output>
+        </operation>
+        <operation name="publish">
+            <input wsam:Action="http://services.choreos.org/InStoreTotem/publishRequest" message="tns:publish"></input>
+            <output wsam:Action="http://services.choreos.org/InStoreTotem/publishResponse" message="tns:publishResponse"></output>
+            <fault message="tns:ScenarioException" name="ScenarioException" wsam:Action="http://services.choreos.org/InStoreTotem/publish/Fault/ScenarioException"></fault>
+        </operation>
+        <operation name="setInvocationAddress">
+            <input wsam:Action="http://services.choreos.org/InStoreTotem/setInvocationAddressRequest" message="tns:setInvocationAddress"></input>
+            <output wsam:Action="http://services.choreos.org/InStoreTotem/setInvocationAddressResponse" message="tns:setInvocationAddressResponse"></output>
+        </operation>
+        <operation name="setEndpointAddress">
+            <input wsam:Action="http://services.choreos.org/InStoreTotem/setEndpointAddressRequest" message="tns:setEndpointAddress"></input>
+            <output wsam:Action="http://services.choreos.org/InStoreTotem/setEndpointAddressResponse" message="tns:setEndpointAddressResponse"></output>
+        </operation>
+    </portType>
+    <binding name="InStoreTotemPortBinding" type="tns:InStoreTotem">
+        <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"></soap:binding>
+        <operation name="scenarioSetup">
+            <soap:operation soapAction=""></soap:operation>
+            <input>
+                <soap:body use="literal"></soap:body>
+            </input>
+            <output>
+                <soap:body use="literal"></soap:body>
+            </output>
+        </operation>
+        <operation name="publish">
+            <soap:operation soapAction=""></soap:operation>
+            <input>
+                <soap:body use="literal"></soap:body>
+            </input>
+            <output>
+                <soap:body use="literal"></soap:body>
+            </output>
+            <fault name="ScenarioException">
+                <soap:fault name="ScenarioException" use="literal"></soap:fault>
+            </fault>
+        </operation>
+        <operation name="setInvocationAddress">
+            <soap:operation soapAction=""></soap:operation>
+            <input>
+                <soap:body use="literal"></soap:body>
+            </input>
+            <output>
+                <soap:body use="literal"></soap:body>
+            </output>
+        </operation>
+        <operation name="setEndpointAddress">
+            <soap:operation soapAction=""></soap:operation>
+            <input>
+                <soap:body use="literal"></soap:body>
+            </input>
+            <output>
+                <soap:body use="literal"></soap:body>
+            </output>
+        </operation>
+    </binding>
+    <service name="InStoreTotemService">
+        <port name="InStoreTotemPort" binding="tns:InStoreTotemPortBinding">
+            <soap:address location="http://localhost:8080/instoretotem/instoretotem"></soap:address>
+        </port>
+    </service>
+</definitions>

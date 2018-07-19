@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<endpoints version="2.0" xmlns="http://java.sun.com/xml/ns/jax-ws/ri/runtime">
+  <endpoint 
+      interface="org.choreos.services.cd.SmartCart" 
+      implementation="org.choreos.services.cd.CDimpl" 
+      name="CD-selfcheckoutmachine-smartcart"
+      wsdl="WEB-INF/wsdl/CD-selfcheckoutmachine-smartcart.wsdl"
+      service="{http://services.choreos.org/}SmartCartService"
+      port="{http://services.choreos.org/}SmartCartPort"
+      url-pattern="/CD-selfcheckoutmachine-smartcart"/>
+  
+	<endpoint  
+      implementation="eu.chorevolution.synthesisprocessor.coordinationprotocol.channel.WSCoordinationChannel" 
+      name="WSCoordinationChannel"
+      service="{http://eu.chorevolution.synthesisprocessor.coordinationprotocol.channel.client/}WSCoordinationChannelService"
+      port="{http://eu.chorevolution.synthesisprocessor.coordinationprotocol.channel.client/}WSCoordinationChannelPort"
+      url-pattern="/WSCoordinationChannel"/>    
+</endpoints>

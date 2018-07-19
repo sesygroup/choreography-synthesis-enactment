@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<endpoints version="2.0" xmlns="http://java.sun.com/xml/ns/jax-ws/ri/runtime">
+  <endpoint 
+      name="client" 
+      interface="org.choreos.services.Client"
+      implementation="org.choreos.services.ClientImpl" 
+      wsdl="WEB-INF/wsdl/client.wsdl"
+      service="{http://services.choreos.org/}ClientService"
+      port="{http://services.choreos.org/}ClientPort"
+      url-pattern="/client"/>
+</endpoints>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coord:COORDModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:coord="http://eu.chorevolution/modelingnotations/coord" name="CD-Selfcheckoutmachine-Marketingapplication" choreographyName="Default Choreography" initialState="//@states.0">
+  <tuples sourceState="//@states.1" targetState="//@states.2" condition="true"/>
+  <tuples sourceState="//@states.3" targetState="//@states.1" allowedOperation="//@operations.0" condition="true"/>
+  <states name="S0"/>
+  <states name="S21"/>
+  <states name="final"/>
+  <states name="S19"/>
+  <operations name="notifyCheckout"/>
+</coord:COORDModel>

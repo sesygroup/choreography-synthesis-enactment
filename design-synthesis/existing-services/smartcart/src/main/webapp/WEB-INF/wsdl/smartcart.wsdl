@@ -1,0 +1,358 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/"
+             xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+             xmlns:tns="http://services.choreos.org/"
+             xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata"
+             xmlns:wsp="http://www.w3.org/ns/ws-policy"
+             xmlns:wsp1_2="http://schemas.xmlsoap.org/ws/2004/09/policy"
+             xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"
+             xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+             targetNamespace="http://services.choreos.org/"
+             name="SmartCartService">
+    <types>
+        <xsd:schema version="1.0" targetNamespace="http://services.choreos.org/">
+            <xsd:element name="ScenarioException" nillable="true" type="tns:ScenarioException"></xsd:element>
+            <xsd:element name="add_product" type="tns:add_product"></xsd:element>
+            <xsd:element name="add_productResponse" type="tns:add_productResponse"></xsd:element>
+            <xsd:element name="change_qty" type="tns:change_qty"></xsd:element>
+            <xsd:element name="change_qtyResponse" type="tns:change_qtyResponse"></xsd:element>
+            <xsd:element name="isAvailable" type="tns:isAvailable"></xsd:element>
+            <xsd:element name="isAvailableResponse" type="tns:isAvailableResponse"></xsd:element>
+            <xsd:element name="payRequired" type="tns:payRequired"></xsd:element>
+            <xsd:element name="payRequiredResponse" type="tns:payRequiredResponse"></xsd:element>
+            <xsd:element name="remove_product" type="tns:remove_product"></xsd:element>
+            <xsd:element name="remove_productResponse" type="tns:remove_productResponse"></xsd:element>
+            <xsd:element name="scenarioSetup" type="tns:scenarioSetup"></xsd:element>
+            <xsd:element name="scenarioSetupResponse" type="tns:scenarioSetupResponse"></xsd:element>
+            <xsd:element name="setEndpointAddress" type="tns:setEndpointAddress"></xsd:element>
+            <xsd:element name="setEndpointAddressResponse" type="tns:setEndpointAddressResponse"></xsd:element>
+            <xsd:element name="setInvocationAddress" type="tns:setInvocationAddress"></xsd:element>
+            <xsd:element name="setInvocationAddressResponse" type="tns:setInvocationAddressResponse"></xsd:element>
+            <xsd:element name="subscribeUserToCart" type="tns:subscribeUserToCart"></xsd:element>
+            <xsd:element name="subscribeUserToCartResponse" type="tns:subscribeUserToCartResponse"></xsd:element>
+            <xsd:element name="unsubscribeUserFrom" type="tns:unsubscribeUserFrom"></xsd:element>
+            <xsd:element name="unsubscribeUserFromResponse" type="tns:unsubscribeUserFromResponse"></xsd:element>
+            <xsd:complexType name="payRequired">
+                <xsd:sequence>
+                    <xsd:element name="sessionId" type="xsd:string" minOccurs="0"></xsd:element>
+                    <xsd:element name="cartId" type="xsd:string" minOccurs="0"></xsd:element>
+                    <xsd:element name="comId" type="xsd:string" minOccurs="0"></xsd:element>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="payRequiredResponse">
+                <xsd:sequence></xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="isAvailable">
+                <xsd:sequence>
+                    <xsd:element name="cartId" type="xsd:string" minOccurs="0"></xsd:element>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="isAvailableResponse">
+                <xsd:sequence>
+                    <xsd:element name="return" type="xsd:boolean"></xsd:element>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="setEndpointAddress">
+                <xsd:sequence>
+                    <xsd:element name="arg0" type="xsd:string" minOccurs="0"></xsd:element>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="setEndpointAddressResponse">
+                <xsd:sequence></xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="setInvocationAddress">
+                <xsd:sequence>
+                    <xsd:element name="arg0" type="xsd:string" minOccurs="0"></xsd:element>
+                    <xsd:element name="arg1" type="xsd:string" minOccurs="0"></xsd:element>
+                    <xsd:element name="arg2" type="xsd:string" minOccurs="0" maxOccurs="unbounded"></xsd:element>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="setInvocationAddressResponse">
+                <xsd:sequence></xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="remove_product">
+                <xsd:sequence>
+                    <xsd:element name="sessionId" type="xsd:string" minOccurs="0"></xsd:element>
+                    <xsd:element name="cartId" type="xsd:string" minOccurs="0"></xsd:element>
+                    <xsd:element name="product" type="tns:product" minOccurs="0"></xsd:element>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="product">
+                <xsd:sequence>
+                    <xsd:element name="name" type="xsd:string" minOccurs="0"></xsd:element>
+                    <xsd:element name="brand" type="xsd:string" minOccurs="0"></xsd:element>
+                    <xsd:element name="barcode" type="xsd:string" minOccurs="0"></xsd:element>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="remove_productResponse">
+                <xsd:sequence></xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="ScenarioException">
+                <xsd:sequence>
+                    <xsd:element name="message" type="xsd:string" minOccurs="0"></xsd:element>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="scenarioSetup">
+                <xsd:sequence></xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="scenarioSetupResponse">
+                <xsd:sequence></xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="subscribeUserToCart">
+                <xsd:sequence>
+                    <xsd:element name="sessionId" type="xsd:string" minOccurs="0"></xsd:element>
+                    <xsd:element name="cartId" type="xsd:string" minOccurs="0"></xsd:element>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="subscribeUserToCartResponse">
+                <xsd:sequence></xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="change_qty">
+                <xsd:sequence>
+                    <xsd:element name="sessionId" type="xsd:string" minOccurs="0"></xsd:element>
+                    <xsd:element name="cartId" type="xsd:string" minOccurs="0"></xsd:element>
+                    <xsd:element name="product" type="tns:product" minOccurs="0"></xsd:element>
+                    <xsd:element name="qty" type="xsd:int" minOccurs="0"></xsd:element>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="change_qtyResponse">
+                <xsd:sequence></xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="add_product">
+                <xsd:sequence>
+                    <xsd:element name="sessionId" type="xsd:string" minOccurs="0"></xsd:element>
+                    <xsd:element name="cartId" type="xsd:string" minOccurs="0"></xsd:element>
+                    <xsd:element name="product" type="tns:product" minOccurs="0"></xsd:element>
+                    <xsd:element name="qty" type="xsd:int" minOccurs="0"></xsd:element>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="add_productResponse">
+                <xsd:sequence></xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="unsubscribeUserFrom">
+                <xsd:sequence>
+                    <xsd:element name="sessionId" type="xsd:string" minOccurs="0"></xsd:element>
+                    <xsd:element name="cartId" type="xsd:string" minOccurs="0"></xsd:element>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="unsubscribeUserFromResponse">
+                <xsd:sequence></xsd:sequence>
+            </xsd:complexType>
+        </xsd:schema>
+    </types>
+    <message name="scenarioSetup">
+        <part name="parameters" element="tns:scenarioSetup"></part>
+    </message>
+    <message name="scenarioSetupResponse">
+        <part name="parameters" element="tns:scenarioSetupResponse"></part>
+    </message>
+    <message name="add_product">
+        <part name="parameters" element="tns:add_product"></part>
+    </message>
+    <message name="add_productResponse">
+        <part name="parameters" element="tns:add_productResponse"></part>
+    </message>
+    <message name="ScenarioException">
+        <part name="fault" element="tns:ScenarioException"></part>
+    </message>
+    <message name="remove_product">
+        <part name="parameters" element="tns:remove_product"></part>
+    </message>
+    <message name="remove_productResponse">
+        <part name="parameters" element="tns:remove_productResponse"></part>
+    </message>
+    <message name="change_qty">
+        <part name="parameters" element="tns:change_qty"></part>
+    </message>
+    <message name="change_qtyResponse">
+        <part name="parameters" element="tns:change_qtyResponse"></part>
+    </message>
+    <message name="subscribeUserToCart">
+        <part name="parameters" element="tns:subscribeUserToCart"></part>
+    </message>
+    <message name="subscribeUserToCartResponse">
+        <part name="parameters" element="tns:subscribeUserToCartResponse"></part>
+    </message>
+    <message name="unsubscribeUserFrom">
+        <part name="parameters" element="tns:unsubscribeUserFrom"></part>
+    </message>
+    <message name="unsubscribeUserFromResponse">
+        <part name="parameters" element="tns:unsubscribeUserFromResponse"></part>
+    </message>
+    <message name="payRequired">
+        <part name="parameters" element="tns:payRequired"></part>
+    </message>
+    <message name="payRequiredResponse">
+        <part name="parameters" element="tns:payRequiredResponse"></part>
+    </message>
+    <message name="isAvailable">
+        <part name="parameters" element="tns:isAvailable"></part>
+    </message>
+    <message name="isAvailableResponse">
+        <part name="parameters" element="tns:isAvailableResponse"></part>
+    </message>
+    <message name="setInvocationAddress">
+        <part name="parameters" element="tns:setInvocationAddress"></part>
+    </message>
+    <message name="setInvocationAddressResponse">
+        <part name="parameters" element="tns:setInvocationAddressResponse"></part>
+    </message>
+    <message name="setEndpointAddress">
+        <part name="parameters" element="tns:setEndpointAddress"></part>
+    </message>
+    <message name="setEndpointAddressResponse">
+        <part name="parameters" element="tns:setEndpointAddressResponse"></part>
+    </message>
+    <portType name="SmartCart">
+        <operation name="scenarioSetup">
+            <input wsam:Action="http://services.choreos.org/SmartCart/scenarioSetupRequest" message="tns:scenarioSetup"></input>
+            <output wsam:Action="http://services.choreos.org/SmartCart/scenarioSetupResponse" message="tns:scenarioSetupResponse"></output>
+        </operation>
+        <operation name="add_product">
+            <input wsam:Action="http://services.choreos.org/SmartCart/add_productRequest" message="tns:add_product"></input>
+            <output wsam:Action="http://services.choreos.org/SmartCart/add_productResponse" message="tns:add_productResponse"></output>
+            <fault message="tns:ScenarioException" name="ScenarioException" wsam:Action="http://services.choreos.org/SmartCart/add_product/Fault/ScenarioException"></fault>
+        </operation>
+        <operation name="remove_product">
+            <input wsam:Action="http://services.choreos.org/SmartCart/remove_productRequest" message="tns:remove_product"></input>
+            <output wsam:Action="http://services.choreos.org/SmartCart/remove_productResponse" message="tns:remove_productResponse"></output>
+            <fault message="tns:ScenarioException" name="ScenarioException" wsam:Action="http://services.choreos.org/SmartCart/remove_product/Fault/ScenarioException"></fault>
+        </operation>
+        <operation name="change_qty">
+            <input wsam:Action="http://services.choreos.org/SmartCart/change_qtyRequest" message="tns:change_qty"></input>
+            <output wsam:Action="http://services.choreos.org/SmartCart/change_qtyResponse" message="tns:change_qtyResponse"></output>
+            <fault message="tns:ScenarioException" name="ScenarioException" wsam:Action="http://services.choreos.org/SmartCart/change_qty/Fault/ScenarioException"></fault>
+        </operation>
+        <operation name="subscribeUserToCart">
+            <input wsam:Action="http://services.choreos.org/SmartCart/subscribeUserToCartRequest" message="tns:subscribeUserToCart"></input>
+            <output wsam:Action="http://services.choreos.org/SmartCart/subscribeUserToCartResponse" message="tns:subscribeUserToCartResponse"></output>
+        </operation>
+        <operation name="unsubscribeUserFrom">
+            <input wsam:Action="http://services.choreos.org/SmartCart/unsubscribeUserFromRequest" message="tns:unsubscribeUserFrom"></input>
+            <output wsam:Action="http://services.choreos.org/SmartCart/unsubscribeUserFromResponse" message="tns:unsubscribeUserFromResponse"></output>
+        </operation>
+        <operation name="payRequired">
+            <input wsam:Action="http://services.choreos.org/SmartCart/payRequiredRequest" message="tns:payRequired"></input>
+            <output wsam:Action="http://services.choreos.org/SmartCart/payRequiredResponse" message="tns:payRequiredResponse"></output>
+        </operation>
+        <operation name="isAvailable">
+            <input wsam:Action="http://services.choreos.org/SmartCart/isAvailableRequest" message="tns:isAvailable"></input>
+            <output wsam:Action="http://services.choreos.org/SmartCart/isAvailableResponse" message="tns:isAvailableResponse"></output>
+        </operation>
+        <operation name="setInvocationAddress">
+            <input wsam:Action="http://services.choreos.org/SmartCart/setInvocationAddressRequest" message="tns:setInvocationAddress"></input>
+            <output wsam:Action="http://services.choreos.org/SmartCart/setInvocationAddressResponse" message="tns:setInvocationAddressResponse"></output>
+        </operation>
+        <operation name="setEndpointAddress">
+            <input wsam:Action="http://services.choreos.org/SmartCart/setEndpointAddressRequest" message="tns:setEndpointAddress"></input>
+            <output wsam:Action="http://services.choreos.org/SmartCart/setEndpointAddressResponse" message="tns:setEndpointAddressResponse"></output>
+        </operation>
+    </portType>
+    <binding name="SmartCartPortBinding" type="tns:SmartCart">
+        <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"></soap:binding>
+        <operation name="scenarioSetup">
+            <soap:operation soapAction=""></soap:operation>
+            <input>
+                <soap:body use="literal"></soap:body>
+            </input>
+            <output>
+                <soap:body use="literal"></soap:body>
+            </output>
+        </operation>
+        <operation name="add_product">
+            <soap:operation soapAction=""></soap:operation>
+            <input>
+                <soap:body use="literal"></soap:body>
+            </input>
+            <output>
+                <soap:body use="literal"></soap:body>
+            </output>
+            <fault name="ScenarioException">
+                <soap:fault name="ScenarioException" use="literal"></soap:fault>
+            </fault>
+        </operation>
+        <operation name="remove_product">
+            <soap:operation soapAction=""></soap:operation>
+            <input>
+                <soap:body use="literal"></soap:body>
+            </input>
+            <output>
+                <soap:body use="literal"></soap:body>
+            </output>
+            <fault name="ScenarioException">
+                <soap:fault name="ScenarioException" use="literal"></soap:fault>
+            </fault>
+        </operation>
+        <operation name="change_qty">
+            <soap:operation soapAction=""></soap:operation>
+            <input>
+                <soap:body use="literal"></soap:body>
+            </input>
+            <output>
+                <soap:body use="literal"></soap:body>
+            </output>
+            <fault name="ScenarioException">
+                <soap:fault name="ScenarioException" use="literal"></soap:fault>
+            </fault>
+        </operation>
+        <operation name="subscribeUserToCart">
+            <soap:operation soapAction=""></soap:operation>
+            <input>
+                <soap:body use="literal"></soap:body>
+            </input>
+            <output>
+                <soap:body use="literal"></soap:body>
+            </output>
+        </operation>
+        <operation name="unsubscribeUserFrom">
+            <soap:operation soapAction=""></soap:operation>
+            <input>
+                <soap:body use="literal"></soap:body>
+            </input>
+            <output>
+                <soap:body use="literal"></soap:body>
+            </output>
+        </operation>
+        <operation name="payRequired">
+            <soap:operation soapAction=""></soap:operation>
+            <input>
+                <soap:body use="literal"></soap:body>
+            </input>
+            <output>
+                <soap:body use="literal"></soap:body>
+            </output>
+        </operation>
+        <operation name="isAvailable">
+            <soap:operation soapAction=""></soap:operation>
+            <input>
+                <soap:body use="literal"></soap:body>
+            </input>
+            <output>
+                <soap:body use="literal"></soap:body>
+            </output>
+        </operation>
+        <operation name="setInvocationAddress">
+            <soap:operation soapAction=""></soap:operation>
+            <input>
+                <soap:body use="literal"></soap:body>
+            </input>
+            <output>
+                <soap:body use="literal"></soap:body>
+            </output>
+        </operation>
+        <operation name="setEndpointAddress">
+            <soap:operation soapAction=""></soap:operation>
+            <input>
+                <soap:body use="literal"></soap:body>
+            </input>
+            <output>
+                <soap:body use="literal"></soap:body>
+            </output>
+        </operation>
+    </binding>
+    <service name="SmartCartService">
+        <port name="SmartCartPort" binding="tns:SmartCartPortBinding">
+            <soap:address location="http://localhost:8080/smartcart/smartcart"></soap:address>
+        </port>
+    </service>
+</definitions>

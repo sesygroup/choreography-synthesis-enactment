@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<endpoints version="2.0" xmlns="http://java.sun.com/xml/ns/jax-ws/ri/runtime">
+ <endpoint 
+      name="smartcart" 
+      interface="org.choreos.services.SmartCart"
+      implementation="org.choreos.services.SmartCartImpl" 
+      wsdl="WEB-INF/wsdl/smartcart.wsdl"
+      service="{http://services.choreos.org/}SmartCartService"
+      port="{http://services.choreos.org/}SmartCartPort"
+      url-pattern="/smartcart"/>
+  
+</endpoints>

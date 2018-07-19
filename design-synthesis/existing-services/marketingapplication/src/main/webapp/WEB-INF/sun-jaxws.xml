@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<endpoints version="2.0" xmlns="http://java.sun.com/xml/ns/jax-ws/ri/runtime">
+ <endpoint 
+      name="marketingapplication" 
+      interface="org.choreos.services.MarketingApplication"
+      implementation="org.choreos.services.MarketingApplicationImpl" 
+      wsdl="WEB-INF/wsdl/marketingapplication.wsdl"
+      service="{http://services.choreos.org/}MarketingApplicationService"
+      port="{http://services.choreos.org/}MarketingApplicationPort"
+      url-pattern="/marketingapplication"/>
+  
+</endpoints>

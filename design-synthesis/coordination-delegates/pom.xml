@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	
+	<groupId>org.choreos.services.cd</groupId>
+  	<artifactId>CD-parent</artifactId>
+	<version>1.0.0</version>
+	<packaging>pom</packaging>
+	
+	<name>Coordination Delegates WP7</name>
+	
+	<properties>
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.target>1.8</maven.compiler.target>
+      <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+      <syncope.url>172.20.3.79</syncope.url>
+      <syncope.port>9080</syncope.port>
+	</properties>
+	
+	<repositories>
+	    <repository>
+	  		<id>chorevolution</id>
+	  		<url>http://nexus.disim.univaq.it/content/repositories/chorevolution/</url>
+	  		<releases>
+	    		<enabled>false</enabled>
+	  		</releases>
+	  		<snapshots>
+	    		<enabled>true</enabled>
+	  		</snapshots>
+		</repository>    
+    </repositories>    
+
+    <dependencies>
+    	<dependency>
+			<groupId>org.apache.httpcomponents</groupId>
+			<artifactId>httpclient</artifactId>
+			<version>4.5.2</version>
+		</dependency>
+      <dependency>
+	      <groupId>javax.servlet</groupId>
+	    	<artifactId>javax.servlet-api</artifactId>
+	    	<version>3.1.0</version>
+         <scope>provided</scope>
+      </dependency>
+      <dependency>
+	    	<groupId>javax.servlet.jsp</groupId>
+	    	<artifactId>javax.servlet.jsp-api</artifactId>
+	    	<version>2.3.1</version>	    
+         <scope>provided</scope>
+      </dependency>
+      <dependency>
+	    	<groupId>com.sun.xml.ws</groupId>
+	    	<artifactId>jaxws-rt</artifactId>
+	    	<version>2.2.10</version>
+      </dependency>
+      <dependency>
+	    	<groupId>org.slf4j</groupId>
+	    	<artifactId>slf4j-api</artifactId>
+	    	<version>1.7.12</version>
+      </dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-log4j12</artifactId>
+			<version>1.7.12</version>
+		</dependency> 
+		<dependency>
+			<groupId>eu.chorevolution.synthesisprocessor</groupId>
+			<artifactId>coordination-algorithm-wp7</artifactId>
+			<version>1.0.0-SNAPSHOT</version>
+		</dependency>
+    </dependencies>
+
+	<modules>
+      <module>coordination-algorithm-wp7</module>
+ 		<module>CD-client-selfcheckoutmachine</module>
+		<module>CD-client-shopentrance</module>
+		<module>CD-client-smartcart</module>
+		<module>CD-marketingapplication-basiccommunicationdevice</module>
+		<module>CD-marketingapplication-instoretotem</module>
+		<module>CD-marketingapplication-marketingmanager</module>
+		<module>CD-marketingapplication-shoppingassistantapp</module>
+		<module>CD-marketingmanager-marketingapplication</module>
+		<module>CD-selfcheckoutmachine-marketingapplication</module>
+		<module>CD-selfcheckoutmachine-smartcart</module>
+		<module>CD-shopentrance-marketingapplication</module>
+		<module>CD-smartcart-selfcheckoutmachine</module>
+	</modules>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.3</version>
+                <configuration>
+                    <source>${maven.compiler.source}</source>
+                    <target>${maven.compiler.target}</target>
+                    <useIncrementalCompilation>false</useIncrementalCompilation>
+                    <showWarnings>true</showWarnings>
+                    <showDeprecation>true</showDeprecation>
+                    <compilerArgument>-Xlint:unchecked</compilerArgument>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>

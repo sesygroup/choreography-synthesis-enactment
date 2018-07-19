@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<endpoints version="2.0" xmlns="http://java.sun.com/xml/ns/jax-ws/ri/runtime">
+ <endpoint 
+      name="selfcheckoutmachine" 
+      interface="org.choreos.services.SelfCheckOutMachine"
+      implementation="org.choreos.services.SelfCheckOutMachineImpl" 
+      wsdl="WEB-INF/wsdl/selfcheckoutmachine.wsdl"
+      service="{http://services.choreos.org/}SelfCheckOutMachineService"
+      port="{http://services.choreos.org/}SelfCheckOutMachinePort"
+      url-pattern="/selfcheckoutmachine"/>
+  
+</endpoints>

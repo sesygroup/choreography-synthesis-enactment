@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Copyright 2015 The CHOReVOLUTION project
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+  http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+  <modelVersion>4.0.0</modelVersion>
+
+  <organization>
+    <name>The CHOReVOLUTION project</name>
+    <url>http://www.chorevolution.eu</url>
+  </organization>
+
+  <licenses>
+    <license>
+      <name>The Apache Software License, Version 2.0</name>
+      <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+      <distribution>repo</distribution>
+    </license>
+  </licenses>
+  
+  <scm>
+    <connection>scm:git:ssh://gitolite@tuleap.ow2.org/chorevolution/syncope.git</connection>
+    <developerConnection>scm:git:ssh://gitolite@tuleap.ow2.org/chorevolution/syncope.git</developerConnection>
+    <url>https://tuleap.ow2.org/plugins/git/chorevolution/syncope</url>
+  </scm>
+  
+  <issueManagement>
+    <system>jira</system>
+    <url>https://jira.ow2.org/browse/CRV</url>
+  </issueManagement>
+  
+  <parent>
+    <groupId>org.apache.syncope</groupId>
+    <artifactId>syncope</artifactId>
+    <version>2.0.0.M5</version>
+  </parent>
+
+  <name>CHOReVOLUTION IdM</name>
+  <groupId>eu.chorevolution.idm</groupId>
+  <artifactId>syncope</artifactId>
+  <version>0.1-SNAPSHOT</version>
+  <packaging>pom</packaging>
+
+  <developers>
+    <developer>
+      <id>ilgrosso</id>
+      <email>ilgrosso@apache.org</email>
+      <name>Francesco Chicchiriccò</name>
+      <organization>Tirasa</organization>
+      <organizationUrl>http://www.tirasa.net/</organizationUrl>
+      <url>http://home.apache.org/~ilgrosso/</url>
+    </developer>
+    <developer>
+      <id>fmartelli</id>
+      <name>Fabio Martelli</name>
+      <organization>Tirasa</organization>
+      <organizationUrl>http://www.tirasa.net/</organizationUrl>
+      <url>http://home.apache.org/~fmartelli/</url>
+    </developer>
+  </developers>
+  
+  <properties>
+    <skip-checkstyle>true</skip-checkstyle>
+    <connid.securityfilter.version>0.1-SNAPSHOT</connid.securityfilter.version>
+    <connid.federationserver.version>0.1-SNAPSHOT</connid.federationserver.version>
+
+    <syncope.version>2.0.0.M5</syncope.version>
+    <secretKey>dsadsadasa4444</secretKey>
+    <anonymousKey>sasdsadsadsadsadsad</anonymousKey>
+    
+    <rootpom.basedir>${basedir}</rootpom.basedir>
+  </properties>
+
+  <dependencyManagement>
+    <dependencies>
+      <dependency>  
+        <groupId>org.apache.syncope.common</groupId>
+        <artifactId>syncope-common-lib</artifactId>
+        <version>${syncope.version}</version>
+      </dependency>
+      
+      <dependency>
+        <groupId>org.apache.syncope.core</groupId>
+        <artifactId>syncope-core-rest-cxf</artifactId>
+        <version>${syncope.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.apache.syncope.core</groupId>
+        <artifactId>syncope-core-workflow-java</artifactId>
+        <version>${syncope.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.apache.syncope.core</groupId>
+        <artifactId>syncope-core-persistence-jpa</artifactId>
+        <version>${syncope.version}</version>
+      </dependency>
+    
+      <dependency>
+        <groupId>org.apache.syncope.core</groupId>
+        <artifactId>syncope-core-workflow-activiti</artifactId>
+        <version>${syncope.version}</version>
+      </dependency>
+        
+      <dependency>
+        <groupId>org.apache.syncope.client</groupId>
+        <artifactId>syncope-client-console</artifactId>
+        <version>${syncope.version}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>org.apache.syncope.client</groupId>
+        <artifactId>syncope-client-enduser</artifactId>
+        <version>${syncope.version}</version>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+    
+  <build>    
+    <pluginManagement>
+      <plugins>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-compiler-plugin</artifactId>
+          <version>3.5</version> 
+          <configuration>
+            <source>1.8</source>
+            <target>1.8</target>
+            <useIncrementalCompilation>false</useIncrementalCompilation>
+            <showWarnings>true</showWarnings>
+            <showDeprecation>true</showDeprecation>
+            <compilerArgument>-Xlint:unchecked</compilerArgument>
+          </configuration>
+        </plugin>
+      
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-checkstyle-plugin</artifactId>
+          <version>2.17</version>
+          <configuration>
+            <configLocation>${rootpom.basedir}/src/main/resources/eu/chorevolution/idm/checkstyle.xml</configLocation>
+            <targetJdk>${targetJdk}</targetJdk>
+            <skip>${skip-checkstyle}</skip>
+          </configuration>
+        </plugin>
+      </plugins>
+    </pluginManagement>
+    
+    <plugins>
+      <!-- Put NOTICE and LICENSE files in all artifacts and javadocs -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-resources-plugin</artifactId>
+        <version>2.7</version>
+        <executions>
+          <execution>            
+            <id>copy-artifact-legal-files</id>
+            <phase>process-resources</phase>
+            <goals>
+              <goal>copy-resources</goal>
+            </goals>
+            <configuration>
+              <outputDirectory>${project.build.directory}/classes/META-INF</outputDirectory>
+              <resources>
+                <resource>
+                  <directory>${rootpom.basedir}</directory>
+                  <includes>
+                    <include>LICENSE</include>
+                    <include>NOTICE</include>
+                  </includes>
+                </resource>
+              </resources>
+            </configuration>
+          </execution>
+          <execution>
+            <id>copy-javadoc-legal-files</id>
+            <phase>process-resources</phase>
+            <goals>
+              <goal>copy-resources</goal>
+            </goals>
+            <configuration>
+              <outputDirectory>${project.build.directory}/apidocs/META-INF</outputDirectory>
+              <resources>
+                <resource>
+                  <directory>${rootpom.basedir}</directory>
+                  <includes>
+                    <include>LICENSE</include>
+                    <include>NOTICE</include>
+                  </includes>
+                </resource>
+              </resources>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-war-plugin</artifactId>
+        <version>2.6</version>
+        <configuration>
+          <webResources>
+            <resource>
+              <directory>${rootpom.basedir}</directory>
+              <targetPath>META-INF</targetPath>
+              <includes>
+                <include>LICENSE</include>
+                <include>NOTICE</include>
+              </includes>
+            </resource>
+          </webResources>
+          <packagingExcludes>WEB-INF/classes/META-INF/LICENSE*,WEB-INF/classes/META-INF/NOTICE*</packagingExcludes>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+    
+  <repositories>
+    <repository>
+      <id>apache.snapshots</id>
+      <name>Apache Snapshot Repository</name>
+      <url>http://repository.apache.org/snapshots</url>
+      <releases>
+        <enabled>false</enabled>
+      </releases>
+    </repository>
+    <repository>
+      <id>ow2-snapshots</id>
+      <url>http://repository.ow2.org/nexus/content/repositories/snapshots/</url>
+      <releases>
+        <enabled>false</enabled>
+      </releases>
+      <snapshots>
+        <enabled>true</enabled>
+      </snapshots>
+    </repository>
+    <repository>
+      <id>ow2-releases</id>
+      <url>http://repository.ow2.org/nexus/content/repositories/releases/</url>
+      <releases>
+        <enabled>false</enabled>
+      </releases>
+      <snapshots>
+        <enabled>true</enabled>
+      </snapshots>
+    </repository>
+  </repositories>
+    
+  <modules>
+    <module>common</module>
+    <module>core</module>
+    <module>console</module>
+    <module>enduser</module>
+    <module>ext</module>
+  </modules>
+
+</project>

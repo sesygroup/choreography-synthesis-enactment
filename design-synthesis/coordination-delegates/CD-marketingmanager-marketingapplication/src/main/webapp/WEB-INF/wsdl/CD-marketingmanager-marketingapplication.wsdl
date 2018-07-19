@@ -1,0 +1,1078 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/"
+             xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+             xmlns:tns="http://services.choreos.org/"
+             xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata"
+             xmlns:wsp="http://www.w3.org/ns/ws-policy"
+             xmlns:wsp1_2="http://schemas.xmlsoap.org/ws/2004/09/policy"
+             xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"
+             xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+             targetNamespace="http://services.choreos.org/"
+             name="MarketingApplicationService">
+    <types>
+        <xsd:schema version="1.0" targetNamespace="http://services.choreos.org/">
+            <xsd:element name="ScenarioException" nillable="true" type="tns:ScenarioException"></xsd:element>
+            <xsd:element name="addProductNotify" type="tns:addProductNotify"></xsd:element>
+            <xsd:element name="addProductNotifyResponse" type="tns:addProductNotifyResponse"></xsd:element>
+            <xsd:element name="authorize" type="tns:authorize"></xsd:element>
+            <xsd:element name="authorizeResponse" type="tns:authorizeResponse"></xsd:element>
+            <xsd:element name="basicCommDeviceSubscribe" type="tns:basicCommDeviceSubscribe"></xsd:element>
+            <xsd:element name="basicCommDeviceSubscribeResponse" type="tns:basicCommDeviceSubscribeResponse"></xsd:element>
+            <xsd:element name="basicCommDeviceUnsubscribe" type="tns:basicCommDeviceUnsubscribe"></xsd:element>
+            <xsd:element name="basicCommDeviceUnsubscribeResponse" type="tns:basicCommDeviceUnsubscribeResponse"></xsd:element>
+            <xsd:element name="changeQtyNotify" type="tns:changeQtyNotify"></xsd:element>
+            <xsd:element name="changeQtyNotifyResponse" type="tns:changeQtyNotifyResponse"></xsd:element>
+            <xsd:element name="communicateAnswers" type="tns:communicateAnswers"></xsd:element>
+            <xsd:element name="communicateAnswersResponse" type="tns:communicateAnswersResponse"></xsd:element>
+            <xsd:element name="ma_receive_sms" type="tns:ma_receive_sms"></xsd:element>
+            <xsd:element name="ma_receive_smsResponse" type="tns:ma_receive_smsResponse"></xsd:element>
+            <xsd:element name="make_proposal" type="tns:make_proposal"></xsd:element>
+            <xsd:element name="make_proposalResponse" type="tns:make_proposalResponse"></xsd:element>
+            <xsd:element name="notifyCheckin" type="tns:notifyCheckin"></xsd:element>
+            <xsd:element name="notifyCheckinResponse" type="tns:notifyCheckinResponse"></xsd:element>
+            <xsd:element name="notifyCheckout" type="tns:notifyCheckout"></xsd:element>
+            <xsd:element name="notifyCheckoutResponse" type="tns:notifyCheckoutResponse"></xsd:element>
+            <xsd:element name="privateOfferConfirmation" type="tns:privateOfferConfirmation"></xsd:element>
+            <xsd:element name="privateOfferConfirmationResponse" type="tns:privateOfferConfirmationResponse"></xsd:element>
+            <xsd:element name="proposeAlternative" type="tns:proposeAlternative"></xsd:element>
+            <xsd:element name="proposeAlternativeResponse" type="tns:proposeAlternativeResponse"></xsd:element>
+            <xsd:element name="publicOfferConfirmation" type="tns:publicOfferConfirmation"></xsd:element>
+            <xsd:element name="publicOfferConfirmationResponse" type="tns:publicOfferConfirmationResponse"></xsd:element>
+            <xsd:element name="put" type="tns:put"></xsd:element>
+            <xsd:element name="putResponse" type="tns:putResponse"></xsd:element>
+            <xsd:element name="removeProductNotify" type="tns:removeProductNotify"></xsd:element>
+            <xsd:element name="removeProductNotifyResponse" type="tns:removeProductNotifyResponse"></xsd:element>
+            <xsd:element name="scenarioSetup" type="tns:scenarioSetup"></xsd:element>
+            <xsd:element name="scenarioSetupResponse" type="tns:scenarioSetupResponse"></xsd:element>
+            <xsd:element name="setEndpointAddress" type="tns:setEndpointAddress"></xsd:element>
+            <xsd:element name="setEndpointAddressResponse" type="tns:setEndpointAddressResponse"></xsd:element>
+            <xsd:element name="setInvocationAddress" type="tns:setInvocationAddress"></xsd:element>
+            <xsd:element name="setInvocationAddressResponse" type="tns:setInvocationAddressResponse"></xsd:element>
+            <xsd:element name="set_estimate" type="tns:set_estimate"></xsd:element>
+            <xsd:element name="set_estimateResponse" type="tns:set_estimateResponse"></xsd:element>
+            <xsd:element name="shopAssistAppSubscribe" type="tns:shopAssistAppSubscribe"></xsd:element>
+            <xsd:element name="shopAssistAppSubscribeResponse" type="tns:shopAssistAppSubscribeResponse"></xsd:element>
+            <xsd:element name="shopAssistAppUnsubscribe" type="tns:shopAssistAppUnsubscribe"></xsd:element>
+            <xsd:element name="shopAssistAppUnsubscribeResponse" type="tns:shopAssistAppUnsubscribeResponse"></xsd:element>
+            <xsd:element name="shopping_list_communication" type="tns:shopping_list_communication"></xsd:element>
+            <xsd:element name="shopping_list_communicationResponse" type="tns:shopping_list_communicationResponse"></xsd:element>
+            <xsd:element name="storeBoughtItems" type="tns:storeBoughtItems"></xsd:element>
+            <xsd:element name="storeBoughtItemsResponse" type="tns:storeBoughtItemsResponse"></xsd:element>
+            <xsd:element name="subscribe_to_sales_estimation" type="tns:subscribe_to_sales_estimation"></xsd:element>
+            <xsd:element name="subscribe_to_sales_estimationResponse" type="tns:subscribe_to_sales_estimationResponse"></xsd:element>
+            <xsd:element name="subscribe_to_supply_authorization" type="tns:subscribe_to_supply_authorization"></xsd:element>
+            <xsd:element name="subscribe_to_supply_authorizationResponse" type="tns:subscribe_to_supply_authorizationResponse"></xsd:element>
+            <xsd:element name="subscribe_to_supply_negotation" type="tns:subscribe_to_supply_negotation"></xsd:element>
+            <xsd:element name="subscribe_to_supply_negotationResponse" type="tns:subscribe_to_supply_negotationResponse"></xsd:element>
+            <xsd:element name="unsubscribe_to_sales_estimation" type="tns:unsubscribe_to_sales_estimation"></xsd:element>
+            <xsd:element name="unsubscribe_to_sales_estimationResponse" type="tns:unsubscribe_to_sales_estimationResponse"></xsd:element>
+            <xsd:element name="unsubscribe_to_supply_negotiation" type="tns:unsubscribe_to_supply_negotiation"></xsd:element>
+            <xsd:element name="unsubscribe_to_supply_negotiationResponse" type="tns:unsubscribe_to_supply_negotiationResponse"></xsd:element>
+            <xsd:element name="unsubscribeto_supply_authorization" type="tns:unsubscribeto_supply_authorization"></xsd:element>
+            <xsd:element name="unsubscribeto_supply_authorizationResponse" type="tns:unsubscribeto_supply_authorizationResponse"></xsd:element>
+            <xsd:complexType name="basicCommDeviceSubscribe">
+                <xsd:sequence>
+                    <xsd:element name="sessionId" type="xsd:string" minOccurs="0"></xsd:element>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="basicCommDeviceSubscribeResponse">
+                <xsd:sequence></xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="ScenarioException">
+                <xsd:sequence>
+                    <xsd:element name="message" type="xsd:string" minOccurs="0"></xsd:element>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="removeProductNotify">
+                <xsd:sequence>
+                    <xsd:element name="sessionId" type="xsd:string" minOccurs="0"></xsd:element>
+                    <xsd:element name="product" type="tns:product" minOccurs="0"></xsd:element>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="product">
+                <xsd:sequence>
+                    <xsd:element name="name" type="xsd:string" minOccurs="0"></xsd:element>
+                    <xsd:element name="brand" type="xsd:string" minOccurs="0"></xsd:element>
+                    <xsd:element name="barcode" type="xsd:string" minOccurs="0"></xsd:element>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="removeProductNotifyResponse">
+                <xsd:sequence></xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="authorize">
+                <xsd:sequence>
+                    <xsd:element name="sa" type="tns:supplyAgreement" minOccurs="0"></xsd:element>
+                    <xsd:element name="authorized" type="xsd:boolean"></xsd:element>
+                    <xsd:element name="callbackAddress" type="xsd:string" minOccurs="0"></xsd:element>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="supplyAgreement">
+                <xsd:sequence>
+                    <xsd:element name="prod" type="tns:product" minOccurs="0"></xsd:element>
+                    <xsd:element name="qty" type="xsd:int" minOccurs="0"></xsd:element>
+                    <xsd:element name="when" type="xsd:dateTime" minOccurs="0"></xsd:element>
+                    <xsd:element name="price" type="xsd:double"></xsd:element>
+                    <xsd:element name="authorized" type="xsd:boolean"></xsd:element>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="authorizeResponse">
+                <xsd:sequence></xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="unsubscribe_to_supply_negotiation">
+                <xsd:sequence>
+                    <xsd:element name="sesssionId" type="xsd:string" minOccurs="0"></xsd:element>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="unsubscribe_to_supply_negotiationResponse">
+                <xsd:sequence></xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="set_estimate">
+                <xsd:sequence>
+                    <xsd:element name="est" type="tns:estimate" minOccurs="0"></xsd:element>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="estimate">
+                <xsd:sequence>
+                    <xsd:element name="product" type="tns:product" minOccurs="0"></xsd:element>
+                    <xsd:element name="qty" type="xsd:int" minOccurs="0"></xsd:element>
+                    <xsd:element name="from" type="xsd:dateTime" minOccurs="0"></xsd:element>
+                    <xsd:element name="to" type="xsd:dateTime" minOccurs="0"></xsd:element>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="set_estimateResponse">
+                <xsd:sequence></xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="unsubscribeto_supply_authorization">
+                <xsd:sequence>
+                    <xsd:element name="callbackAddress" type="xsd:string" minOccurs="0"></xsd:element>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="unsubscribeto_supply_authorizationResponse">
+                <xsd:sequence></xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="ma_receive_sms">
+                <xsd:sequence>
+                    <xsd:element name="sessionId" type="xsd:string" minOccurs="0"></xsd:element>
+                    <xsd:element name="msg" type="tns:sMSMessage" minOccurs="0"></xsd:element>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="sMSMessage">
+                <xsd:sequence>
+                    <xsd:element name="text" type="xsd:string" minOccurs="0"></xsd:element>
+                    <xsd:element name="from" type="xsd:string" minOccurs="0"></xsd:element>
+                    <xsd:element name="date" type="xsd:dateTime" minOccurs="0"></xsd:element>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="ma_receive_smsResponse">
+                <xsd:sequence></xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="shopAssistAppUnsubscribe">
+                <xsd:sequence>
+                    <xsd:element name="sessionId" type="xsd:string" minOccurs="0"></xsd:element>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="shopAssistAppUnsubscribeResponse">
+                <xsd:sequence></xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="notifyCheckout">
+                <xsd:sequence>
+                    <xsd:element name="sessionId" type="xsd:string" minOccurs="0"></xsd:element>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="notifyCheckoutResponse">
+                <xsd:sequence></xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="setInvocationAddress">
+                <xsd:sequence>
+                    <xsd:element name="arg0" type="xsd:string" minOccurs="0"></xsd:element>
+                    <xsd:element name="arg1" type="xsd:string" minOccurs="0"></xsd:element>
+                    <xsd:element name="arg2" type="xsd:string" minOccurs="0" maxOccurs="unbounded"></xsd:element>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="setInvocationAddressResponse">
+                <xsd:sequence></xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="subscribe_to_supply_negotation">
+                <xsd:sequence>
+                    <xsd:element name="sesssionId" type="xsd:string" minOccurs="0"></xsd:element>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="subscribe_to_supply_negotationResponse">
+                <xsd:sequence></xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="privateOfferConfirmation">
+                <xsd:sequence>
+                    <xsd:element name="sessionId" type="xsd:string" minOccurs="0"></xsd:element>
+                    <xsd:element name="offer" type="tns:offer" minOccurs="0"></xsd:element>
+                    <xsd:element name="confirmed" type="xsd:boolean"></xsd:element>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="offer">
+                <xsd:sequence>
+                    <xsd:element name="item" type="tns:product" minOccurs="0"></xsd:element>
+                    <xsd:element name="discount" type="xsd:int"></xsd:element>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="privateOfferConfirmationResponse">
+                <xsd:sequence></xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="unsubscribe_to_sales_estimation">
+                <xsd:sequence>
+                    <xsd:element name="callbackAddress" type="xsd:string" minOccurs="0"></xsd:element>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="unsubscribe_to_sales_estimationResponse">
+                <xsd:sequence></xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="shopAssistAppSubscribe">
+                <xsd:sequence>
+                    <xsd:element name="sessionId" type="xsd:string" minOccurs="0"></xsd:element>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="shopAssistAppSubscribeResponse">
+                <xsd:sequence></xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="addProductNotify">
+                <xsd:sequence>
+                    <xsd:element name="sessionId" type="xsd:string" minOccurs="0"></xsd:element>
+                    <xsd:element name="product" type="tns:product" minOccurs="0"></xsd:element>
+                    <xsd:element name="qty" type="xsd:int" minOccurs="0"></xsd:element>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="addProductNotifyResponse">
+                <xsd:sequence></xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="subscribe_to_supply_authorization">
+                <xsd:sequence>
+                    <xsd:element name="callbackAddress" type="xsd:string" minOccurs="0"></xsd:element>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="subscribe_to_supply_authorizationResponse">
+                <xsd:sequence></xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="setEndpointAddress">
+                <xsd:sequence>
+                    <xsd:element name="arg0" type="xsd:string" minOccurs="0"></xsd:element>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="setEndpointAddressResponse">
+                <xsd:sequence></xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="storeBoughtItems">
+                <xsd:sequence>
+                    <xsd:element name="sessionId" type="xsd:string" minOccurs="0"></xsd:element>
+                    <xsd:element name="items" type="tns:product" minOccurs="0" maxOccurs="unbounded"></xsd:element>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="storeBoughtItemsResponse">
+                <xsd:sequence></xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="make_proposal">
+                <xsd:sequence>
+                    <xsd:element name="sesssionId" type="xsd:string" minOccurs="0"></xsd:element>
+                    <xsd:element name="proposal" type="tns:supplyAgreement" minOccurs="0"></xsd:element>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="make_proposalResponse">
+                <xsd:sequence></xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="scenarioSetup">
+                <xsd:sequence></xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="scenarioSetupResponse">
+                <xsd:sequence></xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="shopping_list_communication">
+                <xsd:sequence>
+                    <xsd:element name="user" type="tns:user" minOccurs="0"></xsd:element>
+                    <xsd:element name="shoppinglist" type="tns:shoppingList" minOccurs="0"></xsd:element>
+                    <xsd:element name="callbackAddress" type="xsd:string" minOccurs="0"></xsd:element>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="user">
+                <xsd:sequence>
+                    <xsd:element name="name" type="xsd:string" minOccurs="0"></xsd:element>
+                    <xsd:element name="email" type="xsd:string" minOccurs="0"></xsd:element>
+                    <xsd:element name="shoppingList" type="tns:shoppingListEntry" nillable="true" minOccurs="0" maxOccurs="unbounded"></xsd:element>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="shoppingListEntry">
+                <xsd:sequence>
+                    <xsd:element name="item" type="tns:product" minOccurs="0"></xsd:element>
+                    <xsd:element name="qty" type="xsd:int" minOccurs="0"></xsd:element>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="shoppingList">
+                <xsd:sequence>
+                    <xsd:element name="entry" type="tns:shoppingListEntry" nillable="true" minOccurs="0" maxOccurs="unbounded"></xsd:element>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="shopping_list_communicationResponse">
+                <xsd:sequence></xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="publicOfferConfirmation">
+                <xsd:sequence>
+                    <xsd:element name="sessionId" type="xsd:string" minOccurs="0"></xsd:element>
+                    <xsd:element name="offer" type="tns:offer" minOccurs="0"></xsd:element>
+                    <xsd:element name="confirmed" type="xsd:boolean"></xsd:element>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="publicOfferConfirmationResponse">
+                <xsd:sequence></xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="put">
+                <xsd:sequence>
+                    <xsd:element name="stockLevelNotification" type="tns:stockLevelNotification" minOccurs="0"></xsd:element>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="stockLevelNotification">
+                <xsd:all></xsd:all>
+            </xsd:complexType>
+            <xsd:complexType name="putResponse">
+                <xsd:sequence></xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="communicateAnswers">
+                <xsd:sequence>
+                    <xsd:element name="sessionId" type="xsd:string" minOccurs="0"></xsd:element>
+                    <xsd:element name="questionnaire" type="tns:questionnaire" minOccurs="0"></xsd:element>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="questionnaire">
+                <xsd:all>
+                    <xsd:element name="ready" type="xsd:boolean"></xsd:element>
+                    <xsd:element name="qa">
+                        <xsd:complexType>
+                            <xsd:sequence>
+                                <xsd:element name="entry" minOccurs="0" maxOccurs="unbounded">
+                                    <xsd:complexType>
+                                        <xsd:sequence>
+                                            <xsd:element name="key" minOccurs="0" type="xsd:string"></xsd:element>
+                                            <xsd:element name="value" minOccurs="0" type="xsd:string"></xsd:element>
+                                        </xsd:sequence>
+                                    </xsd:complexType>
+                                </xsd:element>
+                            </xsd:sequence>
+                        </xsd:complexType>
+                    </xsd:element>
+                </xsd:all>
+            </xsd:complexType>
+            <xsd:complexType name="communicateAnswersResponse">
+                <xsd:sequence></xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="subscribe_to_sales_estimation">
+                <xsd:sequence>
+                    <xsd:element name="callbackAddress" type="xsd:string" minOccurs="0"></xsd:element>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="subscribe_to_sales_estimationResponse">
+                <xsd:sequence></xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="basicCommDeviceUnsubscribe">
+                <xsd:sequence>
+                    <xsd:element name="sessionId" type="xsd:string" minOccurs="0"></xsd:element>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="basicCommDeviceUnsubscribeResponse">
+                <xsd:sequence></xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="proposeAlternative">
+                <xsd:sequence>
+                    <xsd:element name="sessionId" type="xsd:string" minOccurs="0"></xsd:element>
+                    <xsd:element name="alternativeproduct" type="tns:product" minOccurs="0"></xsd:element>
+                    <xsd:element name="availability" type="xsd:int" minOccurs="0"></xsd:element>
+                    <xsd:element name="callbackAddress" type="xsd:string" minOccurs="0"></xsd:element>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="proposeAlternativeResponse">
+                <xsd:sequence></xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="changeQtyNotify">
+                <xsd:sequence>
+                    <xsd:element name="sessionId" type="xsd:string" minOccurs="0"></xsd:element>
+                    <xsd:element name="product" type="tns:product" minOccurs="0"></xsd:element>
+                    <xsd:element name="qty" type="xsd:int" minOccurs="0"></xsd:element>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="changeQtyNotifyResponse">
+                <xsd:sequence></xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="notifyCheckin">
+                <xsd:sequence>
+                    <xsd:element name="sessionId" type="xsd:string" minOccurs="0"></xsd:element>
+                    <xsd:element name="shoppingList" type="tns:shoppingListEntry" minOccurs="0" maxOccurs="unbounded"></xsd:element>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="notifyCheckinResponse">
+                <xsd:sequence></xsd:sequence>
+            </xsd:complexType>
+        </xsd:schema>
+    </types>
+    <message name="scenarioSetup">
+        <part name="parameters" element="tns:scenarioSetup"></part>
+    </message>
+    <message name="scenarioSetupResponse">
+        <part name="parameters" element="tns:scenarioSetupResponse"></part>
+    </message>
+    <message name="basicCommDeviceSubscribe">
+        <part name="parameters" element="tns:basicCommDeviceSubscribe"></part>
+    </message>
+    <message name="basicCommDeviceSubscribeResponse">
+        <part name="parameters" element="tns:basicCommDeviceSubscribeResponse"></part>
+    </message>
+    <message name="ScenarioException">
+        <part name="fault" element="tns:ScenarioException"></part>
+    </message>
+    <message name="shopAssistAppSubscribe">
+        <part name="parameters" element="tns:shopAssistAppSubscribe"></part>
+    </message>
+    <message name="shopAssistAppSubscribeResponse">
+        <part name="parameters" element="tns:shopAssistAppSubscribeResponse"></part>
+    </message>
+    <message name="shopAssistAppUnsubscribe">
+        <part name="parameters" element="tns:shopAssistAppUnsubscribe"></part>
+    </message>
+    <message name="shopAssistAppUnsubscribeResponse">
+        <part name="parameters" element="tns:shopAssistAppUnsubscribeResponse"></part>
+    </message>
+    <message name="basicCommDeviceUnsubscribe">
+        <part name="parameters" element="tns:basicCommDeviceUnsubscribe"></part>
+    </message>
+    <message name="basicCommDeviceUnsubscribeResponse">
+        <part name="parameters" element="tns:basicCommDeviceUnsubscribeResponse"></part>
+    </message>
+    <message name="unsubscribeto_supply_authorization">
+        <part name="parameters" element="tns:unsubscribeto_supply_authorization"></part>
+    </message>
+    <message name="unsubscribeto_supply_authorizationResponse">
+        <part name="parameters" element="tns:unsubscribeto_supply_authorizationResponse"></part>
+    </message>
+    <message name="publicOfferConfirmation">
+        <part name="parameters" element="tns:publicOfferConfirmation"></part>
+    </message>
+    <message name="publicOfferConfirmationResponse">
+        <part name="parameters" element="tns:publicOfferConfirmationResponse"></part>
+    </message>
+    <message name="proposeAlternative">
+        <part name="parameters" element="tns:proposeAlternative"></part>
+    </message>
+    <message name="proposeAlternativeResponse">
+        <part name="parameters" element="tns:proposeAlternativeResponse"></part>
+    </message>
+    <message name="authorize">
+        <part name="parameters" element="tns:authorize"></part>
+    </message>
+    <message name="authorizeResponse">
+        <part name="parameters" element="tns:authorizeResponse"></part>
+    </message>
+    <message name="communicateAnswers">
+        <part name="parameters" element="tns:communicateAnswers"></part>
+    </message>
+    <message name="communicateAnswersResponse">
+        <part name="parameters" element="tns:communicateAnswersResponse"></part>
+    </message>
+    <message name="set_estimate">
+        <part name="parameters" element="tns:set_estimate"></part>
+    </message>
+    <message name="set_estimateResponse">
+        <part name="parameters" element="tns:set_estimateResponse"></part>
+    </message>
+    <message name="addProductNotify">
+        <part name="parameters" element="tns:addProductNotify"></part>
+    </message>
+    <message name="addProductNotifyResponse">
+        <part name="parameters" element="tns:addProductNotifyResponse"></part>
+    </message>
+    <message name="notifyCheckin">
+        <part name="parameters" element="tns:notifyCheckin"></part>
+    </message>
+    <message name="notifyCheckinResponse">
+        <part name="parameters" element="tns:notifyCheckinResponse"></part>
+    </message>
+    <message name="unsubscribe_to_sales_estimation">
+        <part name="parameters" element="tns:unsubscribe_to_sales_estimation"></part>
+    </message>
+    <message name="unsubscribe_to_sales_estimationResponse">
+        <part name="parameters" element="tns:unsubscribe_to_sales_estimationResponse"></part>
+    </message>
+    <message name="ma_receive_sms">
+        <part name="parameters" element="tns:ma_receive_sms"></part>
+    </message>
+    <message name="ma_receive_smsResponse">
+        <part name="parameters" element="tns:ma_receive_smsResponse"></part>
+    </message>
+    <message name="subscribe_to_sales_estimation">
+        <part name="parameters" element="tns:subscribe_to_sales_estimation"></part>
+    </message>
+    <message name="subscribe_to_sales_estimationResponse">
+        <part name="parameters" element="tns:subscribe_to_sales_estimationResponse"></part>
+    </message>
+    <message name="subscribe_to_supply_authorization">
+        <part name="parameters" element="tns:subscribe_to_supply_authorization"></part>
+    </message>
+    <message name="subscribe_to_supply_authorizationResponse">
+        <part name="parameters" element="tns:subscribe_to_supply_authorizationResponse"></part>
+    </message>
+    <message name="notifyCheckout">
+        <part name="parameters" element="tns:notifyCheckout"></part>
+    </message>
+    <message name="notifyCheckoutResponse">
+        <part name="parameters" element="tns:notifyCheckoutResponse"></part>
+    </message>
+    <message name="shopping_list_communication">
+        <part name="parameters" element="tns:shopping_list_communication"></part>
+    </message>
+    <message name="shopping_list_communicationResponse">
+        <part name="parameters" element="tns:shopping_list_communicationResponse"></part>
+    </message>
+    <message name="unsubscribe_to_supply_negotiation">
+        <part name="parameters" element="tns:unsubscribe_to_supply_negotiation"></part>
+    </message>
+    <message name="unsubscribe_to_supply_negotiationResponse">
+        <part name="parameters" element="tns:unsubscribe_to_supply_negotiationResponse"></part>
+    </message>
+    <message name="subscribe_to_supply_negotation">
+        <part name="parameters" element="tns:subscribe_to_supply_negotation"></part>
+    </message>
+    <message name="subscribe_to_supply_negotationResponse">
+        <part name="parameters" element="tns:subscribe_to_supply_negotationResponse"></part>
+    </message>
+    <message name="storeBoughtItems">
+        <part name="parameters" element="tns:storeBoughtItems"></part>
+    </message>
+    <message name="storeBoughtItemsResponse">
+        <part name="parameters" element="tns:storeBoughtItemsResponse"></part>
+    </message>
+    <message name="changeQtyNotify">
+        <part name="parameters" element="tns:changeQtyNotify"></part>
+    </message>
+    <message name="changeQtyNotifyResponse">
+        <part name="parameters" element="tns:changeQtyNotifyResponse"></part>
+    </message>
+    <message name="make_proposal">
+        <part name="parameters" element="tns:make_proposal"></part>
+    </message>
+    <message name="make_proposalResponse">
+        <part name="parameters" element="tns:make_proposalResponse"></part>
+    </message>
+    <message name="privateOfferConfirmation">
+        <part name="parameters" element="tns:privateOfferConfirmation"></part>
+    </message>
+    <message name="privateOfferConfirmationResponse">
+        <part name="parameters" element="tns:privateOfferConfirmationResponse"></part>
+    </message>
+    <message name="removeProductNotify">
+        <part name="parameters" element="tns:removeProductNotify"></part>
+    </message>
+    <message name="removeProductNotifyResponse">
+        <part name="parameters" element="tns:removeProductNotifyResponse"></part>
+    </message>
+    <message name="put">
+        <part name="parameters" element="tns:put"></part>
+    </message>
+    <message name="putResponse">
+        <part name="parameters" element="tns:putResponse"></part>
+    </message>
+    <message name="setInvocationAddress">
+        <part name="parameters" element="tns:setInvocationAddress"></part>
+    </message>
+    <message name="setInvocationAddressResponse">
+        <part name="parameters" element="tns:setInvocationAddressResponse"></part>
+    </message>
+    <message name="setEndpointAddress">
+        <part name="parameters" element="tns:setEndpointAddress"></part>
+    </message>
+    <message name="setEndpointAddressResponse">
+        <part name="parameters" element="tns:setEndpointAddressResponse"></part>
+    </message>
+    <portType name="MarketingApplication">
+        <operation name="scenarioSetup">
+            <input wsam:Action="http://services.choreos.org/MarketingApplication/scenarioSetupRequest" message="tns:scenarioSetup"></input>
+            <output wsam:Action="http://services.choreos.org/MarketingApplication/scenarioSetupResponse" message="tns:scenarioSetupResponse"></output>
+        </operation>
+        <operation name="basicCommDeviceSubscribe">
+            <input wsam:Action="http://services.choreos.org/MarketingApplication/basicCommDeviceSubscribeRequest" message="tns:basicCommDeviceSubscribe"></input>
+            <output wsam:Action="http://services.choreos.org/MarketingApplication/basicCommDeviceSubscribeResponse" message="tns:basicCommDeviceSubscribeResponse"></output>
+            <fault message="tns:ScenarioException" name="ScenarioException" wsam:Action="http://services.choreos.org/MarketingApplication/basicCommDeviceSubscribe/Fault/ScenarioException"></fault>
+        </operation>
+        <operation name="shopAssistAppSubscribe">
+            <input wsam:Action="http://services.choreos.org/MarketingApplication/shopAssistAppSubscribeRequest" message="tns:shopAssistAppSubscribe"></input>
+            <output wsam:Action="http://services.choreos.org/MarketingApplication/shopAssistAppSubscribeResponse" message="tns:shopAssistAppSubscribeResponse"></output>
+            <fault message="tns:ScenarioException" name="ScenarioException" wsam:Action="http://services.choreos.org/MarketingApplication/shopAssistAppSubscribe/Fault/ScenarioException"></fault>
+        </operation>
+        <operation name="shopAssistAppUnsubscribe">
+            <input wsam:Action="http://services.choreos.org/MarketingApplication/shopAssistAppUnsubscribeRequest" message="tns:shopAssistAppUnsubscribe"></input>
+            <output wsam:Action="http://services.choreos.org/MarketingApplication/shopAssistAppUnsubscribeResponse" message="tns:shopAssistAppUnsubscribeResponse"></output>
+            <fault message="tns:ScenarioException" name="ScenarioException" wsam:Action="http://services.choreos.org/MarketingApplication/shopAssistAppUnsubscribe/Fault/ScenarioException"></fault>
+        </operation>
+        <operation name="basicCommDeviceUnsubscribe">
+            <input wsam:Action="http://services.choreos.org/MarketingApplication/basicCommDeviceUnsubscribeRequest" message="tns:basicCommDeviceUnsubscribe"></input>
+            <output wsam:Action="http://services.choreos.org/MarketingApplication/basicCommDeviceUnsubscribeResponse" message="tns:basicCommDeviceUnsubscribeResponse"></output>
+            <fault message="tns:ScenarioException" name="ScenarioException" wsam:Action="http://services.choreos.org/MarketingApplication/basicCommDeviceUnsubscribe/Fault/ScenarioException"></fault>
+        </operation>
+        <operation name="unsubscribeto_supply_authorization">
+            <input wsam:Action="http://services.choreos.org/MarketingApplication/unsubscribeto_supply_authorizationRequest" message="tns:unsubscribeto_supply_authorization"></input>
+            <output wsam:Action="http://services.choreos.org/MarketingApplication/unsubscribeto_supply_authorizationResponse" message="tns:unsubscribeto_supply_authorizationResponse"></output>
+            <fault message="tns:ScenarioException" name="ScenarioException" wsam:Action="http://services.choreos.org/MarketingApplication/unsubscribeto_supply_authorization/Fault/ScenarioException"></fault>
+        </operation>
+        <operation name="publicOfferConfirmation">
+            <input wsam:Action="http://services.choreos.org/MarketingApplication/publicOfferConfirmationRequest" message="tns:publicOfferConfirmation"></input>
+            <output wsam:Action="http://services.choreos.org/MarketingApplication/publicOfferConfirmationResponse" message="tns:publicOfferConfirmationResponse"></output>
+            <fault message="tns:ScenarioException" name="ScenarioException" wsam:Action="http://services.choreos.org/MarketingApplication/publicOfferConfirmation/Fault/ScenarioException"></fault>
+        </operation>
+        <operation name="proposeAlternative">
+            <input wsam:Action="http://services.choreos.org/MarketingApplication/proposeAlternativeRequest" message="tns:proposeAlternative"></input>
+            <output wsam:Action="http://services.choreos.org/MarketingApplication/proposeAlternativeResponse" message="tns:proposeAlternativeResponse"></output>
+            <fault message="tns:ScenarioException" name="ScenarioException" wsam:Action="http://services.choreos.org/MarketingApplication/proposeAlternative/Fault/ScenarioException"></fault>
+        </operation>
+        <operation name="authorize">
+            <input wsam:Action="http://services.choreos.org/MarketingApplication/authorizeRequest" message="tns:authorize"></input>
+            <output wsam:Action="http://services.choreos.org/MarketingApplication/authorizeResponse" message="tns:authorizeResponse"></output>
+            <fault message="tns:ScenarioException" name="ScenarioException" wsam:Action="http://services.choreos.org/MarketingApplication/authorize/Fault/ScenarioException"></fault>
+        </operation>
+        <operation name="communicateAnswers">
+            <input wsam:Action="http://services.choreos.org/MarketingApplication/communicateAnswersRequest" message="tns:communicateAnswers"></input>
+            <output wsam:Action="http://services.choreos.org/MarketingApplication/communicateAnswersResponse" message="tns:communicateAnswersResponse"></output>
+            <fault message="tns:ScenarioException" name="ScenarioException" wsam:Action="http://services.choreos.org/MarketingApplication/communicateAnswers/Fault/ScenarioException"></fault>
+        </operation>
+        <operation name="set_estimate">
+            <input wsam:Action="http://services.choreos.org/MarketingApplication/set_estimateRequest" message="tns:set_estimate"></input>
+            <output wsam:Action="http://services.choreos.org/MarketingApplication/set_estimateResponse" message="tns:set_estimateResponse"></output>
+            <fault message="tns:ScenarioException" name="ScenarioException" wsam:Action="http://services.choreos.org/MarketingApplication/set_estimate/Fault/ScenarioException"></fault>
+        </operation>
+        <operation name="addProductNotify">
+            <input wsam:Action="http://services.choreos.org/MarketingApplication/addProductNotifyRequest" message="tns:addProductNotify"></input>
+            <output wsam:Action="http://services.choreos.org/MarketingApplication/addProductNotifyResponse" message="tns:addProductNotifyResponse"></output>
+            <fault message="tns:ScenarioException" name="ScenarioException" wsam:Action="http://services.choreos.org/MarketingApplication/addProductNotify/Fault/ScenarioException"></fault>
+        </operation>
+        <operation name="notifyCheckin">
+            <input wsam:Action="http://services.choreos.org/MarketingApplication/notifyCheckinRequest" message="tns:notifyCheckin"></input>
+            <output wsam:Action="http://services.choreos.org/MarketingApplication/notifyCheckinResponse" message="tns:notifyCheckinResponse"></output>
+            <fault message="tns:ScenarioException" name="ScenarioException" wsam:Action="http://services.choreos.org/MarketingApplication/notifyCheckin/Fault/ScenarioException"></fault>
+        </operation>
+        <operation name="unsubscribe_to_sales_estimation">
+            <input wsam:Action="http://services.choreos.org/MarketingApplication/unsubscribe_to_sales_estimationRequest" message="tns:unsubscribe_to_sales_estimation"></input>
+            <output wsam:Action="http://services.choreos.org/MarketingApplication/unsubscribe_to_sales_estimationResponse" message="tns:unsubscribe_to_sales_estimationResponse"></output>
+            <fault message="tns:ScenarioException" name="ScenarioException" wsam:Action="http://services.choreos.org/MarketingApplication/unsubscribe_to_sales_estimation/Fault/ScenarioException"></fault>
+        </operation>
+        <operation name="ma_receive_sms">
+            <input wsam:Action="http://services.choreos.org/MarketingApplication/ma_receive_smsRequest" message="tns:ma_receive_sms"></input>
+            <output wsam:Action="http://services.choreos.org/MarketingApplication/ma_receive_smsResponse" message="tns:ma_receive_smsResponse"></output>
+            <fault message="tns:ScenarioException" name="ScenarioException" wsam:Action="http://services.choreos.org/MarketingApplication/ma_receive_sms/Fault/ScenarioException"></fault>
+        </operation>
+        <operation name="subscribe_to_sales_estimation">
+            <input wsam:Action="http://services.choreos.org/MarketingApplication/subscribe_to_sales_estimationRequest" message="tns:subscribe_to_sales_estimation"></input>
+            <output wsam:Action="http://services.choreos.org/MarketingApplication/subscribe_to_sales_estimationResponse" message="tns:subscribe_to_sales_estimationResponse"></output>
+            <fault message="tns:ScenarioException" name="ScenarioException" wsam:Action="http://services.choreos.org/MarketingApplication/subscribe_to_sales_estimation/Fault/ScenarioException"></fault>
+        </operation>
+        <operation name="subscribe_to_supply_authorization">
+            <input wsam:Action="http://services.choreos.org/MarketingApplication/subscribe_to_supply_authorizationRequest" message="tns:subscribe_to_supply_authorization"></input>
+            <output wsam:Action="http://services.choreos.org/MarketingApplication/subscribe_to_supply_authorizationResponse" message="tns:subscribe_to_supply_authorizationResponse"></output>
+            <fault message="tns:ScenarioException" name="ScenarioException" wsam:Action="http://services.choreos.org/MarketingApplication/subscribe_to_supply_authorization/Fault/ScenarioException"></fault>
+        </operation>
+        <operation name="notifyCheckout">
+            <input wsam:Action="http://services.choreos.org/MarketingApplication/notifyCheckoutRequest" message="tns:notifyCheckout"></input>
+            <output wsam:Action="http://services.choreos.org/MarketingApplication/notifyCheckoutResponse" message="tns:notifyCheckoutResponse"></output>
+            <fault message="tns:ScenarioException" name="ScenarioException" wsam:Action="http://services.choreos.org/MarketingApplication/notifyCheckout/Fault/ScenarioException"></fault>
+        </operation>
+        <operation name="shopping_list_communication">
+            <input wsam:Action="http://services.choreos.org/MarketingApplication/shopping_list_communicationRequest" message="tns:shopping_list_communication"></input>
+            <output wsam:Action="http://services.choreos.org/MarketingApplication/shopping_list_communicationResponse" message="tns:shopping_list_communicationResponse"></output>
+            <fault message="tns:ScenarioException" name="ScenarioException" wsam:Action="http://services.choreos.org/MarketingApplication/shopping_list_communication/Fault/ScenarioException"></fault>
+        </operation>
+        <operation name="unsubscribe_to_supply_negotiation">
+            <input wsam:Action="http://services.choreos.org/MarketingApplication/unsubscribe_to_supply_negotiationRequest" message="tns:unsubscribe_to_supply_negotiation"></input>
+            <output wsam:Action="http://services.choreos.org/MarketingApplication/unsubscribe_to_supply_negotiationResponse" message="tns:unsubscribe_to_supply_negotiationResponse"></output>
+            <fault message="tns:ScenarioException" name="ScenarioException" wsam:Action="http://services.choreos.org/MarketingApplication/unsubscribe_to_supply_negotiation/Fault/ScenarioException"></fault>
+        </operation>
+        <operation name="subscribe_to_supply_negotation">
+            <input wsam:Action="http://services.choreos.org/MarketingApplication/subscribe_to_supply_negotationRequest" message="tns:subscribe_to_supply_negotation"></input>
+            <output wsam:Action="http://services.choreos.org/MarketingApplication/subscribe_to_supply_negotationResponse" message="tns:subscribe_to_supply_negotationResponse"></output>
+            <fault message="tns:ScenarioException" name="ScenarioException" wsam:Action="http://services.choreos.org/MarketingApplication/subscribe_to_supply_negotation/Fault/ScenarioException"></fault>
+        </operation>
+        <operation name="storeBoughtItems">
+            <input wsam:Action="http://services.choreos.org/MarketingApplication/storeBoughtItemsRequest" message="tns:storeBoughtItems"></input>
+            <output wsam:Action="http://services.choreos.org/MarketingApplication/storeBoughtItemsResponse" message="tns:storeBoughtItemsResponse"></output>
+            <fault message="tns:ScenarioException" name="ScenarioException" wsam:Action="http://services.choreos.org/MarketingApplication/storeBoughtItems/Fault/ScenarioException"></fault>
+        </operation>
+        <operation name="changeQtyNotify">
+            <input wsam:Action="http://services.choreos.org/MarketingApplication/changeQtyNotifyRequest" message="tns:changeQtyNotify"></input>
+            <output wsam:Action="http://services.choreos.org/MarketingApplication/changeQtyNotifyResponse" message="tns:changeQtyNotifyResponse"></output>
+            <fault message="tns:ScenarioException" name="ScenarioException" wsam:Action="http://services.choreos.org/MarketingApplication/changeQtyNotify/Fault/ScenarioException"></fault>
+        </operation>
+        <operation name="make_proposal">
+            <input wsam:Action="http://services.choreos.org/MarketingApplication/make_proposalRequest" message="tns:make_proposal"></input>
+            <output wsam:Action="http://services.choreos.org/MarketingApplication/make_proposalResponse" message="tns:make_proposalResponse"></output>
+            <fault message="tns:ScenarioException" name="ScenarioException" wsam:Action="http://services.choreos.org/MarketingApplication/make_proposal/Fault/ScenarioException"></fault>
+        </operation>
+        <operation name="privateOfferConfirmation">
+            <input wsam:Action="http://services.choreos.org/MarketingApplication/privateOfferConfirmationRequest" message="tns:privateOfferConfirmation"></input>
+            <output wsam:Action="http://services.choreos.org/MarketingApplication/privateOfferConfirmationResponse" message="tns:privateOfferConfirmationResponse"></output>
+            <fault message="tns:ScenarioException" name="ScenarioException" wsam:Action="http://services.choreos.org/MarketingApplication/privateOfferConfirmation/Fault/ScenarioException"></fault>
+        </operation>
+        <operation name="removeProductNotify">
+            <input wsam:Action="http://services.choreos.org/MarketingApplication/removeProductNotifyRequest" message="tns:removeProductNotify"></input>
+            <output wsam:Action="http://services.choreos.org/MarketingApplication/removeProductNotifyResponse" message="tns:removeProductNotifyResponse"></output>
+            <fault message="tns:ScenarioException" name="ScenarioException" wsam:Action="http://services.choreos.org/MarketingApplication/removeProductNotify/Fault/ScenarioException"></fault>
+        </operation>
+        <operation name="put">
+            <input wsam:Action="http://services.choreos.org/MarketingApplication/putRequest" message="tns:put"></input>
+            <output wsam:Action="http://services.choreos.org/MarketingApplication/putResponse" message="tns:putResponse"></output>
+            <fault message="tns:ScenarioException" name="ScenarioException" wsam:Action="http://services.choreos.org/MarketingApplication/put/Fault/ScenarioException"></fault>
+        </operation>
+        <operation name="setInvocationAddress">
+            <input wsam:Action="http://services.choreos.org/MarketingApplication/setInvocationAddressRequest" message="tns:setInvocationAddress"></input>
+            <output wsam:Action="http://services.choreos.org/MarketingApplication/setInvocationAddressResponse" message="tns:setInvocationAddressResponse"></output>
+        </operation>
+        <operation name="setEndpointAddress">
+            <input wsam:Action="http://services.choreos.org/MarketingApplication/setEndpointAddressRequest" message="tns:setEndpointAddress"></input>
+            <output wsam:Action="http://services.choreos.org/MarketingApplication/setEndpointAddressResponse" message="tns:setEndpointAddressResponse"></output>
+        </operation>
+    </portType>
+    <binding name="MarketingApplicationPortBinding" type="tns:MarketingApplication">
+        <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"></soap:binding>
+        <operation name="scenarioSetup">
+            <soap:operation soapAction=""></soap:operation>
+            <input>
+                <soap:body use="literal"></soap:body>
+            </input>
+            <output>
+                <soap:body use="literal"></soap:body>
+            </output>
+        </operation>
+        <operation name="basicCommDeviceSubscribe">
+            <soap:operation soapAction=""></soap:operation>
+            <input>
+                <soap:body use="literal"></soap:body>
+            </input>
+            <output>
+                <soap:body use="literal"></soap:body>
+            </output>
+            <fault name="ScenarioException">
+                <soap:fault name="ScenarioException" use="literal"></soap:fault>
+            </fault>
+        </operation>
+        <operation name="shopAssistAppSubscribe">
+            <soap:operation soapAction=""></soap:operation>
+            <input>
+                <soap:body use="literal"></soap:body>
+            </input>
+            <output>
+                <soap:body use="literal"></soap:body>
+            </output>
+            <fault name="ScenarioException">
+                <soap:fault name="ScenarioException" use="literal"></soap:fault>
+            </fault>
+        </operation>
+        <operation name="shopAssistAppUnsubscribe">
+            <soap:operation soapAction=""></soap:operation>
+            <input>
+                <soap:body use="literal"></soap:body>
+            </input>
+            <output>
+                <soap:body use="literal"></soap:body>
+            </output>
+            <fault name="ScenarioException">
+                <soap:fault name="ScenarioException" use="literal"></soap:fault>
+            </fault>
+        </operation>
+        <operation name="basicCommDeviceUnsubscribe">
+            <soap:operation soapAction=""></soap:operation>
+            <input>
+                <soap:body use="literal"></soap:body>
+            </input>
+            <output>
+                <soap:body use="literal"></soap:body>
+            </output>
+            <fault name="ScenarioException">
+                <soap:fault name="ScenarioException" use="literal"></soap:fault>
+            </fault>
+        </operation>
+        <operation name="unsubscribeto_supply_authorization">
+            <soap:operation soapAction=""></soap:operation>
+            <input>
+                <soap:body use="literal"></soap:body>
+            </input>
+            <output>
+                <soap:body use="literal"></soap:body>
+            </output>
+            <fault name="ScenarioException">
+                <soap:fault name="ScenarioException" use="literal"></soap:fault>
+            </fault>
+        </operation>
+        <operation name="publicOfferConfirmation">
+            <soap:operation soapAction=""></soap:operation>
+            <input>
+                <soap:body use="literal"></soap:body>
+            </input>
+            <output>
+                <soap:body use="literal"></soap:body>
+            </output>
+            <fault name="ScenarioException">
+                <soap:fault name="ScenarioException" use="literal"></soap:fault>
+            </fault>
+        </operation>
+        <operation name="proposeAlternative">
+            <soap:operation soapAction=""></soap:operation>
+            <input>
+                <soap:body use="literal"></soap:body>
+            </input>
+            <output>
+                <soap:body use="literal"></soap:body>
+            </output>
+            <fault name="ScenarioException">
+                <soap:fault name="ScenarioException" use="literal"></soap:fault>
+            </fault>
+        </operation>
+        <operation name="authorize">
+            <soap:operation soapAction=""></soap:operation>
+            <input>
+                <soap:body use="literal"></soap:body>
+            </input>
+            <output>
+                <soap:body use="literal"></soap:body>
+            </output>
+            <fault name="ScenarioException">
+                <soap:fault name="ScenarioException" use="literal"></soap:fault>
+            </fault>
+        </operation>
+        <operation name="communicateAnswers">
+            <soap:operation soapAction=""></soap:operation>
+            <input>
+                <soap:body use="literal"></soap:body>
+            </input>
+            <output>
+                <soap:body use="literal"></soap:body>
+            </output>
+            <fault name="ScenarioException">
+                <soap:fault name="ScenarioException" use="literal"></soap:fault>
+            </fault>
+        </operation>
+        <operation name="set_estimate">
+            <soap:operation soapAction=""></soap:operation>
+            <input>
+                <soap:body use="literal"></soap:body>
+            </input>
+            <output>
+                <soap:body use="literal"></soap:body>
+            </output>
+            <fault name="ScenarioException">
+                <soap:fault name="ScenarioException" use="literal"></soap:fault>
+            </fault>
+        </operation>
+        <operation name="addProductNotify">
+            <soap:operation soapAction=""></soap:operation>
+            <input>
+                <soap:body use="literal"></soap:body>
+            </input>
+            <output>
+                <soap:body use="literal"></soap:body>
+            </output>
+            <fault name="ScenarioException">
+                <soap:fault name="ScenarioException" use="literal"></soap:fault>
+            </fault>
+        </operation>
+        <operation name="notifyCheckin">
+            <soap:operation soapAction=""></soap:operation>
+            <input>
+                <soap:body use="literal"></soap:body>
+            </input>
+            <output>
+                <soap:body use="literal"></soap:body>
+            </output>
+            <fault name="ScenarioException">
+                <soap:fault name="ScenarioException" use="literal"></soap:fault>
+            </fault>
+        </operation>
+        <operation name="unsubscribe_to_sales_estimation">
+            <soap:operation soapAction=""></soap:operation>
+            <input>
+                <soap:body use="literal"></soap:body>
+            </input>
+            <output>
+                <soap:body use="literal"></soap:body>
+            </output>
+            <fault name="ScenarioException">
+                <soap:fault name="ScenarioException" use="literal"></soap:fault>
+            </fault>
+        </operation>
+        <operation name="ma_receive_sms">
+            <soap:operation soapAction=""></soap:operation>
+            <input>
+                <soap:body use="literal"></soap:body>
+            </input>
+            <output>
+                <soap:body use="literal"></soap:body>
+            </output>
+            <fault name="ScenarioException">
+                <soap:fault name="ScenarioException" use="literal"></soap:fault>
+            </fault>
+        </operation>
+        <operation name="subscribe_to_sales_estimation">
+            <soap:operation soapAction=""></soap:operation>
+            <input>
+                <soap:body use="literal"></soap:body>
+            </input>
+            <output>
+                <soap:body use="literal"></soap:body>
+            </output>
+            <fault name="ScenarioException">
+                <soap:fault name="ScenarioException" use="literal"></soap:fault>
+            </fault>
+        </operation>
+        <operation name="subscribe_to_supply_authorization">
+            <soap:operation soapAction=""></soap:operation>
+            <input>
+                <soap:body use="literal"></soap:body>
+            </input>
+            <output>
+                <soap:body use="literal"></soap:body>
+            </output>
+            <fault name="ScenarioException">
+                <soap:fault name="ScenarioException" use="literal"></soap:fault>
+            </fault>
+        </operation>
+        <operation name="notifyCheckout">
+            <soap:operation soapAction=""></soap:operation>
+            <input>
+                <soap:body use="literal"></soap:body>
+            </input>
+            <output>
+                <soap:body use="literal"></soap:body>
+            </output>
+            <fault name="ScenarioException">
+                <soap:fault name="ScenarioException" use="literal"></soap:fault>
+            </fault>
+        </operation>
+        <operation name="shopping_list_communication">
+            <soap:operation soapAction=""></soap:operation>
+            <input>
+                <soap:body use="literal"></soap:body>
+            </input>
+            <output>
+                <soap:body use="literal"></soap:body>
+            </output>
+            <fault name="ScenarioException">
+                <soap:fault name="ScenarioException" use="literal"></soap:fault>
+            </fault>
+        </operation>
+        <operation name="unsubscribe_to_supply_negotiation">
+            <soap:operation soapAction=""></soap:operation>
+            <input>
+                <soap:body use="literal"></soap:body>
+            </input>
+            <output>
+                <soap:body use="literal"></soap:body>
+            </output>
+            <fault name="ScenarioException">
+                <soap:fault name="ScenarioException" use="literal"></soap:fault>
+            </fault>
+        </operation>
+        <operation name="subscribe_to_supply_negotation">
+            <soap:operation soapAction=""></soap:operation>
+            <input>
+                <soap:body use="literal"></soap:body>
+            </input>
+            <output>
+                <soap:body use="literal"></soap:body>
+            </output>
+            <fault name="ScenarioException">
+                <soap:fault name="ScenarioException" use="literal"></soap:fault>
+            </fault>
+        </operation>
+        <operation name="storeBoughtItems">
+            <soap:operation soapAction=""></soap:operation>
+            <input>
+                <soap:body use="literal"></soap:body>
+            </input>
+            <output>
+                <soap:body use="literal"></soap:body>
+            </output>
+            <fault name="ScenarioException">
+                <soap:fault name="ScenarioException" use="literal"></soap:fault>
+            </fault>
+        </operation>
+        <operation name="changeQtyNotify">
+            <soap:operation soapAction=""></soap:operation>
+            <input>
+                <soap:body use="literal"></soap:body>
+            </input>
+            <output>
+                <soap:body use="literal"></soap:body>
+            </output>
+            <fault name="ScenarioException">
+                <soap:fault name="ScenarioException" use="literal"></soap:fault>
+            </fault>
+        </operation>
+        <operation name="make_proposal">
+            <soap:operation soapAction=""></soap:operation>
+            <input>
+                <soap:body use="literal"></soap:body>
+            </input>
+            <output>
+                <soap:body use="literal"></soap:body>
+            </output>
+            <fault name="ScenarioException">
+                <soap:fault name="ScenarioException" use="literal"></soap:fault>
+            </fault>
+        </operation>
+        <operation name="privateOfferConfirmation">
+            <soap:operation soapAction=""></soap:operation>
+            <input>
+                <soap:body use="literal"></soap:body>
+            </input>
+            <output>
+                <soap:body use="literal"></soap:body>
+            </output>
+            <fault name="ScenarioException">
+                <soap:fault name="ScenarioException" use="literal"></soap:fault>
+            </fault>
+        </operation>
+        <operation name="removeProductNotify">
+            <soap:operation soapAction=""></soap:operation>
+            <input>
+                <soap:body use="literal"></soap:body>
+            </input>
+            <output>
+                <soap:body use="literal"></soap:body>
+            </output>
+            <fault name="ScenarioException">
+                <soap:fault name="ScenarioException" use="literal"></soap:fault>
+            </fault>
+        </operation>
+        <operation name="put">
+            <soap:operation soapAction=""></soap:operation>
+            <input>
+                <soap:body use="literal"></soap:body>
+            </input>
+            <output>
+                <soap:body use="literal"></soap:body>
+            </output>
+            <fault name="ScenarioException">
+                <soap:fault name="ScenarioException" use="literal"></soap:fault>
+            </fault>
+        </operation>
+        <operation name="setInvocationAddress">
+            <soap:operation soapAction=""></soap:operation>
+            <input>
+                <soap:body use="literal"></soap:body>
+            </input>
+            <output>
+                <soap:body use="literal"></soap:body>
+            </output>
+        </operation>
+        <operation name="setEndpointAddress">
+            <soap:operation soapAction=""></soap:operation>
+            <input>
+                <soap:body use="literal"></soap:body>
+            </input>
+            <output>
+                <soap:body use="literal"></soap:body>
+            </output>
+        </operation>
+    </binding>
+    <service name="MarketingApplicationService">
+        <port name="MarketingApplicationPort" binding="tns:MarketingApplicationPortBinding">
+            <soap:address location="http://localhost:8080/CD-marketingmanager-marketingapplication/CD-marketingmanager-marketingapplication"></soap:address>
+        </port>
+    </service>
+</definitions>

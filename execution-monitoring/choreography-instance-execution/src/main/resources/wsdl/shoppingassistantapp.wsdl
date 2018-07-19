@@ -1,0 +1,398 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/"
+             xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+             xmlns:tns="http://services.choreos.org/"
+             xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata"
+             xmlns:wsp="http://www.w3.org/ns/ws-policy"
+             xmlns:wsp1_2="http://schemas.xmlsoap.org/ws/2004/09/policy"
+             xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"
+             xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+             targetNamespace="http://services.choreos.org/"
+             name="ShoppingassistantappService">
+    <types>
+        <xsd:schema version="1.0" targetNamespace="http://services.choreos.org/">
+            <xsd:element name="ScenarioException" nillable="true" type="tns:ScenarioException"></xsd:element>
+            <xsd:element name="communicate_incentive" type="tns:communicate_incentive"></xsd:element>
+            <xsd:element name="communicate_incentiveResponse" type="tns:communicate_incentiveResponse"></xsd:element>
+            <xsd:element name="communicate_questionnaire" type="tns:communicate_questionnaire"></xsd:element>
+            <xsd:element name="communicate_questionnaireResponse" type="tns:communicate_questionnaireResponse"></xsd:element>
+            <xsd:element name="private_offer" type="tns:private_offer"></xsd:element>
+            <xsd:element name="private_offerResponse" type="tns:private_offerResponse"></xsd:element>
+            <xsd:element name="record_bought_items" type="tns:record_bought_items"></xsd:element>
+            <xsd:element name="record_bought_itemsResponse" type="tns:record_bought_itemsResponse"></xsd:element>
+            <xsd:element name="remind" type="tns:remind"></xsd:element>
+            <xsd:element name="remindResponse" type="tns:remindResponse"></xsd:element>
+            <xsd:element name="scenarioSetup" type="tns:scenarioSetup"></xsd:element>
+            <xsd:element name="scenarioSetupResponse" type="tns:scenarioSetupResponse"></xsd:element>
+            <xsd:element name="setEndpointAddress" type="tns:setEndpointAddress"></xsd:element>
+            <xsd:element name="setEndpointAddressResponse" type="tns:setEndpointAddressResponse"></xsd:element>
+            <xsd:element name="setInvocationAddress" type="tns:setInvocationAddress"></xsd:element>
+            <xsd:element name="setInvocationAddressResponse" type="tns:setInvocationAddressResponse"></xsd:element>
+            <xsd:element name="shopAssistAppSubscribe" type="tns:shopAssistAppSubscribe"></xsd:element>
+            <xsd:element name="shopAssistAppSubscribeResponse" type="tns:shopAssistAppSubscribeResponse"></xsd:element>
+            <xsd:element name="shopAssistAppUnsubscribe" type="tns:shopAssistAppUnsubscribe"></xsd:element>
+            <xsd:element name="shopAssistAppUnsubscribeResponse" type="tns:shopAssistAppUnsubscribeResponse"></xsd:element>
+            <xsd:complexType name="remind">
+                <xsd:sequence>
+                    <xsd:element name="sessionId" type="xsd:string" minOccurs="0"></xsd:element>
+                    <xsd:element name="rem" type="tns:reminder" minOccurs="0"></xsd:element>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="reminder">
+                <xsd:sequence>
+                    <xsd:element name="questionnaire" type="tns:questionnaire" minOccurs="0"></xsd:element>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="questionnaire">
+                <xsd:all>
+                    <xsd:element name="ready" type="xsd:boolean"></xsd:element>
+                    <xsd:element name="qa">
+                        <xsd:complexType>
+                            <xsd:sequence>
+                                <xsd:element name="entry" minOccurs="0" maxOccurs="unbounded">
+                                    <xsd:complexType>
+                                        <xsd:sequence>
+                                            <xsd:element name="key" minOccurs="0" type="xsd:string"></xsd:element>
+                                            <xsd:element name="value" minOccurs="0" type="xsd:string"></xsd:element>
+                                        </xsd:sequence>
+                                    </xsd:complexType>
+                                </xsd:element>
+                            </xsd:sequence>
+                        </xsd:complexType>
+                    </xsd:element>
+                </xsd:all>
+            </xsd:complexType>
+            <xsd:complexType name="remindResponse">
+                <xsd:sequence></xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="ScenarioException">
+                <xsd:sequence>
+                    <xsd:element name="message" type="xsd:string" minOccurs="0"></xsd:element>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="communicate_incentive">
+                <xsd:sequence>
+                    <xsd:element name="sessionId" type="xsd:string" minOccurs="0"></xsd:element>
+                    <xsd:element name="inc" type="tns:specialoffer" minOccurs="0"></xsd:element>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="specialoffer">
+                <xsd:all></xsd:all>
+            </xsd:complexType>
+            <xsd:complexType name="communicate_incentiveResponse">
+                <xsd:sequence></xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="record_bought_items">
+                <xsd:sequence>
+                    <xsd:element name="sessionId" type="xsd:string" minOccurs="0"></xsd:element>
+                    <xsd:element name="items" type="tns:product" minOccurs="0" maxOccurs="unbounded"></xsd:element>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="product">
+                <xsd:sequence>
+                    <xsd:element name="name" type="xsd:string" minOccurs="0"></xsd:element>
+                    <xsd:element name="brand" type="xsd:string" minOccurs="0"></xsd:element>
+                    <xsd:element name="barcode" type="xsd:string" minOccurs="0"></xsd:element>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="record_bought_itemsResponse">
+                <xsd:sequence></xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="private_offer">
+                <xsd:sequence>
+                    <xsd:element name="sessionId" type="xsd:string" minOccurs="0"></xsd:element>
+                    <xsd:element name="offer" type="tns:offer" minOccurs="0"></xsd:element>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="offer">
+                <xsd:sequence>
+                    <xsd:element name="item" type="tns:product" minOccurs="0"></xsd:element>
+                    <xsd:element name="discount" type="xsd:int"></xsd:element>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="private_offerResponse">
+                <xsd:sequence></xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="setEndpointAddress">
+                <xsd:sequence>
+                    <xsd:element name="arg0" type="xsd:string" minOccurs="0"></xsd:element>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="setEndpointAddressResponse">
+                <xsd:sequence></xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="shopAssistAppSubscribe">
+                <xsd:sequence>
+                    <xsd:element name="sessionId" type="xsd:string" minOccurs="0"></xsd:element>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="shopAssistAppSubscribeResponse">
+                <xsd:sequence></xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="setInvocationAddress">
+                <xsd:sequence>
+                    <xsd:element name="arg0" type="xsd:string" minOccurs="0"></xsd:element>
+                    <xsd:element name="arg1" type="xsd:string" minOccurs="0"></xsd:element>
+                    <xsd:element name="arg2" type="xsd:string" minOccurs="0" maxOccurs="unbounded"></xsd:element>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="setInvocationAddressResponse">
+                <xsd:sequence></xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="scenarioSetup">
+                <xsd:sequence></xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="scenarioSetupResponse">
+                <xsd:sequence></xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="communicate_questionnaire">
+                <xsd:sequence>
+                    <xsd:element name="sessionId" type="xsd:string" minOccurs="0"></xsd:element>
+                    <xsd:element name="q" type="tns:questionnaire" minOccurs="0"></xsd:element>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="communicate_questionnaireResponse">
+                <xsd:sequence></xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="shopAssistAppUnsubscribe">
+                <xsd:sequence>
+                    <xsd:element name="sessionId" type="xsd:string" minOccurs="0"></xsd:element>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="shopAssistAppUnsubscribeResponse">
+                <xsd:sequence></xsd:sequence>
+            </xsd:complexType>
+        </xsd:schema>
+    </types>
+    <message name="scenarioSetup">
+        <part name="parameters" element="tns:scenarioSetup"></part>
+    </message>
+    <message name="scenarioSetupResponse">
+        <part name="parameters" element="tns:scenarioSetupResponse"></part>
+    </message>
+    <message name="shopAssistAppSubscribe">
+        <part name="parameters" element="tns:shopAssistAppSubscribe"></part>
+    </message>
+    <message name="shopAssistAppSubscribeResponse">
+        <part name="parameters" element="tns:shopAssistAppSubscribeResponse"></part>
+    </message>
+    <message name="ScenarioException">
+        <part name="fault" element="tns:ScenarioException"></part>
+    </message>
+    <message name="shopAssistAppUnsubscribe">
+        <part name="parameters" element="tns:shopAssistAppUnsubscribe"></part>
+    </message>
+    <message name="shopAssistAppUnsubscribeResponse">
+        <part name="parameters" element="tns:shopAssistAppUnsubscribeResponse"></part>
+    </message>
+    <message name="private_offer">
+        <part name="parameters" element="tns:private_offer"></part>
+    </message>
+    <message name="private_offerResponse">
+        <part name="parameters" element="tns:private_offerResponse"></part>
+    </message>
+    <message name="record_bought_items">
+        <part name="parameters" element="tns:record_bought_items"></part>
+    </message>
+    <message name="record_bought_itemsResponse">
+        <part name="parameters" element="tns:record_bought_itemsResponse"></part>
+    </message>
+    <message name="communicate_questionnaire">
+        <part name="parameters" element="tns:communicate_questionnaire"></part>
+    </message>
+    <message name="communicate_questionnaireResponse">
+        <part name="parameters" element="tns:communicate_questionnaireResponse"></part>
+    </message>
+    <message name="remind">
+        <part name="parameters" element="tns:remind"></part>
+    </message>
+    <message name="remindResponse">
+        <part name="parameters" element="tns:remindResponse"></part>
+    </message>
+    <message name="communicate_incentive">
+        <part name="parameters" element="tns:communicate_incentive"></part>
+    </message>
+    <message name="communicate_incentiveResponse">
+        <part name="parameters" element="tns:communicate_incentiveResponse"></part>
+    </message>
+    <message name="setInvocationAddress">
+        <part name="parameters" element="tns:setInvocationAddress"></part>
+    </message>
+    <message name="setInvocationAddressResponse">
+        <part name="parameters" element="tns:setInvocationAddressResponse"></part>
+    </message>
+    <message name="setEndpointAddress">
+        <part name="parameters" element="tns:setEndpointAddress"></part>
+    </message>
+    <message name="setEndpointAddressResponse">
+        <part name="parameters" element="tns:setEndpointAddressResponse"></part>
+    </message>
+    <portType name="Shoppingassistantapp">
+        <operation name="scenarioSetup">
+            <input wsam:Action="http://services.choreos.org/Shoppingassistantapp/scenarioSetupRequest" message="tns:scenarioSetup"></input>
+            <output wsam:Action="http://services.choreos.org/Shoppingassistantapp/scenarioSetupResponse" message="tns:scenarioSetupResponse"></output>
+        </operation>
+        <operation name="shopAssistAppSubscribe">
+            <input wsam:Action="http://services.choreos.org/Shoppingassistantapp/shopAssistAppSubscribeRequest" message="tns:shopAssistAppSubscribe"></input>
+            <output wsam:Action="http://services.choreos.org/Shoppingassistantapp/shopAssistAppSubscribeResponse" message="tns:shopAssistAppSubscribeResponse"></output>
+            <fault message="tns:ScenarioException" name="ScenarioException" wsam:Action="http://services.choreos.org/Shoppingassistantapp/shopAssistAppSubscribe/Fault/ScenarioException"></fault>
+        </operation>
+        <operation name="shopAssistAppUnsubscribe">
+            <input wsam:Action="http://services.choreos.org/Shoppingassistantapp/shopAssistAppUnsubscribeRequest" message="tns:shopAssistAppUnsubscribe"></input>
+            <output wsam:Action="http://services.choreos.org/Shoppingassistantapp/shopAssistAppUnsubscribeResponse" message="tns:shopAssistAppUnsubscribeResponse"></output>
+            <fault message="tns:ScenarioException" name="ScenarioException" wsam:Action="http://services.choreos.org/Shoppingassistantapp/shopAssistAppUnsubscribe/Fault/ScenarioException"></fault>
+        </operation>
+        <operation name="private_offer">
+            <input wsam:Action="http://services.choreos.org/Shoppingassistantapp/private_offerRequest" message="tns:private_offer"></input>
+            <output wsam:Action="http://services.choreos.org/Shoppingassistantapp/private_offerResponse" message="tns:private_offerResponse"></output>
+            <fault message="tns:ScenarioException" name="ScenarioException" wsam:Action="http://services.choreos.org/Shoppingassistantapp/private_offer/Fault/ScenarioException"></fault>
+        </operation>
+        <operation name="record_bought_items">
+            <input wsam:Action="http://services.choreos.org/Shoppingassistantapp/record_bought_itemsRequest" message="tns:record_bought_items"></input>
+            <output wsam:Action="http://services.choreos.org/Shoppingassistantapp/record_bought_itemsResponse" message="tns:record_bought_itemsResponse"></output>
+            <fault message="tns:ScenarioException" name="ScenarioException" wsam:Action="http://services.choreos.org/Shoppingassistantapp/record_bought_items/Fault/ScenarioException"></fault>
+        </operation>
+        <operation name="communicate_questionnaire">
+            <input wsam:Action="http://services.choreos.org/Shoppingassistantapp/communicate_questionnaireRequest" message="tns:communicate_questionnaire"></input>
+            <output wsam:Action="http://services.choreos.org/Shoppingassistantapp/communicate_questionnaireResponse" message="tns:communicate_questionnaireResponse"></output>
+            <fault message="tns:ScenarioException" name="ScenarioException" wsam:Action="http://services.choreos.org/Shoppingassistantapp/communicate_questionnaire/Fault/ScenarioException"></fault>
+        </operation>
+        <operation name="remind">
+            <input wsam:Action="http://services.choreos.org/Shoppingassistantapp/remindRequest" message="tns:remind"></input>
+            <output wsam:Action="http://services.choreos.org/Shoppingassistantapp/remindResponse" message="tns:remindResponse"></output>
+            <fault message="tns:ScenarioException" name="ScenarioException" wsam:Action="http://services.choreos.org/Shoppingassistantapp/remind/Fault/ScenarioException"></fault>
+        </operation>
+        <operation name="communicate_incentive">
+            <input wsam:Action="http://services.choreos.org/Shoppingassistantapp/communicate_incentiveRequest" message="tns:communicate_incentive"></input>
+            <output wsam:Action="http://services.choreos.org/Shoppingassistantapp/communicate_incentiveResponse" message="tns:communicate_incentiveResponse"></output>
+            <fault message="tns:ScenarioException" name="ScenarioException" wsam:Action="http://services.choreos.org/Shoppingassistantapp/communicate_incentive/Fault/ScenarioException"></fault>
+        </operation>
+        <operation name="setInvocationAddress">
+            <input wsam:Action="http://services.choreos.org/Shoppingassistantapp/setInvocationAddressRequest" message="tns:setInvocationAddress"></input>
+            <output wsam:Action="http://services.choreos.org/Shoppingassistantapp/setInvocationAddressResponse" message="tns:setInvocationAddressResponse"></output>
+        </operation>
+        <operation name="setEndpointAddress">
+            <input wsam:Action="http://services.choreos.org/Shoppingassistantapp/setEndpointAddressRequest" message="tns:setEndpointAddress"></input>
+            <output wsam:Action="http://services.choreos.org/Shoppingassistantapp/setEndpointAddressResponse" message="tns:setEndpointAddressResponse"></output>
+        </operation>
+    </portType>
+    <binding name="ShoppingassistantappPortBinding" type="tns:Shoppingassistantapp">
+        <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"></soap:binding>
+        <operation name="scenarioSetup">
+            <soap:operation soapAction=""></soap:operation>
+            <input>
+                <soap:body use="literal"></soap:body>
+            </input>
+            <output>
+                <soap:body use="literal"></soap:body>
+            </output>
+        </operation>
+        <operation name="shopAssistAppSubscribe">
+            <soap:operation soapAction=""></soap:operation>
+            <input>
+                <soap:body use="literal"></soap:body>
+            </input>
+            <output>
+                <soap:body use="literal"></soap:body>
+            </output>
+            <fault name="ScenarioException">
+                <soap:fault name="ScenarioException" use="literal"></soap:fault>
+            </fault>
+        </operation>
+        <operation name="shopAssistAppUnsubscribe">
+            <soap:operation soapAction=""></soap:operation>
+            <input>
+                <soap:body use="literal"></soap:body>
+            </input>
+            <output>
+                <soap:body use="literal"></soap:body>
+            </output>
+            <fault name="ScenarioException">
+                <soap:fault name="ScenarioException" use="literal"></soap:fault>
+            </fault>
+        </operation>
+        <operation name="private_offer">
+            <soap:operation soapAction=""></soap:operation>
+            <input>
+                <soap:body use="literal"></soap:body>
+            </input>
+            <output>
+                <soap:body use="literal"></soap:body>
+            </output>
+            <fault name="ScenarioException">
+                <soap:fault name="ScenarioException" use="literal"></soap:fault>
+            </fault>
+        </operation>
+        <operation name="record_bought_items">
+            <soap:operation soapAction=""></soap:operation>
+            <input>
+                <soap:body use="literal"></soap:body>
+            </input>
+            <output>
+                <soap:body use="literal"></soap:body>
+            </output>
+            <fault name="ScenarioException">
+                <soap:fault name="ScenarioException" use="literal"></soap:fault>
+            </fault>
+        </operation>
+        <operation name="communicate_questionnaire">
+            <soap:operation soapAction=""></soap:operation>
+            <input>
+                <soap:body use="literal"></soap:body>
+            </input>
+            <output>
+                <soap:body use="literal"></soap:body>
+            </output>
+            <fault name="ScenarioException">
+                <soap:fault name="ScenarioException" use="literal"></soap:fault>
+            </fault>
+        </operation>
+        <operation name="remind">
+            <soap:operation soapAction=""></soap:operation>
+            <input>
+                <soap:body use="literal"></soap:body>
+            </input>
+            <output>
+                <soap:body use="literal"></soap:body>
+            </output>
+            <fault name="ScenarioException">
+                <soap:fault name="ScenarioException" use="literal"></soap:fault>
+            </fault>
+        </operation>
+        <operation name="communicate_incentive">
+            <soap:operation soapAction=""></soap:operation>
+            <input>
+                <soap:body use="literal"></soap:body>
+            </input>
+            <output>
+                <soap:body use="literal"></soap:body>
+            </output>
+            <fault name="ScenarioException">
+                <soap:fault name="ScenarioException" use="literal"></soap:fault>
+            </fault>
+        </operation>
+        <operation name="setInvocationAddress">
+            <soap:operation soapAction=""></soap:operation>
+            <input>
+                <soap:body use="literal"></soap:body>
+            </input>
+            <output>
+                <soap:body use="literal"></soap:body>
+            </output>
+        </operation>
+        <operation name="setEndpointAddress">
+            <soap:operation soapAction=""></soap:operation>
+            <input>
+                <soap:body use="literal"></soap:body>
+            </input>
+            <output>
+                <soap:body use="literal"></soap:body>
+            </output>
+        </operation>
+    </binding>
+    <service name="ShoppingassistantappService">
+        <port name="ShoppingassistantappPort" binding="tns:ShoppingassistantappPortBinding">
+            <soap:address location="http://localhost:8080/shoppingassistantapp/shoppingassistantapp"></soap:address>
+        </port>
+    </service>
+</definitions>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<endpoints version="2.0" xmlns="http://java.sun.com/xml/ns/jax-ws/ri/runtime">
+  <endpoint 
+      name="basiccommunicationdevice" 
+      interface="org.choreos.services.BasicCommunicationDevice"
+      implementation="org.choreos.services.BasicCommunicationDeviceImpl" 
+      wsdl="WEB-INF/wsdl/basiccommunicationdevice.wsdl"
+      service="{http://services.choreos.org/}BasicCommunicationDeviceService"
+      port="{http://services.choreos.org/}BasicCommunicationDevicePort"
+      url-pattern="/basiccommunicationdevice"/>
+</endpoints>

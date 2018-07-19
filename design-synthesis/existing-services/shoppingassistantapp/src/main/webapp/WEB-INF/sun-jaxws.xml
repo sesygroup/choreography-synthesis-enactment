@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<endpoints version="2.0" xmlns="http://java.sun.com/xml/ns/jax-ws/ri/runtime">
+ <endpoint 
+      name="shoppingassistantapp" 
+      interface="org.choreos.services.Shoppingassistantapp"
+      implementation="org.choreos.services.ShoppingassistantappImpl" 
+      wsdl="WEB-INF/wsdl/shoppingassistantapp.wsdl"
+      service="{http://services.choreos.org/}ShoppingassistantappService"
+      port="{http://services.choreos.org/}ShoppingassistantappPort"
+      url-pattern="/shoppingassistantapp"/>
+  
+</endpoints>

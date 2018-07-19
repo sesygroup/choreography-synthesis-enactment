@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coord:COORDModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:coord="http://eu.chorevolution/modelingnotations/coord" name="CD-Client-Smartcart" choreographyName="Default Choreography" initialState="//@states.0">
+  <tuples sourceState="//@states.1" targetState="//@states.2" condition="true"/>
+  <tuples sourceState="//@states.3" targetState="//@states.4" allowedOperation="//@operations.0" condition="true"/>
+  <tuples sourceState="//@states.5" targetState="//@states.1" condition="true"/>
+  <tuples sourceState="//@states.6" targetState="//@states.7" allowedComponentInTargetState="//@participants.0" condition="true"/>
+  <tuples sourceState="//@states.6" targetState="//@states.8" condition="true"/>
+  <tuples sourceState="//@states.9" targetState="//@states.10" allowedOperation="//@operations.1" condition="true"/>
+  <tuples sourceState="//@states.11" targetState="//@states.2" condition="true"/>
+  <tuples sourceState="//@states.2" targetState="//@states.12" condition="true"/>
+  <tuples sourceState="//@states.10" targetState="//@states.13" condition="true">
+    <wait>
+      <elements state="//@states.14" participants="//@participants.1"/>
+    </wait>
+    <notify>
+      <elements state="//@states.10" participants="//@participants.1"/>
+    </notify>
+  </tuples>
+  <tuples sourceState="//@states.13" targetState="//@states.11" condition="true"/>
+  <tuples sourceState="//@states.15" targetState="//@states.5" allowedOperation="//@operations.2" condition="true"/>
+  <tuples sourceState="//@states.16" targetState="//@states.8" condition="true"/>
+  <tuples sourceState="//@states.17" targetState="//@states.18" allowedOperation="//@operations.3" condition="true"/>
+  <tuples sourceState="//@states.16" targetState="//@states.19" allowedComponentInTargetState="//@participants.0" condition="true"/>
+  <tuples sourceState="//@states.2" targetState="//@states.20" allowedComponentInTargetState="//@participants.2" condition="true"/>
+  <tuples sourceState="//@states.18" targetState="//@states.1" condition="true"/>
+  <tuples sourceState="//@states.12" targetState="//@states.17" allowedComponentInTargetState="//@participants.3" condition="true"/>
+  <tuples sourceState="//@states.12" targetState="//@states.15" allowedComponentInTargetState="//@participants.3" condition="true"/>
+  <tuples sourceState="//@states.11" targetState="//@states.16" condition="true"/>
+  <tuples sourceState="//@states.11" targetState="//@states.6" condition="true"/>
+  <tuples sourceState="//@states.4" targetState="//@states.1" condition="true"/>
+  <tuples sourceState="//@states.12" targetState="//@states.3" allowedComponentInTargetState="//@participants.3" condition="true"/>
+  <states name="S0"/>
+  <states name="S14"/>
+  <states name="S17"/>
+  <states name="S6"/>
+  <states name="S7"/>
+  <states name="S5"/>
+  <states name="S30"/>
+  <states name="S34"/>
+  <states name="final"/>
+  <states name="S10"/>
+  <states name="S11"/>
+  <states name="S3"/>
+  <states name="S8"/>
+  <states name="S9"/>
+  <states name="S13"/>
+  <states name="S4"/>
+  <states name="S40"/>
+  <states name="S15"/>
+  <states name="S16"/>
+  <states name="S41"/>
+  <states name="S22"/>
+  <operations name="remove_product"/>
+  <operations name="subscribeUserToCart"/>
+  <operations name="change_qty"/>
+  <operations name="add_product"/>
+  <participants name="CD-Marketingapplication-Marketingmanager"/>
+  <participants name="CD-Shopentrance-Marketingapplication"/>
+  <participants name="CD-Client-Selfcheckoutmachine"/>
+  <participants name="CD-Client-Smartcart"/>
+</coord:COORDModel>

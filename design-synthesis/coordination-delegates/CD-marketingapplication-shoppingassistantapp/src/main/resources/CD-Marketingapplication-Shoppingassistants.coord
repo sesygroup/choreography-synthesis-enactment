@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coord:COORDModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:coord="http://eu.chorevolution/modelingnotations/coord" name="CD-Marketingapplication-Shoppingassistants" choreographyName="Default Choreography" initialState="//@states.0">
+  <tuples sourceState="//@states.1" targetState="//@states.2" allowedComponentInTargetState="//@participants.0" condition="true"/>
+  <tuples sourceState="//@states.1" targetState="//@states.3" condition="true"/>
+  <tuples sourceState="//@states.4" targetState="//@states.5" condition="true"/>
+  <tuples sourceState="//@states.5" targetState="//@states.1" condition="true"/>
+  <tuples sourceState="//@states.6" targetState="//@states.4" allowedOperation="//@operations.0" condition="true"/>
+  <states name="S0"/>
+  <states name="S30"/>
+  <states name="S34"/>
+  <states name="final"/>
+  <states name="S32"/>
+  <states name="S33"/>
+  <states name="S31"/>
+  <operations name="private_offer"/>
+  <participants name="CD-Marketingapplication-Marketingmanager"/>
+</coord:COORDModel>

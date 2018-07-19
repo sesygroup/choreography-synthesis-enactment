@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<endpoints version="2.0" xmlns="http://java.sun.com/xml/ns/jax-ws/ri/runtime">
+  <endpoint 
+      interface="org.choreos.services.cd.MarketingApplication" 
+      implementation="org.choreos.services.cd.CDimpl" 
+      name="CD-shopentrance-marketingapplication"
+      wsdl="WEB-INF/wsdl/CD-shopentrance-marketingapplication.wsdl"
+      service="{http://services.choreos.org/}MarketingApplicationService"
+      port="{http://services.choreos.org/}MarketingApplicationPort"
+      url-pattern="/CD-shopentrance-marketingapplication"/>
+  
+	<endpoint  
+      implementation="eu.chorevolution.synthesisprocessor.coordinationprotocol.channel.WSCoordinationChannel" 
+      name="WSCoordinationChannel"
+      service="{http://eu.chorevolution.synthesisprocessor.coordinationprotocol.channel.client/}WSCoordinationChannelService"
+      port="{http://eu.chorevolution.synthesisprocessor.coordinationprotocol.channel.client/}WSCoordinationChannelPort"
+      url-pattern="/WSCoordinationChannel"/>    
+</endpoints>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coord:COORDModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:coord="http://eu.chorevolution/modelingnotations/coord" name="CD-Marketingmanager-Marketingapplication" choreographyName="Default Choreography" initialState="//@states.0">
+  <tuples sourceState="//@states.1" targetState="//@states.2" allowedOperation="//@operations.0" condition="true"/>
+  <tuples sourceState="//@states.2" targetState="//@states.3" condition="true"/>
+  <tuples sourceState="//@states.3" targetState="//@states.4" allowedComponentInTargetState="//@participants.0" condition="true"/>
+  <tuples sourceState="//@states.3" targetState="//@states.5" allowedComponentInTargetState="//@participants.1" condition="true"/>
+  <tuples sourceState="//@states.6" targetState="//@states.7" allowedOperation="//@operations.1" allowedComponentInTargetState="//@participants.2" condition="true"/>
+  <states name="S0"/>
+  <states name="S35"/>
+  <states name="S27"/>
+  <states name="S43"/>
+  <states name="S31"/>
+  <states name="S36"/>
+  <states name="S42"/>
+  <states name="S39"/>
+  <operations name="privateOfferConfirmation"/>
+  <operations name="publicOfferConfirmation"/>
+  <participants name="CD-Marketingapplication-Shoppingassistants"/>
+  <participants name="CD-Marketingapplication-Basiccommunicationdevice"/>
+  <participants name="CD-Marketingapplication-Instoretotem"/>
+</coord:COORDModel>
