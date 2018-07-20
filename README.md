@@ -16,7 +16,7 @@ The replication package can be downloaded [here](https://github.com/sesygroup/ch
 
 | Folder                | Description  |
 |-----------------------|--------------|
-|  deployment-enactment | contains the artefacts needed for `deployment` and `enactment` purposes |
+|  deployment-enactment | contains the enactment engine used for `deploying` the synthesized coordination delegates and for `enacting` the choreography |
 |  design-synthesis     | contains the BPMN2 `choreography` specification, the image of the choreography `architecture`, the choreography `deployment description`, the set of synthesized `coordination delegates`, and the set of selected `existing services` |
 |  execution-monitoring | contains the artefacts used to `execute` the experiment, the `monitor` used to analyze the extracted data, and the set of `monitoring data` |
 
