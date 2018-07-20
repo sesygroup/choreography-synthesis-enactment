@@ -14,7 +14,9 @@
 		<maven.compiler.source>1.8</maven.compiler.source>
 		<maven.compiler.target>1.8</maven.compiler.target>
       <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+      <!-- SET the url of syncope (monitor) -->
       <syncope.url>172.20.3.79</syncope.url>
+      <!-- SET the port of syncope (monitor) -->
       <syncope.port>9080</syncope.port>
 	</properties>
 	

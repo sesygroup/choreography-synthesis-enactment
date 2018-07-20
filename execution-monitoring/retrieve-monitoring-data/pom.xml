@@ -11,8 +11,9 @@
 		<maven.compiler.source>1.8</maven.compiler.source>
 		<maven.compiler.target>1.8</maven.compiler.target>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-
 		<use_cds_component>true</use_cds_component>
+      
+      <!-- SET the url and the port of all business services and CDs-->
 		<cd_client_selfcheckoutmachine_host>172.20.3.72</cd_client_selfcheckoutmachine_host>
 		<cd_client_selfcheckoutmachine_port>8080</cd_client_selfcheckoutmachine_port>
 		<cd_client_shopentrance_host>172.20.3.73</cd_client_shopentrance_host>

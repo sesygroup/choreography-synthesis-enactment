@@ -14,10 +14,8 @@
 		<maven.compiler.source>1.8</maven.compiler.source>
 		<maven.compiler.target>1.8</maven.compiler.target>
       <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-      <!-- number of execution from 0 to 10 
-           used to appropriately set the service sleep -->
-      <running_number>5</running_number>
-
+      <!-- SET the number of running from 1 to 10 -->
+      <running_number>1</running_number>
 	</properties>
 
 	<dependencies>
