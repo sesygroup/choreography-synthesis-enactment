@@ -10,7 +10,7 @@ This work has been designed, developed, and reported by the following contributo
  - [Amleto Di Salle (University of L’Aquila)](mailto:amleto.disalle@univaq.it)
  - [Leonardo Leite (University of São Paulo)](mailto:leofl@ime.usp.br)
 
-For any information, interested researchers can contact us by writing an email to any contributor listed above. A full `documentation` can be founded [here](https://).
+For any information, interested researchers can contact us by writing an email to any contributor listed above. A full `documentation` can be founded [here](https://sesygroup.github.io/choreography-synthesis-enactment).
 
 The replication package can be downloaded [here](https://github.com/sesygroup/choreography-synthesis-enactment/archive/master.zip), and it is structured as follow:
 
