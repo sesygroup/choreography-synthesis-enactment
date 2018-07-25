@@ -1,0 +1,8 @@
+# options for <clustername>.CLOUD_PROVIDER: FIXED (for tests), AWS and OPEN_STACK
+
+MY_CLUSTER.CLOUD_PROVIDER=FIXED
+MY_CLUSTER.FIXED_VM_IPS=172.20.3.72,172.20.3.73,172.20.3.75,172.20.3.76,172.20.3.78
+MY_CLUSTER.FIXED_VM_PRIVATE_SSH_KEYS=/home/ubuntu/.ssh/id_ra,/home/ubuntu/.ssh/id_ra,/home/ubuntu/.ssh/id_ra,/home/ubuntu/.ssh/id_ra,/home/ubuntu/.ssh/id_ra
+MY_CLUSTER.FIXED_VM_USERS=ubuntu,ubuntu,ubuntu,ubuntu,ubuntu
+
+
