@@ -87,14 +87,14 @@
 
           <h4>Setup your target node</h4>
 
-          <p>Run a virtual machine on your localhost. Be sure the VM:</p>
+          <p>Run 5 virtual machines (VMs) on your localhost. The coordination delegates will be deployed on these VMs. Be sure each VM:</p>
 
           <ul>
             <li>Uses Ubuntu 12.04.</li> 
             <li>Is accessible through <a href="http://www.integrade.org.br/ssh-without-password">SSH using a key requiring no password</a>.</li>
             <li>Allows sudo without typing a password: type <span class="code code--inline">$sudo visudo</span> and add the line <span class="code code--inline">[user] ALL = NOPASSWD: ALL</span> at the end (change <span class="code code--inline">[user]</span> by the actual user).</li>
             <li>Has an adjusted clock: <span class="code code--inline">#ntpdate ccsl.ime.usp.br</span>.</li>
-            <li>To bootstrap it (i.e. install Chef) by running the <span class="code code--inline">org.ow2.choreos.deployment.nodes.cm.BootstrapFixedMachines</span> class.
+            <li>It's bootstrapped (i.e. has Chef installed) by running the <span class="code code--inline">org.ow2.choreos.deployment.nodes.cm.BootstrapFixedMachines</span> class.
           </ul>
 
 
@@ -104,9 +104,9 @@
 
           <p>Download and extract the EE binary from <a href="http://ccsl.ime.usp.br/files/EnactmentEngine-2014-03-03.zip">here</a>.</p>
 
-          <p>Move the files on the <span class="code code--inline">ee-conf</span> folder of this repo to the <span class="code code--inline">conf</span> folder of EE.</p>
+          <p>Move the files on the <span class="code code--inline">deployment-enactment/ee-conf</span> folder of this repo to the <span class="code code--inline">conf</span> folder of EE.</p>
 
-          <p>Edit the file <span class="code code--inline">conf/clouds.properties</span> according to your VM properties.<p>
+          <p>Edit the file <span class="code code--inline">conf/clouds.properties</span> according to your VM properties. You can consider as example the <span class="code code--inline">clouds.properties.experiment</span> file that was used on our experiments.<p>
 
           <p>Launch the EE: <span class="code code--inline">$mvn exec:java</span>.</p>
 
