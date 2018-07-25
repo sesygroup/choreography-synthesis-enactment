@@ -11,8 +11,8 @@
             <serviceType>SOAP</serviceType>
             <endpointName>CD-client-selfcheckoutmachine</endpointName>
             <numberOfInstances>1</numberOfInstances>
-            <packageType>EASY_ESB</packageType>
-            <packageUri>http://synthesis.disim.univaq.it/cdgenerator/getcd/wp7/1381141603666/CD-client-selfcheckoutmachine.tar.gz</packageUri>
+            <packageType>TOMCAT</packageType>
+            <packageUri><!-- SET the WAR URL --></packageUri>
             <port>8180</port>
         </deployableServiceSpecs>
         <deployableServiceSpecs>
@@ -25,8 +25,8 @@
             <serviceType>SOAP</serviceType>
             <endpointName>CD-client-shopentrance</endpointName>
             <numberOfInstances>1</numberOfInstances>
-            <packageType>EASY_ESB</packageType>
-            <packageUri>http://synthesis.disim.univaq.it/cdgenerator/getcd/wp7/1381141603717/CD-client-shopentrance.tar.gz</packageUri>
+            <packageType>TOMCAT</packageType>
+            <packageUri><!-- SET the WAR URL --></packageUri>
             <port>8180</port>
         </deployableServiceSpecs>
         <deployableServiceSpecs>
@@ -39,8 +39,8 @@
             <serviceType>SOAP</serviceType>
             <endpointName>CD-client-smartcart</endpointName>
             <numberOfInstances>1</numberOfInstances>
-            <packageType>EASY_ESB</packageType>
-            <packageUri>http://synthesis.disim.univaq.it/cdgenerator/getcd/wp7/1381141603766/CD-client-smartcart.tar.gz</packageUri>
+            <packageType>TOMCAT</packageType>
+            <packageUri><!-- SET the WAR URL --></packageUri>
             <port>8180</port>
         </deployableServiceSpecs>
         <deployableServiceSpecs>
@@ -53,8 +53,8 @@
             <serviceType>SOAP</serviceType>
             <endpointName>CD-shopentrance-marketingapplication</endpointName>
             <numberOfInstances>1</numberOfInstances>
-            <packageType>EASY_ESB</packageType>
-            <packageUri>http://synthesis.disim.univaq.it/cdgenerator/getcd/wp7/1381141603845/CD-shopentrance-marketingapplication.tar.gz</packageUri>
+            <packageType>TOMCAT</packageType>
+            <packageUri><!-- SET the WAR URL --></packageUri>
             <port>8180</port>
         </deployableServiceSpecs>
         <deployableServiceSpecs>
@@ -67,8 +67,8 @@
             <serviceType>SOAP</serviceType>
             <endpointName>CD-marketingapplication-instoretotem</endpointName>
             <numberOfInstances>1</numberOfInstances>
-            <packageType>EASY_ESB</packageType>
-            <packageUri>http://synthesis.disim.univaq.it/cdgenerator/getcd/wp7/1381141603896/CD-marketingapplication-instoretotem.tar.gz</packageUri>
+            <packageType>TOMCAT</packageType>
+            <packageUri><!-- SET the WAR URL --></packageUri>
             <port>8180</port>
         </deployableServiceSpecs>
         <deployableServiceSpecs>
@@ -81,8 +81,8 @@
             <serviceType>SOAP</serviceType>
             <endpointName>CD-marketingapplication-shoppingassistants</endpointName>
             <numberOfInstances>1</numberOfInstances>
-            <packageType>EASY_ESB</packageType>
-            <packageUri>http://synthesis.disim.univaq.it/cdgenerator/getcd/wp7/1381141603968/CD-marketingapplication-shoppingassistants.tar.gz</packageUri>
+            <packageType>TOMCAT</packageType>
+            <packageUri><!-- SET the WAR URL --></packageUri>
             <port>8180</port>
         </deployableServiceSpecs>
         <deployableServiceSpecs>
@@ -95,8 +95,8 @@
             <serviceType>SOAP</serviceType>
             <endpointName>CD-marketingapplication-marketingmanager</endpointName>
             <numberOfInstances>1</numberOfInstances>
-            <packageType>EASY_ESB</packageType>
-            <packageUri>http://synthesis.disim.univaq.it/cdgenerator/getcd/wp7/1381141604015/CD-marketingapplication-marketingmanager.tar.gz</packageUri>
+            <packageType>TOMCAT</packageType>
+            <packageUri><!-- SET the WAR URL --></packageUri>
             <port>8180</port>
         </deployableServiceSpecs>
         <deployableServiceSpecs>
@@ -109,8 +109,8 @@
             <serviceType>SOAP</serviceType>
             <endpointName>CD-selfcheckoutmachine-marketingapplication</endpointName>
             <numberOfInstances>1</numberOfInstances>
-            <packageType>EASY_ESB</packageType>
-            <packageUri>http://synthesis.disim.univaq.it/cdgenerator/getcd/wp7/1381141604129/CD-selfcheckoutmachine-marketingapplication.tar.gz</packageUri>
+            <packageType>TOMCAT</packageType>
+            <packageUri><!-- SET the WAR URL --></packageUri>
             <port>8180</port>
         </deployableServiceSpecs>
         <deployableServiceSpecs>
@@ -123,8 +123,8 @@
             <serviceType>SOAP</serviceType>
             <endpointName>CD-selfcheckoutmachine-smartcart</endpointName>
             <numberOfInstances>1</numberOfInstances>
-            <packageType>EASY_ESB</packageType>
-            <packageUri>http://synthesis.disim.univaq.it/cdgenerator/getcd/wp7/1381141604178/CD-selfcheckoutmachine-smartcart.tar.gz</packageUri>
+            <packageType>TOMCAT</packageType>
+            <packageUri><!-- SET the WAR URL --></packageUri>
             <port>8180</port>
         </deployableServiceSpecs>
         <deployableServiceSpecs>
@@ -137,8 +137,8 @@
             <serviceType>SOAP</serviceType>
             <endpointName>CD-marketingmanager-marketingapplication</endpointName>
             <numberOfInstances>1</numberOfInstances>
-            <packageType>EASY_ESB</packageType>
-            <packageUri>http://synthesis.disim.univaq.it/cdgenerator/getcd/wp7/1381141604250/CD-marketingmanager-marketingapplication.tar.gz</packageUri>
+            <packageType>TOMCAT</packageType>
+            <packageUri><!-- SET the WAR URL --></packageUri>
             <port>8180</port>
         </deployableServiceSpecs>
         <deployableServiceSpecs>
@@ -151,8 +151,8 @@
             <serviceType>SOAP</serviceType>
             <endpointName>CD-smartcart-selfcheckoutmachine</endpointName>
             <numberOfInstances>1</numberOfInstances>
-            <packageType>EASY_ESB</packageType>
-            <packageUri>http://synthesis.disim.univaq.it/cdgenerator/getcd/wp7/1381141604320/CD-smartcart-selfcheckoutmachine.tar.gz</packageUri>
+            <packageType>TOMCAT</packageType>
+            <packageUri><!-- SET the WAR URL --></packageUri>
             <port>8180</port>
         </deployableServiceSpecs>
         <deployableServiceSpecs>
@@ -165,8 +165,8 @@
             <serviceType>SOAP</serviceType>
             <endpointName>CD-marketingapplication-basiccommunicationdevice</endpointName>
             <numberOfInstances>1</numberOfInstances>
-            <packageType>EASY_ESB</packageType>
-            <packageUri>http://synthesis.disim.univaq.it/cdgenerator/getcd/wp7/1381141604056/CD-marketingapplication-basiccommunicationdevice.tar.gz</packageUri>
+            <packageType>TOMCAT</packageType>
+            <packageUri><!-- SET the WAR URL --></packageUri>
             <port>8180</port>
         </deployableServiceSpecs>
         <legacyServiceSpecs>
@@ -185,7 +185,7 @@
             <name>client</name>
             <roles>client</roles>
             <serviceType>SOAP</serviceType>
-            <nativeURIs>http://choreosdemo.disim.univaq.it/wp7/client/client?wsdl</nativeURIs>
+            <nativeURIs><!-- SET the WSDL URL --></nativeURIs>
         </legacyServiceSpecs>
         <legacyServiceSpecs>
             <dependencies>
@@ -195,7 +195,7 @@
             <name>shopentrance</name>
             <roles>shopentrance</roles>
             <serviceType>SOAP</serviceType>
-            <nativeURIs>http://choreosdemo.disim.univaq.it/wp7/shopentrance/shopentrance?wsdl</nativeURIs>
+            <nativeURIs><!-- SET the WSDL URL --></nativeURIs>
         </legacyServiceSpecs>
         <legacyServiceSpecs>
             <dependencies>
@@ -217,7 +217,7 @@
             <name>marketingapplication</name>
             <roles>marketingapplication</roles>
             <serviceType>SOAP</serviceType>
-            <nativeURIs>http://choreosdemo.disim.univaq.it/wp7/marketingapplication/marketingapplication?wsdl</nativeURIs>
+            <nativeURIs><!-- SET the WSDL URL --></nativeURIs>
         </legacyServiceSpecs>
         <legacyServiceSpecs>
             <dependencies>
@@ -231,7 +231,7 @@
             <name>selfcheckoutmachine</name>
             <roles>selfcheckoutmachine</roles>
             <serviceType>SOAP</serviceType>
-            <nativeURIs>http://choreosdemo.disim.univaq.it/wp7/selfcheckoutmachine/selfcheckoutmachine?wsdl</nativeURIs>
+            <nativeURIs><!-- SET the WSDL URL --></nativeURIs>
         </legacyServiceSpecs>
         <legacyServiceSpecs>
             <dependencies>
@@ -241,7 +241,7 @@
             <name>marketingmanager</name>
             <roles>marketingmanager</roles>
             <serviceType>SOAP</serviceType>
-            <nativeURIs>http://choreosdemo.disim.univaq.it/wp7/marketingmanager/marketingmanager?wsdl</nativeURIs>
+            <nativeURIs><!-- SET the WSDL URL --></nativeURIs>
         </legacyServiceSpecs>
         <legacyServiceSpecs>
             <dependencies>
@@ -251,25 +251,25 @@
             <name>smartcart</name>
             <roles>smartcart</roles>
             <serviceType>SOAP</serviceType>
-            <nativeURIs>http://choreosdemo.disim.univaq.it/wp7/smartcart/smartcart?wsdl</nativeURIs>
+            <nativeURIs><!-- SET the WSDL URL --></nativeURIs>
         </legacyServiceSpecs>
         <legacyServiceSpecs>
             <name>instoretotem</name>
             <roles>instoretotem</roles>
             <serviceType>SOAP</serviceType>
-            <nativeURIs>http://choreosdemo.disim.univaq.it/wp7/instoretotem/instoretotem?wsdl</nativeURIs>
+            <nativeURIs><!-- SET the WSDL URL --></nativeURIs>
         </legacyServiceSpecs>
         <legacyServiceSpecs>
             <name>shoppingassistants</name>
             <roles>shoppingassistants</roles>
             <serviceType>SOAP</serviceType>
-            <nativeURIs>http://choreosdemo.disim.univaq.it/wp7/shoppingassistantapp/shoppingassistantapp?wsdl</nativeURIs>
+            <nativeURIs><!-- SET the WSDL URL --></nativeURIs>
         </legacyServiceSpecs>
         <legacyServiceSpecs>
             <name>basiccommunicationdevice</name>
             <roles>basiccommunicationdevice</roles>
             <serviceType>SOAP</serviceType>
-            <nativeURIs>http://choreosdemo.disim.univaq.it/wp7/basiccommunicationdevice/basiccommunicationdevice?wsdl</nativeURIs>
+            <nativeURIs><!-- SET the WSDL URL --></nativeURIs>
         </legacyServiceSpecs>
     </choreographySpec>
     <id>1</id>
