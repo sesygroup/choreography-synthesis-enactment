@@ -118,14 +118,14 @@
 
           <h4>Fix the choreography specification</h4>
 
-          <p>Edit the file <span class="code code--inline">wp7-chorspec.xml</span> on the repo and replace properly the content of <span class="code code--inline">packageUri</span> and <span class="code code--inline">nativeURIs</span> properties.</p>
+          <p>Edit the file <span class="code code--inline">design-synthesis/choreography-deployment/in-store-marketing-and-sale-chor-spec.xml</span> on the repo and replace properly the content of <span class="code code--inline">packageUri</span> and <span class="code code--inline">nativeURIs</span> properties.</p>
 
           <h4>Invoke the Enactment Engine to enact the choreography</h4>
 
-          <p>Finally, in the same folder where is the <span class="code code--inline">wp7-chorspec.xml</span> file, trigger the following commands:</p>
+          <p>Finally, in the same folder where is the <span class="code code--inline">in-store-marketing-and-sale-chor-spec.xml</span> file, trigger the following commands:</p>
 
           <ul>
-            <li><span class="code code--inline">$curl -X POST -d @wp7-chorspec.xml http://0.0.0.0:9100/enactmentengine/chors --header "Content-Type:application/xml"</span></li>
+            <li><span class="code code--inline">$curl -X POST -d @in-store-marketing-and-sale-chor-spec.xml http://0.0.0.0:9100/enactmentengine/chors --header "Content-Type:application/xml"</span></li>
             <li><span class="code code--inline">$curl -X POST http://0.0.0.0:9100/enactmentengine/chors/1/deployment</span></li>
           </ul>
 
