@@ -93,7 +93,7 @@
             <li>Uses Ubuntu 12.04.</li> 
             <li>Is accessible through <a href="http://www.integrade.org.br/ssh-without-password">SSH using a key requiring no password</a>.</li>
             <li>Allows sudo without typing a password: type <span class="code code--inline">$sudo visudo</span> and add the line <span class="code code--inline">[user] ALL = NOPASSWD: ALL</span> at the end (change <span class="code code--inline">[user]</span> by the actual user).</li>
-            <li>Has a synchronized clock: <span class="code code--inline">#ntpdate ccsl.ime.usp.br</span>.</li>
+            <li>Has an adjusted clock: <span class="code code--inline">#ntpdate ccsl.ime.usp.br</span>.</li>
             <li>To bootstrap it (i.e. install Chef) by running the <span class="code code--inline">org.ow2.choreos.deployment.nodes.cm.BootstrapFixedMachines</span> class.
           </ul>
 
