@@ -80,9 +80,54 @@
         </section>
         <section class="js-section">
           <h3 class="section__title">Deployment and Enactment</h3>
-          <p>The folder <span class="code code--inline">deployment-enactment</span> contains the enactment engine used for deploying the synthesized coordination delegates and for enacting the choreography.</p>
-          <p>Malis percipitur an pro. Pro aperiam persequeris at, at sonet sensibus mei, id mea postulant definiebas concludaturque. Id qui malis abhorreant, mazim melius quo et. At eam altera dolorum, case dicant lobortis ius te, ad vel affert oportere reprehendunt. Quo no verterem deseruisse, mea brute postea te, ne per tacimates suavitate vituperatoribus.</p>
-          <p>Malis percipitur an pro. Pro aperiam persequeris at, at sonet sensibus mei, id mea postulant definiebas concludaturque. Id qui malis abhorreant, mazim melius quo et. At eam altera dolorum, case dicant lobortis ius te, ad vel affert oportere reprehendunt. Quo no verterem deseruisse, mea brute postea te, ne per tacimates suavitate vituperatoribus.</p>
+
+          <p>The folder <span class="code code--inline">deployment-enactment</span> contains the artifacts necessary for deploying the synthesized coordination delegates and enacting the choreography.</p>
+
+          <p>We will provide here the basic instructions for choreography enactment, but more detailed instructions can be found at the <a href="http://www.ime.usp.br/%7Eleofl/choreos/doc/ee_user_guide.pdf">CHOReOS Enactment Engine User Guide.</a></p>
+
+          <h4>Setup your target node</h4>
+
+          <p>Run a virtual machine on your localhost. Be sure the VM:</p>
+
+          <ul>
+            <li>Uses Ubuntu 12.04.</li> 
+            <li>Is accessible through <a href="http://www.integrade.org.br/ssh-without-password">SSH using a key requiring no password</a>.</li>
+            <li>Allows sudo without typing a password: type <span class="code code--inline">$sudo visudo</span> and add the line <span class="code code--inline">[user] ALL = NOPASSWD: ALL</span> at the end (change <span class="code code--inline">[user]</span> by the actual user).</li>
+            <li>Has a synchronized clock: <span class="code code--inline">#ntpdate ccsl.ime.usp.br</span>.</li>
+            <li>To bootstrap it (i.e. install Chef) by running the <span class="code code--inline">org.ow2.choreos.deployment.nodes.cm.BootstrapFixedMachines</span> class.
+          </ul>
+
+
+          <h4>Setup the Enactment Engine</h4>
+
+          <p>Requirements for your localhost: Java 6 or later, Maven 3.</p>
+
+          <p>Download and extract the EE binary from <a href="http://ccsl.ime.usp.br/files/EnactmentEngine-2014-03-03.zip">here</a>.</p>
+
+          <p>Move the files on the <span class="code code--inline">ee-conf</span> folder of this repo to the <span class="code code--inline">conf</span> folder of EE.</p>
+
+          <p>Launch the EE: <span class="code code--inline">$mvn exec:java</span>.</p>
+
+
+          <h4>Host CD packages</h4>
+
+          <p>The WAR files of the generated coordination delegates must be accessible through some URL. For achieve this, you can, for example, host them on Dropbox.</p>
+
+
+          <h4>Fix the choreography specification</h4>
+
+          <p>Edit the file <span class="code code--inline">wp7-chorspec.xml</span> on the repo and replace properly the content of <span class="code code--inline">packageUri</span> and nativeURIs</span> properties.</p>
+
+          <h4>Invoke the Enactment Engine to enact the choreography</h4>
+
+          <p>Finally, in the same folder where is the <span class="code code--inline">wp7-chorspec.xml</span> file, trigger the following commands:</p>
+
+          <ul>
+            <li><span class="code code--inline">$curl -X POST -d @wp7-chorspec.xml http://0.0.0.0:9100/enactmentengine/chors --header "Content-Type:application/xml"</span></li>
+            <li><span class="code code--inline">$curl -X POST http://0.0.0.0:9100/enactmentengine/chors/1/deployment</span></li>
+          </ul>
+
+
           <hr />
         </section>
         <section class="js-section">
