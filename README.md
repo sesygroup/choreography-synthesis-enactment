@@ -16,8 +16,8 @@ The replication package can be downloaded [here](https://github.com/sesygroup/ch
 
 | Folder                | Description  |
 |-----------------------|--------------|
-|  deployment-enactment | contains the enactment engine used for `deploying` the synthesized coordination delegates and for `enacting` the choreography |
 |  design-synthesis     | contains the BPMN2 `choreography` specification, the image of the choreography `architecture`, the choreography `deployment description`, the set of synthesized `coordination delegates`, and the set of selected `existing services` |
+|  deployment-enactment | contains the artifacts necessary for `deploying` the synthesized coordination delegates and `enacting` the choreography |
 |  execution-monitoring | contains the artefacts used to `execute` the experiment, the `monitor` used to analyze the extracted data, and the set of `monitoring data` |
 
 
@@ -25,17 +25,16 @@ The replication package can be downloaded [here](https://github.com/sesygroup/ch
 choreography-synthesis-enactment
 |   pom.xml 'build all the projects'
 |
-+---deployment-enactment
 +---design-synthesis
 |   +---choreography
-|   |       In-store Marketing and Sale - choreography specification.bpmn2
-|   |       In-store Marketing and Sale - choreography specification.png
+|   |      In-store Marketing and Sale - choreography specification.bpmn2
+|   |      In-store Marketing and Sale - choreography specification.png
 |   |
 |   +---choreography-architecture
-|   |       In-store Marketing and Sale - architecture.png
+|   |      In-store Marketing and Sale - architecture.png
 |   |
 |   +---choreography-deployment
-|   |       In-store Marketing and Sale - choreography deployment.xml
+|   |      in-store-marketing-and-sale-chor-spec.xml
 |   |
 |   +---coordination-delegates
 |   |   |   pom.xml 'build the coordination delegates'
@@ -67,6 +66,12 @@ choreography-synthesis-enactment
 |       +---shoppingassistantapp
 |       +---smartcart
 |
++---deployment-enactment
+|      clouds.properties
+|      clouds.properties.experiment
+|      ee.properties
+|      qos_mgmt.properties
+|    
 \---execution-monitoring
     |   pom.xml 'build the monitor and the projects for executing the choreography'
     |
@@ -74,34 +79,34 @@ choreography-synthesis-enactment
     +---client-monitor
     +---execution-results 'extracted monitoring data (n.b. use the monitor to show the extracted data)'
     |   +---running-01
-    |   |       MasterContent.xml
+    |   |      MasterContent.xml
     |   |
     |   +---running-02
-    |   |       MasterContent.xml
+    |   |      MasterContent.xml
     |   |
     |   +---running-03
-    |   |       MasterContent.xml
+    |   |      MasterContent.xml
     |   |
     |   +---running-04
-    |   |       MasterContent.xml
+    |   |      MasterContent.xml
     |   |
     |   +---running-05
-    |   |       MasterContent.xml
+    |   |      MasterContent.xml
     |   |
     |   +---running-06
-    |   |       MasterContent.xml
+    |   |      MasterContent.xml
     |   |
     |   +---running-07
-    |   |       MasterContent.xml
+    |   |      MasterContent.xml
     |   |
     |   +---running-08
-    |   |       MasterContent.xml
+    |   |      MasterContent.xml
     |   |
     |   +---running-09
-    |   |       MasterContent.xml
+    |   |      MasterContent.xml
     |   |
     |   \---running-10
-    |           MasterContent.xml
+    |          MasterContent.xml
     |
     +---retrieve-monitoring-data
     |
