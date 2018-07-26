@@ -366,21 +366,6 @@ table td:first-child {
    border-radius: 50%;
 }
 
-.team .overlay {
-    background: #1C1D21;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    top: 0;
-    opacity: 0;
-    -webkit-transition: 0.2s opacity;
-    transition: 0.2s opacity;
-}
-
-.team:hover .overlay {
-    opacity: 0.8;
-}
 
 .team .team-content {
     text-align: center;
@@ -409,22 +394,24 @@ table td:first-child {
     color: #6195FF;
 }
 
+.team:hover .team-social a{
+  color: #FFF;
+}
+
 .team .team-social {
     position: absolute;
     top: 0;
     right: 0;
-    opacity: 0;
     -webkit-transition: 0.2s opacity;
     transition: 0.2s opacity;
 }
 
 .team .team-social a {
+    vertical-align: middle;
     display: block;
-    line-height: 50px;
-    width: 50px;
+    font-size: 150%;
     text-align: center;
-    background-color: #6195FF;
-    color: #FFF;
+    color: var(--accent-color);
 }
 
 .team .team-social a:hover, .team .team-social a:focus {

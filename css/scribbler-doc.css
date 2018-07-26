@@ -59,19 +59,24 @@ html, body {
 }
 
 .doc__nav ul.fixed {
-  position: fixed;
-  top: 2rem;
+   position: -webkit-sticky;  /* required for Safari*/
+    position: sticky;
+    top: 3rem; /* required as well.*/
+    position: sticky;
 }
 
-.doc__nav li:hover {
+.doc__nav li a:hover {
   color: var(--primary-color-light);
   cursor: pointer;
   transition: color .3s ease-in-out;
 }
 
 .doc__nav .selected {
-  color: var(--accent-color);
   position: relative;
+}
+
+.doc__nav .selected a {
+  color: var(--accent-color);
 }
 
 .doc__nav .selected:after {

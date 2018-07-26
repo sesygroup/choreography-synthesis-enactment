@@ -1,89 +1,90 @@
 <!doctype html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Choreography Synthesis and Enactment at Work documentation page for replication package</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:300,400,600,700,800,900" rel="stylesheet">
-    <link rel="stylesheet" href="scribbler-global.css">
-    <link rel="stylesheet" href="scribbler-doc.css">
-    <link rel="author" href="humans.txt">
-  </head>
-  <body>
-    <div class="doc__bg"></div>
-    <nav class="header">
-      <h1 class="logo">Choreography Synthesis and Enactment at Work <span class="logo__thin">Doc</span></h1>
-      <ul class="menu">
-        <div class="menu__item toggle"><span></span></div>
-        <li class="menu__item"><a href="https://github.com/sesygroup/choreography-synthesis-enactment" class="link link--dark"><i class="fa fa-github"></i> Github</a></li>
-        <li class="menu__item"><a href="index.html" class="link link--dark"><i class="fa fa-home"></i> Home</a></li>
-      </ul>
-    </nav>
-    <div class="wrapper">
-      <aside class="doc__nav">
-        <ul>
-          <li class="js-btn selected">Get Started</li>
-          <li class="js-btn">Design and Synthesis</li>
-          <li class="js-btn">Deployment and Enactment</li>
-          <li class="js-btn">Execution and Monitoring</li>
-        </ul>
-      </aside>
-      <article class="doc__content">
-        <section class="js-section">
-          <h3 class="section__title">Get Started</h3>
-          <p>Learn how to use the replication package.</p>
-          <h3 class="section__title">Installation</h3>
-          <p>Clone the replication package from <a href="https://github.com/sesygroup/choreography-synthesis-enactment" class="link link--light">Github</a> and build everything.</p>
-          <div class="code__block code__block--notabs">
-            <pre class="code code--block">
-              <code>
-                $ git clone https://github.com/sesygroup/choreography-synthesis-enactment.git choreography-synthesis-enactment
-                $ cd choreography-synthesis-enactment
-                $ mvn clean install
-              </code>
-            </pre>
-          </div>
-        </section>
-        <section class="js-section">
-          <h3 class="section__title">Design and Synthesis</h3>
-          <p>The folder <span class="code code--inline">design-synthesis</span> contains the artefacts of the development activities covering the choreography design and the code synthesis.</p>
-          <table id="customers">
-            <tr>
-              <th>Folder</th>
-              <th>Description</th>
-            </tr>
-            <tr>
-              <td>choreography</td>
-              <td>Contains the BPMN2 choreography diagram of the In-store Marketing and Sale use case.</td>
-            </tr>
-            <tr>
-              <td>choreography-architecture</td>
-              <td>Contains the graphical representation of Choreography Architecture Description model.</td>
-            </tr>
-            <tr>
-              <td>choreography-deployment</td>
-              <td>Contains the Choreography Deployment Description model.</td>
-            </tr>
-            <tr>
-              <td>coordination-delegates</td>
-              <td>Contains the set of Coordination Delegates. Before building them, fix the pom file with the URL and the port of <span class="code code--inline">syncope</span> (monitor). Execute <span class="code code--inline">mvn clean verify</span> to apply the modifications, a war folder containing the compiled CDs is created.</td>
-            </tr>
-            <tr>
-              <td>existing-services</td>
-              <td>Contains the set of business services. Before building them, fix the pom file with the number of running. Execute <span class="code code--inline">mvn clean verify</span> to apply the modifications, a war folder containing the compiled services is created. Deploy these services where you want.</td>
-            </tr>
-          </table>
-          <p>In-store Marketing and Sale BPMN2 choreography diagram</p><p><img class="img-responsive" src="./img/choreography.png" alt="In-store Marketing and Sale use case"></p>
-          <hr />
-        </section>
-        <section class="js-section">
-          <h3 class="section__title">Deployment and Enactment</h3>
+<html lang="en">
+   <head>
+      <meta charset="utf-8">
+      <meta name="description" content="Choreography Synthesis and Enactment at Work documentation">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <title>Choreography Synthesis and Enactment at Work documentation page for replication package</title>
+      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito+Sans:300,400,600,700,800,900">
+      <link rel="stylesheet" href="css/scribbler-global.css">
+      <link rel="stylesheet" href="css/scribbler-doc.css">
+   </head>
+   <body>
+      <div class="doc__bg"></div>
+      <nav class="header">
+         <h1 class="logo">Choreography Synthesis and Enactment at Work <span class="logo__thin">Doc</span></h1>
+         <ul class="menu">
+            <div class="menu__item toggle"><span></span></div>
+            <li class="menu__item"><a href="https://github.com/sesygroup/choreography-synthesis-enactment" class="link link--dark"><i class="fab fa-github"></i> Github</a></li>
+            <li class="menu__item"><a href="index.html" class="link link--dark"><i class="fas fa-home"></i> Home</a></li>
+         </ul>
+      </nav>
+      <div class="wrapper">
+         <aside class="doc__nav">
+            <ul class="fixed">
+               <li class="selected"><a href ="#get_started">Get Started</a></li>
+               <li><a href ="#design_synthesis">Design and Synthesis</a></li>
+               <li><a href ="#deployment_enactment">Deployment and Enactment</a></li>
+               <li><a href ="#execution_monitoring">Execution and Monitoring</a></li>
+            </ul>
+         </aside>
+         <article class="doc__content">
+            <section id="get_started" >
+               <h3 class="section__title">Get Started</h3>
+               <p>Learn how to use the replication package.</p>
+               <h3 class="section__title">Installation</h3>
+               <p>Clone the replication package from <a target="_blank" href="https://github.com/sesygroup/choreography-synthesis-enactment" class="link link--light">Github</a> and build everything.</p>
+               <div class="code__block code__block--notabs">
+                  <pre class="code code--block">
+                     <code>
+                       git clone https://github.com/sesygroup/choreography-synthesis-enactment.git choreography-synthesis-enactment
+                       cd choreography-synthesis-enactment
+                       mvn clean install
+                     </code>
+                  </pre>
+               </div>
+               <hr />
+            </section>
+            <section id="design_synthesis">
+               <h3 class="section__title">Design and Synthesis</h3>
+               <p>The folder <span class="code code--inline">design-synthesis</span> contains the artefacts of the development activities covering the choreography design and the code synthesis.</p>
+               <table id="customers">
+                  <tr>
+                     <th>Folder</th>
+                     <th>Description</th>
+                  </tr>
+                  <tr>
+                     <td>choreography</td>
+                     <td>Contains the BPMN2 choreography diagram of the In-store Marketing and Sale use case.</td>
+                  </tr>
+                  <tr>
+                     <td>choreography-architecture</td>
+                     <td>Contains the graphical representation of Choreography Architecture Description model.</td>
+                  </tr>
+                  <tr>
+                     <td>choreography-deployment</td>
+                     <td>Contains the Choreography Deployment Description model.</td>
+                  </tr>
+                  <tr>
+                     <td>coordination-delegates</td>
+                     <td>Contains the set of Coordination Delegates. Before building them, fix the pom file with the URL and the port of <span class="code code--inline">syncope</span> (monitor). Execute <span class="code code--inline">mvn clean verify</span> to apply the modifications, a war folder containing the compiled CDs is created.</td>
+                  </tr>
+                  <tr>
+                     <td>existing-services</td>
+                     <td>Contains the set of business services. Before building them, fix the pom file with the number of running. Execute <span class="code code--inline">mvn clean verify</span> to apply the modifications, a war folder containing the compiled services is created. Deploy these services where you want.</td>
+                  </tr>
+               </table>
+               <p>In-store Marketing and Sale BPMN2 choreography diagram</p>
+               <p><img class="img-responsive" src="./img/choreography.png" alt="In-store Marketing and Sale use case"></p>
+               <hr />
+            </section>
+            <section id="deployment_enactment">
+               <h3 class="section__title">Deployment and Enactment</h3>
 
           <p>The folder <span class="code code--inline">deployment-enactment</span> contains the artifacts necessary for deploying the synthesized coordination delegates and enacting the choreography.</p>
 
-          <p>We will provide here the basic instructions for choreography enactment, but more detailed instructions can be found at the <a href="http://www.ime.usp.br/%7Eleofl/choreos/doc/ee_user_guide.pdf">CHOReOS Enactment Engine User Guide.</a></p>
+          <p>We will provide here the basic instructions for choreography enactment, but more detailed instructions can be found at the <a target="_blank" href="http://www.ime.usp.br/%7Eleofl/choreos/doc/ee_user_guide.pdf" class="link link--light">Enactment Engine User Guide.</a></p>
 
           <h4>Setup your target node</h4>
 
@@ -91,8 +92,8 @@
 
           <ul>
             <li>Uses Ubuntu 12.04.</li> 
-            <li>Is accessible through <a href="http://www.integrade.org.br/ssh-without-password">SSH using a key requiring no password</a>.</li>
-            <li>Allows sudo without typing a password: type <span class="code code--inline">$sudo visudo</span> and add the line <span class="code code--inline">[user] ALL = NOPASSWD: ALL</span> at the end (change <span class="code code--inline">[user]</span> by the actual user).</li>
+            <li>Is accessible through <a target="_blank" href="http://www.integrade.org.br/ssh-without-password" class="link link--light">SSH using a key requiring no password</a>.</li>
+            <li>Allows sudo without typing a password: type <span class="code code--inline">sudo visudo</span> and add the line <span class="code code--inline">[user] ALL = NOPASSWD: ALL</span> at the end (change <span class="code code--inline">[user]</span> by the actual user).</li>
             <li>Has an adjusted clock: <span class="code code--inline">#ntpdate ccsl.ime.usp.br</span>.</li>
             <li>It's bootstrapped (i.e. has Chef installed) by running the <span class="code code--inline">org.ow2.choreos.deployment.nodes.cm.BootstrapFixedMachines</span> class.
           </ul>
@@ -102,13 +103,13 @@
 
           <p>Requirements for your localhost: Java 6 or later, Maven 3.</p>
 
-          <p>Download and extract the EE binary from <a href="http://ccsl.ime.usp.br/files/EnactmentEngine-2014-03-03.zip">here</a>.</p>
+          <p>Download and extract the EE binary from <a target="_blank" href="http://ccsl.ime.usp.br/files/EnactmentEngine-2014-03-03.zip" class="link link--light">here</a>.</p>
 
           <p>Move the files on the <span class="code code--inline">deployment-enactment/ee-conf</span> folder of this repo to the <span class="code code--inline">conf</span> folder of EE.</p>
 
           <p>Edit the file <span class="code code--inline">conf/clouds.properties</span> according to your VM properties. You can consider as example the <span class="code code--inline">clouds.properties.experiment</span> file that was used on our experiments.<p>
 
-          <p>Launch the EE: <span class="code code--inline">$mvn exec:java</span>.</p>
+          <p>Launch the EE: <span class="code code--inline">mvn exec:java</span>.</p>
 
 
           <h4>Host CD packages</h4>
@@ -125,47 +126,47 @@
           <p>Finally, in the same folder where is the <span class="code code--inline">in-store-marketing-and-sale-chor-spec.xml</span> file, trigger the following commands:</p>
 
           <ul>
-            <li><span class="code code--inline">$curl -X POST -d @in-store-marketing-and-sale-chor-spec.xml http://0.0.0.0:9100/enactmentengine/chors --header "Content-Type:application/xml"</span></li>
-            <li><span class="code code--inline">$curl -X POST http://0.0.0.0:9100/enactmentengine/chors/1/deployment</span></li>
+            <li><span class="code code--inline">curl -X POST -d @in-store-marketing-and-sale-chor-spec.xml http://0.0.0.0:9100/enactmentengine/chors --header "Content-Type:application/xml"</span></li>
+            <li><span class="code code--inline">curl -X POST http://0.0.0.0:9100/enactmentengine/chors/1/deployment</span></li>
           </ul>
 
 
           <hr />
-        </section>
-        <section class="js-section">
-          <h3 class="section__title">Execution and Monitoring</h3>
-          <p>The folder <span class="code code--inline">execution-monitoring</span> contains the software artefacts required for executing and for monitoring the choreography.</p>
-          <table id="customers">
-            <tr>
-              <th>Folder</th>
-              <th>Description</th>
-            </tr>
-            <tr>
-              <td>client-monitor</td>
-              <td>It is a syncope connetor. Before building it, fix the pom file with the URL and the port of <span class="code code--inline">syncope</span> (monitor). This changing requires a rebuilding of the entire repository, so execute <span class="code code--inline">mvn clean install</span> in the folder <span class="code code--inline">choreography-synthesis-enactment</span>.</td>
-            </tr>
-            <tr>
-              <td>choreography-instance-execution</td>
-              <td>Creates new choreography instances. Before creating choreography instances, fix the pom file with the URL and the port of <span class="code code--inline">client</span> service, and with the number of instances that you want run. Execute <span class="code code--inline">mvn clean verify</span> to apply the modifications and then use <span class="code code--inline">mvn exec:java</span> to create choreography instances.</td>
-            </tr>
-            <tr>
-              <td>retrieve-monitoring-data</td>
-              <td>Use when all choreography instances end, to send to the monitor all the monitoring data. Before sending monitoring data, make sure that syncope is in running, and fix the pom file with the URL and the port of business services and CDs. Execute <span class="code code--inline">mvn clean verify</span> to apply the modifications and then use <span class="code code--inline">mvn exec:java</span> to send monitoring data.</td>
-            </tr>
-            <tr>
-              <td>syncope</td>
-              <td>It is the monitor. Startup the monitor with <span class="code code--inline">mvn -Pembedded</span> in the folder <span class="code code--inline">enduser</span>. When the monitor is in execution go to <span class="code code--inline">http://localhost:9080/syncope-console</span> to display it, provide the credential to access it <span class="code code--inline">username: admin</span> and <span class="code code--inline">password: password</span>, and go to <span class="code code--inline">Extensions</span> and then <span class="code code--inline">Choreographies</span> to show the set of monitored choreographies. When the monitor shutdowns all the monitoring data are erased, so to backup them execute <span class="code code--inline">curl -X GET -u admin:password -o MasterContent.xml http://localhost:9080/syncope/rest/configurations/stream</span>.</td>
-            </tr>
-            <tr>
-              <td>execution-results</td>
-              <td>Contains all the monitoring data about the 10 runnings of the In-store Marketing and Sale choreography. To show the data make sure that syncope is not in running, and substitute the syncope MasterContent.xml with one of these. To substitute the MasterContent.xml execute <span class="code code--inline">cp running-[NUM_RUNNING]/MasterContent.xml ../syncope/core/src/test/resources/domains/</span>. Execute <span class="code code--inline">mvn clean install</span> in the root folder of syncope to apply the modifications and then startup the monitor. </td>
-            </tr>
-          </table>
-        </section>
-      </article>
-    </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-    <script>hljs.initHighlightingOnLoad();</script>
-    <script src="scribbler.js"></script>
-  </body>
+            </section>
+            <section id="execution_monitoring">
+               <h3 class="section__title">Execution and Monitoring</h3>
+               <p>The folder <span class="code code--inline">execution-monitoring</span> contains the software artefacts required for executing and for monitoring the choreography.</p>
+               <table id="customers">
+                  <tr>
+                     <th>Folder</th>
+                     <th>Description</th>
+                  </tr>
+                  <tr>
+                     <td>client-monitor</td>
+                     <td>It is a syncope connetor. Before building it, fix the pom file with the URL and the port of <span class="code code--inline">syncope</span> (monitor). This changing requires a rebuilding of the entire repository, so execute <span class="code code--inline">mvn clean install</span> in the folder <span class="code code--inline">choreography-synthesis-enactment</span>.</td>
+                  </tr>
+                  <tr>
+                     <td>choreography-instance-execution</td>
+                     <td>Creates new choreography instances. Before creating choreography instances, fix the pom file with the URL and the port of <span class="code code--inline">client</span> service, and with the number of instances that you want run. Execute <span class="code code--inline">mvn clean verify</span> to apply the modifications and then use <span class="code code--inline">mvn exec:java</span> to create choreography instances.</td>
+                  </tr>
+                  <tr>
+                     <td>retrieve-monitoring-data</td>
+                     <td>Use when all choreography instances end, to send to the monitor all the monitoring data. Before sending monitoring data, make sure that syncope is in running, and fix the pom file with the URL and the port of business services and CDs. Execute <span class="code code--inline">mvn clean verify</span> to apply the modifications and then use <span class="code code--inline">mvn exec:java</span> to send monitoring data.</td>
+                  </tr>
+                  <tr>
+                     <td>syncope</td>
+                     <td>It is the monitor. Startup the monitor with <span class="code code--inline">mvn -Pembedded</span> in the folder <span class="code code--inline">enduser</span>. When the monitor is in execution go to <span class="code code--inline">http://localhost:9080/syncope-console</span> to display it, provide the credential to access it <span class="code code--inline">username: admin</span> and <span class="code code--inline">password: password</span>, and go to <span class="code code--inline">Extensions</span> and then <span class="code code--inline">Choreographies</span> to show the set of monitored choreographies. When the monitor shutdowns all the monitoring data are erased, so to backup them execute <span class="code code--inline">curl -X GET -u admin:password -o MasterContent.xml http://localhost:9080/syncope/rest/configurations/stream</span>.</td>
+                  </tr>
+                  <tr>
+                     <td>execution-results</td>
+                     <td>Contains all the monitoring data about the 10 runnings of the In-store Marketing and Sale choreography. To show the data make sure that syncope is not in running, and substitute the syncope MasterContent.xml with one of these. To substitute the MasterContent.xml execute <span class="code code--inline">cp running-[NUM_RUNNING]/MasterContent.xml ../syncope/core/src/test/resources/domains/</span>. Execute <span class="code code--inline">mvn clean install</span> in the root folder of syncope to apply the modifications and then startup the monitor. </td>
+                  </tr>
+               </table>
+            </section>
+         </article>
+      </div>
+      <script src="js/jquery-3.3.1.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+      <script src="js/scribbler-doc.js"></script>
+   </body>
 </html>
