@@ -13,7 +13,6 @@ $ cd choreography-synthesis-enactment
 choreography-synthesis-enactment
 | pom.xml 'build all the projects'
 |
-+-deployment-enactment
 +-design-synthesis
 |   |
 |   +---choreography
@@ -21,6 +20,8 @@ choreography-synthesis-enactment
 |   +---choreography-deployment
 |   +---coordination-delegates
 |   +---existing-services
+|
++-deployment-enactment
 |
 +-execution-monitoring
 |    |

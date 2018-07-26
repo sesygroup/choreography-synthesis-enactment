@@ -33,7 +33,9 @@
             <section id="get_started" >
                <h3 class="section__title">Get Started</h3>
                <p>Learn how to use the replication package.</p>
-               <h3 class="section__title">Installation</h3>
+               <h4 class="section__title">Requirements</h4>
+               <p>Java 6 or later and Maven 3.</p>
+               <h4 class="section__title">Installation</h4>
                <p>Clone the replication package from <a target="_blank" href="https://github.com/sesygroup/choreography-synthesis-enactment" class="link link--light">Github</a> and build everything.</p>
                <div class="code__block code__block--notabs">
                   <pre class="code code--block">
@@ -64,11 +66,11 @@
                   </tr>
                   <tr>
                      <td>choreography-deployment</td>
-                     <td>Contains the Choreography Deployment Description model.</td>
+                     <td>Contains the Choreography Deployment Description model. Before deploying and enacting the choreography, fix the choreography deployment by replaceing the content of <span class="code code--inline">packageUri</span> and <span class="code code--inline">nativeURIs</span>.</td>
                   </tr>
                   <tr>
                      <td>coordination-delegates</td>
-                     <td>Contains the set of Coordination Delegates. Before building them, fix the pom file with the URL and the port of <span class="code code--inline">syncope</span> (monitor). Execute <span class="code code--inline">mvn clean verify</span> to apply the modifications, a war folder containing the compiled CDs is created.</td>
+                     <td>Contains the set of Coordination Delegates. Before building them, fix the pom file with the URL and the port of <span class="code code--inline">syncope</span> (monitor). Execute <span class="code code--inline">mvn clean verify</span> to apply the modifications, a war folder containing the compiled CDs is created. Before deploying and enacting the choreography all the .war files must be accessible through some URL, e.g., host them on Dropbox</td>
                   </tr>
                   <tr>
                      <td>existing-services</td>
@@ -101,25 +103,14 @@
 
           <h4>Setup the Enactment Engine</h4>
 
-          <p>Requirements for your localhost: Java 6 or later, Maven 3.</p>
-
           <p>Download and extract the EE binary from <a target="_blank" href="http://ccsl.ime.usp.br/files/EnactmentEngine-2014-03-03.zip" class="link link--light">here</a>.</p>
 
-          <p>Move the files on the <span class="code code--inline">deployment-enactment/ee-conf</span> folder of this repo to the <span class="code code--inline">conf</span> folder of EE.</p>
+          <p>Move the files on the <span class="code code--inline">deployment-enactment</span> folder of this repo to the <span class="code code--inline">conf</span> folder of EE.</p>
 
           <p>Edit the file <span class="code code--inline">conf/clouds.properties</span> according to your VM properties. You can consider as example the <span class="code code--inline">clouds.properties.experiment</span> file that was used on our experiments.<p>
 
           <p>Launch the EE: <span class="code code--inline">mvn exec:java</span>.</p>
 
-
-          <h4>Host CD packages</h4>
-
-          <p>The WAR files of the generated coordination delegates must be accessible through some URL. For achieve this, you can, for example, host them on Dropbox.</p>
-
-
-          <h4>Fix the choreography specification</h4>
-
-          <p>Edit the file <span class="code code--inline">design-synthesis/choreography-deployment/in-store-marketing-and-sale-chor-spec.xml</span> on the repo and replace properly the content of <span class="code code--inline">packageUri</span> and <span class="code code--inline">nativeURIs</span> properties.</p>
 
           <h4>Invoke the Enactment Engine to enact the choreography</h4>
 
