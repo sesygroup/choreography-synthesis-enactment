@@ -6,6 +6,10 @@
                 <serviceSpecName>selfcheckoutmachine</serviceSpecName>
                 <serviceSpecRole>selfcheckoutmachine</serviceSpecRole>
             </dependencies>
+            <dependencies>
+                <serviceSpecName>CD-selfcheckoutmachine-smartcart</serviceSpecName>
+                <serviceSpecRole>smartcart</serviceSpecRole>
+            </dependencies>
             <name>CD-client-selfcheckoutmachine</name>
             <roles>selfcheckoutmachine</roles>
             <serviceType>SOAP</serviceType>
@@ -19,6 +23,14 @@
             <dependencies>
                 <serviceSpecName>shopentrance</serviceSpecName>
                 <serviceSpecRole>shopentrance</serviceSpecRole>
+            </dependencies>
+            <dependencies>
+                <serviceSpecName>CD-client-smartcart</serviceSpecName>
+                <serviceSpecRole>smartcart</serviceSpecRole>
+            </dependencies>
+            <dependencies>
+                <serviceSpecName>CD-shopentrance-marketingapplication</serviceSpecName>
+                <serviceSpecRole>marketingapplication</serviceSpecRole>
             </dependencies>
             <name>CD-client-shopentrance</name>
             <roles>shopentrance</roles>
@@ -34,6 +46,14 @@
                 <serviceSpecName>smartcart</serviceSpecName>
                 <serviceSpecRole>smartcart</serviceSpecRole>
             </dependencies>
+            <dependencies>
+                <serviceSpecName>CD-client-selfcheckoutmachine</serviceSpecName>
+                <serviceSpecRole>selfcheckoutmachine</serviceSpecRole>
+            </dependencies>
+            <dependencies>
+                <serviceSpecName>CD-marketingapplication-marketingmanager</serviceSpecName>
+                <serviceSpecRole>marketingmanager</serviceSpecRole>
+            </dependencies>
             <name>CD-client-smartcart</name>
             <roles>smartcart</roles>
             <serviceType>SOAP</serviceType>
@@ -47,6 +67,18 @@
             <dependencies>
                 <serviceSpecName>marketingapplication</serviceSpecName>
                 <serviceSpecRole>marketingapplication</serviceSpecRole>
+            </dependencies>
+            <dependencies>
+                <serviceSpecName>CD-client-smartcart</serviceSpecName>
+                <serviceSpecRole>smartcart</serviceSpecRole>
+            </dependencies>
+            <dependencies>
+                <serviceSpecName>CD-client-selfcheckoutmachine</serviceSpecName>
+                <serviceSpecRole>selfcheckoutmachine</serviceSpecRole>
+            </dependencies>
+            <dependencies>
+                <serviceSpecName>CD-marketingapplication-marketingmanager</serviceSpecName>
+                <serviceSpecRole>marketingmanager</serviceSpecRole>
             </dependencies>
             <name>CD-shopentrance-marketingapplication</name>
             <roles>marketingapplication</roles>
@@ -62,6 +94,10 @@
                 <serviceSpecName>instoretotem</serviceSpecName>
                 <serviceSpecRole>instoretotem</serviceSpecRole>
             </dependencies>
+            <dependencies>
+                <serviceSpecName>CD-marketingapplication-marketingmanager</serviceSpecName>
+                <serviceSpecRole>marketingmanager</serviceSpecRole>
+            </dependencies>
             <name>CD-marketingapplication-instoretotem</name>
             <roles>instoretotem</roles>
             <serviceType>SOAP</serviceType>
@@ -76,6 +112,10 @@
                 <serviceSpecName>shoppingassistants</serviceSpecName>
                 <serviceSpecRole>shoppingassistants</serviceSpecRole>
             </dependencies>
+            <dependencies>
+                <serviceSpecName>CD-marketingapplication-marketingmanager</serviceSpecName>
+                <serviceSpecRole>marketingmanager</serviceSpecRole>
+            </dependencies>
             <name>CD-marketingapplication-shoppingassistants</name>
             <roles>shoppingassistants</roles>
             <serviceType>SOAP</serviceType>
@@ -89,6 +129,10 @@
             <dependencies>
                 <serviceSpecName>marketingmanager</serviceSpecName>
                 <serviceSpecRole>marketingmanager</serviceSpecRole>
+            </dependencies>
+            <dependencies>
+                <serviceSpecName>CD-marketingmanger-marketingapplication</serviceSpecName>
+                <serviceSpecRole>marketingapplication</serviceSpecRole>
             </dependencies>
             <name>CD-marketingapplication-marketingmanager</name>
             <roles>marketingmanager</roles>
@@ -118,6 +162,10 @@
                 <serviceSpecName>smartcart</serviceSpecName>
                 <serviceSpecRole>smartcart</serviceSpecRole>
             </dependencies>
+            <dependencies>
+                <serviceSpecName>CD-smartcart-selfcheckoutmachine</serviceSpecName>
+                <serviceSpecRole>selfcheckoutmachine</serviceSpecRole>
+            </dependencies>
             <name>CD-selfcheckoutmachine-smartcart</name>
             <roles>smartcart</roles>
             <serviceType>SOAP</serviceType>
@@ -131,6 +179,18 @@
             <dependencies>
                 <serviceSpecName>marketingapplication</serviceSpecName>
                 <serviceSpecRole>marketingapplication</serviceSpecRole>
+            </dependencies>
+            <dependencies>
+                <serviceSpecName>CD-marketingapplication-instoretotem</serviceSpecName>
+                <serviceSpecRole>instoretotem</serviceSpecRole>
+            </dependencies>
+            <dependencies>
+                <serviceSpecName>CD-marketingapplication-shoppingassistants</serviceSpecName>
+                <serviceSpecRole>shoppingassistants</serviceSpecRole>
+            </dependencies>
+            <dependencies>
+                <serviceSpecName>CD-marketingapplication-basiccommunicationdevice</serviceSpecName>
+                <serviceSpecRole>basiccommunicationdevice</serviceSpecRole>
             </dependencies>
             <name>CD-marketingmanager-marketingapplication</name>
             <roles>marketingapplication</roles>
@@ -146,6 +206,10 @@
                 <serviceSpecName>selfcheckoutmachine</serviceSpecName>
                 <serviceSpecRole>selfcheckoutmachine</serviceSpecRole>
             </dependencies>
+            <dependencies>
+                <serviceSpecName>CD-selfcheckoutmachine-marketingapplication</serviceSpecName>
+                <serviceSpecRole>marketingapplication</serviceSpecRole>
+            </dependencies>
             <name>CD-smartcart-selfcheckoutmachine</name>
             <roles>selfcheckoutmachine</roles>
             <serviceType>SOAP</serviceType>
@@ -159,6 +223,10 @@
             <dependencies>
                 <serviceSpecName>basiccommunicationdevice</serviceSpecName>
                 <serviceSpecRole>basiccommunicationdevice</serviceSpecRole>
+            </dependencies>
+            <dependencies>
+                <serviceSpecName>CD-marketingapplication-marketingmanager</serviceSpecName>
+                <serviceSpecRole>marketingmanager</serviceSpecRole>
             </dependencies>
             <name>CD-marketingapplication-basiccommunicationdevice</name>
             <roles>basiccommunicationdevice</roles>
