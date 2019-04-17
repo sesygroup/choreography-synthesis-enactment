@@ -96,16 +96,7 @@ choreography-synthesis-enactment
     |   +---running-06
     |   |      MasterContent.xml
     |   |
-    |   +---running-07
-    |   |      MasterContent.xml
-    |   |
-    |   +---running-08
-    |   |      MasterContent.xml
-    |   |
-    |   +---running-09
-    |   |      MasterContent.xml
-    |   |
-    |   \---running-10
+    |   \---running-07
     |          MasterContent.xml
     |
     +---retrieve-monitoring-data
