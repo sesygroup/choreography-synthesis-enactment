@@ -8,6 +8,10 @@
       <link rel="stylesheet" href="css/railscasts.min.css">
       <link rel="stylesheet" href="css/scribbler-global.css">
       <link rel="stylesheet" href="css/scribbler-landing.css">
+      <link rel="stylesheet" href="css/w3c_slider.css">
+      <style>
+.mySlides {display:none;}
+</style>
    </head>
    <body>
       <nav>
@@ -22,12 +26,28 @@
          <h1 class="hero__title">Highly-collaborative distributed systems: synthesis and enactment at work</h1>
          <p class="hero__description">This web page contains the replication package of the paper we submitted to the <a href="https://www.computer.org/web/tsc" class="link link--light">IEEE Transactions on Services Computing</a> with title <b>Highly-collaborative distributed systems: synthesis and enactment at work</b>.</p>
       </div>
+     <!--
       <div class="hero__terminal">
          <pre>
-        <!-- Place your demo code here -->
+        <!-- Place your demo code here 
         <code class="shell-session demo">choreography ~ $ </code>
       </pre>
       </div>
+   -->
+<div class="w3-content w3-display-container" style="
+    margin: -11rem auto 3rem auto;
+    border-radius: 4px;
+    animation: fadeUp 2s;
+    box-shadow: 0px 12px 36.8px 9.2px rgba(0, 0, 0, 0.1);
+">
+  <img class="mySlides" src="./img/studio1.png" style="width:100%">
+  <img class="mySlides" src="./img/choreography.png" style="width:100%">
+  <img class="mySlides" src="./img/monitor1.png" style="width:100%">
+  <img class="mySlides" src="./img/monitor2.png" style="width:100%">
+  <button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
+  <button class="w3-button w3-black w3-display-right" onclick="plusDivs(1)">&#10095;</button>
+</div>
+ 
       <div class="wrapper">
          <h3 class="section__title">Abstract</h3>
          <p>
@@ -135,5 +155,6 @@
       <script src="js/fontawesome-all.min.js"></script>
       <script src="js/highlight.min.js"></script>
       <script src="js/scribbler-index.js"></script>
+      <script src="js/w3c_slider.js"></script>
    </body>
 </html>
