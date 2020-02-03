@@ -1,14 +1,14 @@
 Highly-collaborative distributed systems: synthesis and enactment at work
 =======================
-This repository contains the replication package of the paper we submitted to the [IEEE Transactions on Services Computing](https://www.computer.org/web/tsc) with title ***Highly-collaborative distributed systems: synthesis and enactment at work***.
+This repository contains the replication package of the paper we submitted to the international journal [Distributed Computing](https://www.springer.com/journal/446) with title ***Highly-collaborative distributed systems: synthesis and enactment at work***.
 
 This work has been designed, developed, and reported by the following contributors:
  - [Marco Autili (University of L’Aquila)](mailto:marco.autili@univaq.it)
- - [Fabio Kon (University of São Paulo)](mailto:kon@ime.usp.br)
  - [Alexander Perucci (University of L’Aquila)](mailto:alexander.perucci@univaq.it)
- - [Massimo Tivoli (University of L’Aquila)](mailto:massimo.tivoli@univaq.it)
- - [Amleto Di Salle (University of L’Aquila)](mailto:amleto.disalle@univaq.it)
  - [Leonardo Leite (University of São Paulo)](mailto:leofl@ime.usp.br)
+ - [Massimo Tivoli (University of L’Aquila)](mailto:massimo.tivoli@univaq.it)
+ - [Fabio Kon (University of São Paulo)](mailto:kon@ime.usp.br)
+ - [Amleto Di Salle (University of L’Aquila)](mailto:amleto.disalle@univaq.it)
 
 For any information, interested researchers can contact us by writing an email to any contributor listed above. A fully `documentation` can be found [here](https://sesygroup.github.io/choreography-synthesis-enactment).
 
