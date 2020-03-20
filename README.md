@@ -1,6 +1,6 @@
 Highly-collaborative distributed systems: synthesis and enactment at work
 =======================
-This repository contains the replication package of the paper we submitted to the international journal [Distributed Computing](https://www.springer.com/journal/446) with title ***Highly-collaborative distributed systems: synthesis and enactment at work***.
+This repository contains the replication package of the paper we submitted to the journal [Concurrency and Computation: Practice and Experience](https://onlinelibrary.wiley.com/journal/15320634) with title ***Highly-collaborative distributed systems: synthesis and enactment at work***.
 
 This work has been designed, developed, and reported by the following contributors:
  - [Marco Autili (University of L’Aquila)](mailto:marco.autili@univaq.it)
